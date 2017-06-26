@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="TravelAdmin" xmlns:wsdlns="TravelAdmin" name="PaquetesPopularesWS" targetNamespace="TravelAdmin" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="TravelAdmin">
+      <xsd:element name="PaquetesPopularesWS.PAQUETES">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.PAQUETESResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Popularpaquetehtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.DESTINOS">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.DESTINOSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Destinopopularhtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:schema>
+  </types>
+  <message name="PaquetesPopularesWS.PAQUETESSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.PAQUETES" />
+  </message>
+  <message name="PaquetesPopularesWS.PAQUETESSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.PAQUETESResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.DESTINOSSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINOS" />
+  </message>
+  <message name="PaquetesPopularesWS.DESTINOSSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINOSResponse" />
+  </message>
+  <portType name="PaquetesPopularesWSSoapPort">
+    <operation name="PAQUETES">
+      <input message="wsdlns:PaquetesPopularesWS.PAQUETESSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.PAQUETESSoapOut" />
+    </operation>
+    <operation name="DESTINOS">
+      <input message="wsdlns:PaquetesPopularesWS.DESTINOSSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.DESTINOSSoapOut" />
+    </operation>
+  </portType>
+  <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="PAQUETES">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.PAQUETES" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DESTINOS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.DESTINOS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="PaquetesPopularesWS">
+    <port name="PaquetesPopularesWSSoapPort" binding="wsdlns:PaquetesPopularesWSSoapBinding">
+      <soap:address location="http://localhost/TravelAdmin.NetEnvironment/apaquetespopularesws.aspx" />
+    </port>
+  </service>
+</definitions>
