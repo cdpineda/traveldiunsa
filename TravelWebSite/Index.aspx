@@ -28,14 +28,14 @@
 <div class="container boking-inner">
     <div class="row">
         <div class="col-sm-12">
-            <div class="panel">
-                <div class="panel-heading">
+            <div class="panel1">
+                <div class="panel1-heading">
                     <ul class="nav nav-tabs">
-                        <li class="active"><a href="#tab1default" data-toggle="tab"><i class="flaticon-paper-plane"></i>Tour</a></li>
+                        <li class="active"><a href="#tab1default" data-toggle="tab"><i class="flaticon-paper-plane"></i>Paquetes</a></li>
                         <li><a href="#tab2default" data-toggle="tab"> <i class="flaticon-cabin"></i>Hotel</a></li>
                     </ul>
                 </div>
-                <div class="panel-body">
+                <div class="panel1-body">
                     <div class="tab-content">
                         <div class="tab-pane fade in active" id="tab1default">
                             <div class="row">
@@ -249,4 +249,5 @@
         </div>
     </div>
 </section>
+     <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>
 </asp:Content>

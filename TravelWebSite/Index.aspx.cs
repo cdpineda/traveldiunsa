@@ -19,6 +19,9 @@ namespace TravelWebSite
             resultado = paquetesWS.DESTINOS();
             LtDestinoPopular.Text = resultado;
 
+            resultado = paquetesWS.BOLETINFOOTER();
+            LtBoletin.Text = resultado;
+
 
         }
     }

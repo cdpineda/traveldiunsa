@@ -1,13 +1,6 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /*------------------------------------------------------------------------------
-[Master Stylesheet]
 
-Project:        Travel - Responsive HTML Template
-Version:        1.0
-Last change:    10/12/2016
-Primary use:    Travel & Tour
-Author:         BDTASK
-URL:            https://themeforest.net/user/bdtask
 ------------------------------------------------------------------------------*/
 /*
 This file contains the common info of this theme.
@@ -193,7 +186,7 @@ a:hover{text-decoration: none;}
 /*** 11. Slider
 ------------------------------------------------------------------------------*/
 .slider-wrapper{position:relative;overflow:hidden;width:100%;margin:0 auto;background-image: url(../images/destination-bg.jpg);background-size: cover;position: relative;background-position: center top;background-repeat: no-repeat;background-attachment: fixed;}
-.slider-wrapper:before, .home-ref:before{width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;background-color: rgba(0,0,0,0.5);}
+.slider-wrapper:before, .home-ref:before{width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;/*background-color: rgba(0,0,0,0.5);*/}
 .slider{position:relative;width:100%;height:700px;margin:0 auto;}
 /* Slider Element Style */
 .slider-wrapper p{padding:1% 3%;white-space: nowrap;text-align: center;color: #fff;}
@@ -212,7 +205,7 @@ a:hover{text-decoration: none;}
 }
 /*** 12. Page header
 ------------------------------------------------------------------------------*/
-.header {position: relative;width: 100%;background-attachment: fixed;background-position: center center;background-repeat: repeat-x;animation: animatedBackground 20s linear infinite;background-size: cover;color: #fff;text-align: center;}
+.header {position: relative;width: 100%;background-attachment: fixed;background-position: center center;background-repeat: repeat-x;animation: animatedBackground 20s linear infinite;background-size: cover;color: #151515;text-align: center;}/*Cambio de color color: #fff*/
 .header-bg-1{background-image: url(../images/header-1920x1135-1.jpg);}
 .header-bg-2{background-image: url(../images/header-1920x1135-2.jpg);}
 .header-bg-3{background-image: url(../images/header-1920x1135-3.jpg);}
@@ -223,11 +216,11 @@ a:hover{text-decoration: none;}
 .header-bg-8{background-image: url(../images/header-1920x1135-8.jpg);}
 .header-bg-9{background-image: url(../images/header-1920x1135-9.jpg);}
 .header-bg-10{background-image: url(../images/header-1920x1135-10.jpg);}
-.header:before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;background: rgba(0, 0, 0, 0.5);}
+.header:before {content: "";position: absolute;top: 0;left: 0;width: 100%;height: 100%;/*background: rgba(0, 0, 0, 0.5);*/}
 .header-content {text-align: center;padding: 115px 0 60px;position: relative;}
 .header-content-inner {position: relative;margin: 0 auto;}
 .header-content-inner h1 {text-transform: uppercase;font-weight: 800;letter-spacing: 1px;margin: 50px 0 20px;}
-.header-content-inner p{color: #fff;margin: 0 0 15px;}
+.header-content-inner p{color: #151515;margin: 0 0 15px;}/*Cambio de color color: #fff*/
 /*Breadcrumb*/
 .ui.breadcrumb {display: inline-block;vertical-align: middle;background-color: rgba(255, 255, 255,0.1);font-size: 13px;border: 1px solid rgba(255, 255, 255,0.3);}
 .ui.breadcrumb:first-child {margin-top: 0em;}
@@ -244,14 +237,18 @@ a:hover{text-decoration: none;}
 /*** 13. Home page all section style
 ------------------------------------------------------------------------------*/
 /*appointment form*/
-.panel {background-color: transparent;border-radius: 0;z-index: 999;position: relative;margin-top: -17.58%;width: 100%;border: 0;margin-bottom: 0;}
-.panel-heading {padding: 0;border: 0;border-radius: 0;}
+/*.panel {background-color: transparent;border-radius: 0;z-index: 999;position: relative;margin-top: -17.58%;width: 100%;border: 0;margin-bottom: 0;}*/
+/*.panel-heading {padding: 0;border: 0;border-radius: 0;}*/
+/*PARA EL PANEL PAGINA PRINCIPAL Y NO SOBREESCRIBIR EL DE BOOTSTRAP*/
+.panel1 {background-color: transparent;border-radius: 0;z-index: 999;position: relative;margin-top: -17.58%;width: 100%;border: 0;margin-bottom: 0;}
+.panel1-heading {padding: 0;border: 0;border-radius: 0;}
+.panel1-body {background-color: rgb(254,193,7);padding: 40px;}
 .nav-tabs {border-bottom: 0;}
 .nav-tabs>li {margin-bottom: 0; }
 .nav-tabs > li > a {border-radius: 0;background-color: #fff;color: inherit;padding: 15px 40px;border: 0;margin-right: 0;color: #575757;}
 .nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {color: #333;cursor: default;background-color: rgb(254,193,7);border: 0;}
 .nav-tabs > li > a i {margin-right: 12px;font-size: 18px;}
-.panel-body {background-color: rgb(254,193,7);padding: 40px;}
+/*.panel-body {background-color: rgb(254,193,7);padding: 40px;}*/
 .panel-margin{ margin-right: -10px;margin-left: -10px;}
 .panel-padding{padding-right: 10px;padding-left: 10px;}
 .center-block {float: none;margin-left: auto;margin-right: auto;}
@@ -303,14 +300,14 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .effect-block h4 {font-size: 30px;color: #373737;font-weight: 700;margin: 0 0 20px;}
 /*destination*/
 .destination{position: relative;background-image: url(../images/destination-bg.jpg);background-repeat: no-repeat;background-size: cover;padding-bottom: 50px;}
-.destination::before {width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;background-color: rgba(255, 255, 255, 0.8);}
+.destination::before {width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;/*background-color: rgba(255, 255, 255, 0.8);*/}
 .destination .thm-margin {margin-right: -10px;margin-left: -10px;}
 .destination .thm-padding {padding-left: 10px;padding-right: 10px;padding-bottom: 20px;}
 .destination-grid {overflow: hidden;position: relative;text-align: center;cursor: default;box-shadow: 0 5px 10px rgba(0,0,0,0.5);}
 .destination-grid:hover{box-shadow: none;}
 .destination-grid img {display: block;position: relative;transform: scaleY(1);transition: all .7s ease-in-out;}
 .destination-grid:hover img {-webkit-transform: scale(10);transform: scale(10);opacity: 0;}
-.destination-grid .mask{top: 0;left: 0;width: 100%;height: 100%;padding: 20px;position: absolute;overflow: hidden;background-color: rgba(0, 0, 0, 0.3);}
+.destination-grid .mask{top: 0;left: 0;width: 100%;height: 100%;padding: 20px;position: absolute;overflow: hidden;/*background-color: rgba(0, 0, 0, 0.3);*/}
 .destination-grid:hover .mask {background-color: #fff;box-shadow: none;}
 .destination-grid .mask h2 {margin: 15px 0;transform: scale(0);color: #333;font-size: 25px;font-weight: 700;}
 .destination-grid .mask p {margin: 0;color: #333;opacity: 0;font-size: 14px;transform: scale(0);}
@@ -469,7 +466,7 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .grid-margin{margin-left: -10px;margin-right: -10px;}
 .grid-item{margin-bottom: 20px;padding-right: 10px;padding-left: 10px;}
 .grid-item-inner{position: relative;overflow: hidden;color: #fff;}
-.grid-content{background-color: rgba(0,0,0,0.3);position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;}
+.grid-content{/*background-color: rgba(0,0,0,0.3);*/position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;}
 .grid-text{position:absolute;bottom:0;left:0;padding: 15px;width:100%;}
 .place-name {display: inline-block;padding: 5px 7px;font-size: 12px;line-height: 10px;background-color: #f94141;}
 .travel-times h4{font-size:16px;color: #fff;}
@@ -615,7 +612,7 @@ ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set
 .booking_price .price strong {font-size: 50px;display: inline-block;margin-right: 10px;}
 .booking_price ul.list-ok li {line-height: 30px;}
 .booking_price .offer {margin-top: 12px;}
-.tour_view_map #map{height: 500px;width: 100%;}
+.tour_view_map #map{height: 350px;width: 100%;}
 .box_map {position: relative;padding-left: 70px;margin-bottom: 30px;}
 .box_map i {font-size: 45px;position: absolute;left: 0;top: -10px;}
 /*** 23. About page
@@ -662,7 +659,7 @@ blockquote .author {width: 100%;display: block;font-weight: 100;margin: 10px 0 0
 ------------------------------------------------------------------------------*/
 .contact_map #map{height: 350px;width: 100%;margin-bottom: 70px;}
 .contact-icon{margin-top: 30px;margin-bottom: 30px;}
-.contact-icon a{color: #fff;}
+.contact-icon a{color: #151515;}/*Cambio de color*/
 .contact-icon i{font-size: 40px}
 .contact-icon h5{letter-spacing: 0.5px;font-size: 16px;}
 .contact-content {margin-bottom: 30px;}

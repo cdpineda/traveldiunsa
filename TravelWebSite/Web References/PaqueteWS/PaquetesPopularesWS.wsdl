@@ -14,6 +14,18 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.BOLETINFOOTER">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.BOLETINFOOTERResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Boletinhtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.DESTINOS">
         <xsd:complexType>
           <xsd:sequence />
@@ -26,6 +38,64 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.DESTINODETALLE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Id" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.DESTINODETALLEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Destinodetailhtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.COORDENADASPAQUETE">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Id" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.COORDENADASPAQUETEResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Paqueteubicacion" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CONTACTOALMACENAR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Nombre1" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Nombre2" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Correo" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Telefono" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Comentario" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CONTACTOALMACENARResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="retval" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CONTACTO">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CONTACTOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Contactohtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
     </xsd:schema>
   </types>
   <message name="PaquetesPopularesWS.PAQUETESSoapIn">
@@ -34,20 +104,70 @@
   <message name="PaquetesPopularesWS.PAQUETESSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.PAQUETESResponse" />
   </message>
+  <message name="PaquetesPopularesWS.BOLETINFOOTERSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.BOLETINFOOTER" />
+  </message>
+  <message name="PaquetesPopularesWS.BOLETINFOOTERSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.BOLETINFOOTERResponse" />
+  </message>
   <message name="PaquetesPopularesWS.DESTINOSSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINOS" />
   </message>
   <message name="PaquetesPopularesWS.DESTINOSSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINOSResponse" />
   </message>
+  <message name="PaquetesPopularesWS.DESTINODETALLESoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINODETALLE" />
+  </message>
+  <message name="PaquetesPopularesWS.DESTINODETALLESoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.DESTINODETALLEResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.COORDENADASPAQUETESoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.COORDENADASPAQUETE" />
+  </message>
+  <message name="PaquetesPopularesWS.COORDENADASPAQUETESoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.COORDENADASPAQUETEResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.CONTACTOALMACENARSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CONTACTOALMACENAR" />
+  </message>
+  <message name="PaquetesPopularesWS.CONTACTOALMACENARSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CONTACTOALMACENARResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.CONTACTOSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CONTACTO" />
+  </message>
+  <message name="PaquetesPopularesWS.CONTACTOSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CONTACTOResponse" />
+  </message>
   <portType name="PaquetesPopularesWSSoapPort">
     <operation name="PAQUETES">
       <input message="wsdlns:PaquetesPopularesWS.PAQUETESSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.PAQUETESSoapOut" />
     </operation>
+    <operation name="BOLETINFOOTER">
+      <input message="wsdlns:PaquetesPopularesWS.BOLETINFOOTERSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.BOLETINFOOTERSoapOut" />
+    </operation>
     <operation name="DESTINOS">
       <input message="wsdlns:PaquetesPopularesWS.DESTINOSSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.DESTINOSSoapOut" />
+    </operation>
+    <operation name="DESTINODETALLE">
+      <input message="wsdlns:PaquetesPopularesWS.DESTINODETALLESoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.DESTINODETALLESoapOut" />
+    </operation>
+    <operation name="COORDENADASPAQUETE">
+      <input message="wsdlns:PaquetesPopularesWS.COORDENADASPAQUETESoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.COORDENADASPAQUETESoapOut" />
+    </operation>
+    <operation name="CONTACTOALMACENAR">
+      <input message="wsdlns:PaquetesPopularesWS.CONTACTOALMACENARSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.CONTACTOALMACENARSoapOut" />
+    </operation>
+    <operation name="CONTACTO">
+      <input message="wsdlns:PaquetesPopularesWS.CONTACTOSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.CONTACTOSoapOut" />
     </operation>
   </portType>
   <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
@@ -61,8 +181,53 @@
         <soap:body use="literal" />
       </output>
     </operation>
+    <operation name="BOLETINFOOTER">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.BOLETINFOOTER" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="DESTINOS">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.DESTINOS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="DESTINODETALLE">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.DESTINODETALLE" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="COORDENADASPAQUETE">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.COORDENADASPAQUETE" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CONTACTOALMACENAR">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.CONTACTOALMACENAR" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CONTACTO">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.CONTACTO" />
       <input>
         <soap:body use="literal" />
       </input>
