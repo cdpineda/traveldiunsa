@@ -249,5 +249,6 @@
         </div>
     </div>
 </section>
+    <asp:Literal ID="LtRecomendados" runat="server"></asp:Literal>
      <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>
 </asp:Content>

@@ -22,7 +22,11 @@ namespace TravelWebSite
             resultado = paquetesWS.BOLETINFOOTER();
             LtBoletin.Text = resultado;
 
+            resultado = paquetesWS.RECOMENDADOS();
+            LtRecomendados.Text = resultado;
+
 
         }
+        
     }
 }

@@ -73,3 +73,22 @@ Creation date: 01/12/2016 07:42
 .flaticon-twitter:before { content: "\f12d"; }
 .flaticon-weightlifting:before { content: "\f12e"; }
 .flaticon-wifi:before { content: "\f12f"; }
+
+
+/*
+Iniciar Sesión
+*/
+.Fondo{ 
+    padding: 20px;
+    font-size: 14px;
+    background-color: #fff;
+    border: 1px solid #d8dee2;
+}
+
+.Logo-InicioSesion{
+    width: 60%;
+}
+
+/*
+Finaliza Iniciar Sesión
+*/

@@ -274,9 +274,12 @@
     <Content Include="assets\owl-carousel\owl.theme.css" />
     <Content Include="assets\owl-carousel\owl.transitions.css" />
     <Content Include="Contacto.aspx" />
+    <Content Include="Contenido.aspx" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
+    <Content Include="Cotizar.aspx" />
+    <Content Include="EnvioMailCotizacion.asmx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
@@ -330,7 +333,10 @@
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Index.aspx" />
+    <Content Include="InformacionAdicional.aspx" />
+    <Content Include="Login.aspx" />
     <Content Include="Paquete.aspx" />
+    <Content Include="Registrarse.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -392,6 +398,24 @@
     <Compile Include="Contacto.aspx.designer.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Contenido.aspx.cs">
+      <DependentUpon>Contenido.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contenido.aspx.designer.cs">
+      <DependentUpon>Contenido.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cotizar.aspx.cs">
+      <DependentUpon>Cotizar.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cotizar.aspx.designer.cs">
+      <DependentUpon>Cotizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioMailCotizacion.asmx.cs">
+      <DependentUpon>EnvioMailCotizacion.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -401,6 +425,20 @@
     </Compile>
     <Compile Include="Index.aspx.designer.cs">
       <DependentUpon>Index.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="InformacionAdicional.aspx.cs">
+      <DependentUpon>InformacionAdicional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="InformacionAdicional.aspx.designer.cs">
+      <DependentUpon>InformacionAdicional.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paquete.aspx.cs">
       <DependentUpon>Paquete.aspx</DependentUpon>
@@ -414,6 +452,13 @@
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Registrarse.aspx.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registrarse.aspx.designer.cs">
+      <DependentUpon>Registrarse.aspx</DependentUpon>
     </Compile>
     <Compile Include="TravelSite.Master.cs">
       <DependentUpon>TravelSite.Master</DependentUpon>

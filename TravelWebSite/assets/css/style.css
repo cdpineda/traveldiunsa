@@ -42,7 +42,7 @@ This file contains the common info of this theme.
 ::-moz-selection{background-color: #fec107;color: #ffffff;}
 ::selection{background-color: #fec107;color: #ffffff;}
 body{font-family: 'Open Sans', sans-serif;font-size: 13px;}
-p {color: #7d7d7d;line-height: 23px;letter-spacing: 0.25px;}
+p {color: #666666;line-height: 23px;letter-spacing: 0.25px;}
 #page-content{position: relative;margin-bottom: 421px;z-index: 10;background-color: white;}
 ol, ul {padding: 0;margin:0;list-style-type: none;}
 img{width: 100%;}
@@ -92,7 +92,7 @@ a:hover{text-decoration: none;}
 .comment-form .form-control, .contact-form .form-control, .contact-content h4, .contact-content a, .trip h5, .trip p, 
 .hotels-details-inner h3, .tour-details-inner h3, .review-text h4, .content-list li, .contact-icon h5, .sub-footer p, 
 .navbar-default.tour-nav ul li a, .booking_price ul.list-ok li, .booking_price .offer, .effect-block h3, .package-price .price span{
-    font-weight: 600;
+    font-weight: 400;
 }
 /*** 04. Color
 ------------------------------------------------------------------------------*/
@@ -103,19 +103,19 @@ a:hover{text-decoration: none;}
 .filters-btn:hover i, .travel-title span i, .pagination-inner .pager li > a:hover, .pagination > li > a, .cats-widget ul li:hover,
 .cats-widget ul li:hover a, .popular-post-inner ul li a:hover, .checkbox-star .star i, .help-widget h4 span, .hotel-review .hotel-review-ratting,
 .booking-form .icon-addon .glyphicon, .btn-pm, .contact-icon a:hover, .contact-content a, .categoty li a:hover, .footer-menu ul li a:hover{
-    color: #fec107 !important;
+    color: #ff9400 !important;
 }
 /*red*/
 .section-title i, ul.list-ok li::before, .effect-block .package-ratting, .package-price .price, .review_rating,
 .booking_price .offer, .box_map i, .content-list li::before, .content-left span, blockquote .author, .team_text_inner p {
-    color: #f94141 !important;
+    color: #ff9400 !important;
 }
 /*** 05. Background color
 ------------------------------------------------------------------------------*/
 /*background color yellow*/
 .thm-btn, .btn-top, .region, .portfolio-sorting li a span, .pagination-inner .pager li > a, .pagination > li > a:hover,
 .pagination-inner .pagination > .active > a,.cats-title span, .ui.tag:hover{
-    background-color: #fec107 !important;
+    background-color: #ff9400 !important;
 }
 /*** 06. Page padding
 ------------------------------------------------------------------------------*/
@@ -127,18 +127,18 @@ a:hover{text-decoration: none;}
 /*** 07. Main title
 ------------------------------------------------------------------------------*/
 .title {text-align: center;margin-bottom: 70px;}
-.title h2{margin: 0 0 5px; text-align: center;font-weight: 800;color: #000;position: relative;z-index: 10;}
+.title h2{margin: 0 0 5px; text-align: center;font-weight: 300;color: #004d9c;position: relative;z-index: 10;}
 .title p {margin: 0;}
 /*** 08. Section title
 ------------------------------------------------------------------------------*/
 .section-title{margin-bottom: 50px;}
 .section-title i{font-size: 60px;line-height: 70px;}
-.section-title h2 {font-weight: 800;margin-top: 0;color: #000;text-transform: capitalize;}
+.section-title h2 {font-weight: 300;margin-top: 0;color: #004d9c;text-transform: none;}
 .section-title p{font-size: 14px;}
 /*** 09. Theme button
 ------------------------------------------------------------------------------*/
-.thm-btn {padding: 12px 30px;color: #333;font-weight: 700;font-size: 13px;border: 0;text-align: center;border-radius: 4px;text-decoration: none;display: inline-block;vertical-align: middle;-webkit-transform: perspective(1px) translateZ(0);transform: perspective(1px) translateZ(0);box-shadow: 0 0 1px transparent;position: relative;}
-.thm-btn:before {content: '';position: absolute;border: white solid 3px;border-radius: 4px;top: 3px;left: 3px;right: 3px;bottom: 3px;opacity: 0;-webkit-transition-duration: 0.3s;transition-duration: 0.3s;-webkit-transition-property: opacity;transition-property: opacity;}
+.thm-btn {padding: 12px 30px;color: #ffffff;font-weight: 700;font-size: 13px;border: 0;text-align: center;border-radius: 0px;text-decoration: none;display: inline-block;vertical-align: middle;-webkit-transform: perspective(1px) translateZ(0);transform: perspective(1px) translateZ(0);box-shadow: 0 0 1px transparent;position: relative;}
+.thm-btn:before {content: '';position: absolute;border:none;top: 3px;left: 3px;right: 3px;bottom: 3px;opacity: 0;-webkit-transition-duration: 0.3s;transition-duration: 0.3s;-webkit-transition-property: opacity;transition-property: opacity;}
 .thm-btn:hover:before, .thm-btn:focus:before, .thm-btn:active:before {opacity: 1;}
 /*** 10. Navigation
 ------------------------------------------------------------------------------*/
@@ -205,7 +205,7 @@ a:hover{text-decoration: none;}
 }
 /*** 12. Page header
 ------------------------------------------------------------------------------*/
-.header {position: relative;width: 100%;background-attachment: fixed;background-position: center center;background-repeat: repeat-x;animation: animatedBackground 20s linear infinite;background-size: cover;color: #151515;text-align: center;}/*Cambio de color color: #fff*/
+.header {position: relative;width: 100%;background-attachment: fixed;background-position: center center;background-repeat: repeat-x;animation: animatedBackground 20s linear infinite;background-size: cover;color: #fff;text-align: center;}
 .header-bg-1{background-image: url(../images/header-1920x1135-1.jpg);}
 .header-bg-2{background-image: url(../images/header-1920x1135-2.jpg);}
 .header-bg-3{background-image: url(../images/header-1920x1135-3.jpg);}
@@ -220,7 +220,7 @@ a:hover{text-decoration: none;}
 .header-content {text-align: center;padding: 115px 0 60px;position: relative;}
 .header-content-inner {position: relative;margin: 0 auto;}
 .header-content-inner h1 {text-transform: uppercase;font-weight: 800;letter-spacing: 1px;margin: 50px 0 20px;}
-.header-content-inner p{color: #151515;margin: 0 0 15px;}/*Cambio de color color: #fff*/
+.header-content-inner p{color: #fff;margin: 0 0 15px;}
 /*Breadcrumb*/
 .ui.breadcrumb {display: inline-block;vertical-align: middle;background-color: rgba(255, 255, 255,0.1);font-size: 13px;border: 1px solid rgba(255, 255, 255,0.3);}
 .ui.breadcrumb:first-child {margin-top: 0em;}
@@ -245,21 +245,22 @@ a:hover{text-decoration: none;}
 .panel1-body {background-color: rgb(254,193,7);padding: 40px;}
 .nav-tabs {border-bottom: 0;}
 .nav-tabs>li {margin-bottom: 0; }
-.nav-tabs > li > a {border-radius: 0;background-color: #fff;color: inherit;padding: 15px 40px;border: 0;margin-right: 0;color: #575757;}
-.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {color: #333;cursor: default;background-color: rgb(254,193,7);border: 0;}
-.nav-tabs > li > a i {margin-right: 12px;font-size: 18px;}
+.nav-tabs > li > a {border-radius: 0;background-color: #ff9400;color: inherit;padding: 15px 40px;border: 0;margin-right: 0;color: #575757;font-size: 15px;text-transform: uppercase;}
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:focus, .nav-tabs > li.active > a:hover {color: #ff9400;cursor: default;background-color: #ffffff;border: 0;text-transform: uppercase;font-size:15px;}
+.nav>li>a:hover {background-color: #004d9c;color: #fff;}
+.nav-tabs > li > a i {margin-right: 12px;font-size: 15px;text-transform: uppercase;}
 /*.panel-body {background-color: rgb(254,193,7);padding: 40px;}*/
 .panel-margin{ margin-right: -10px;margin-left: -10px;}
 .panel-padding{padding-right: 10px;padding-left: 10px;}
 .center-block {float: none;margin-left: auto;margin-right: auto;}
-.panel label{text-transform: uppercase;font-size: 11px;letter-spacing: 1px;}
+.panel label{text-transform: uppercase;font-size: 11px;letter-spacing: 0px;color: #ff9400;font-weight: 400;}
 .input-group .icon-addon .form-control {border-radius: 0;}
 .icon-addon {position: relative;}
 .icon-addon .glyphicon {position: absolute;z-index: 2;right: 10px;font-size: 14px;width: 20px;text-align: center;padding: 14px 0;top: 0;margin: 0;}
-.icon-addon .form-control {line-height: 1.33;height: 42px;font-size: 14px;padding: 5px 40px 5px 8px;border-radius: 4px;box-shadow: none;border: 1px solid #fff;font-size: 13px;}
-.panel-body .select-filters{height: 42px;border: 1px solid #fff;border-radius: 4px;}
+.icon-addon .form-control {line-height: 1.33;height: 42px;font-size: 14px;padding: 5px 40px 5px 8px;border-radius: 0px;box-shadow: none;border: 1px solid #ff9400;font-size: 13px;}
+.panel-body .select-filters{height: 42px;border: 1px solid #ff9400;border-radius: 0px;}
 .panel-body .select-filters select{height: 40px;}
-.panel-body .thm-btn {margin-top: 23px;background-color: rgb(249,65,65) !important;color: #fff;}
+.panel-body .thm-btn {margin-top: 21px;background-color:#ff9400 !important;color: #fff;border: 0px solid #fff;}
 /*calender*/
 .ui-widget.ui-widget-content {border: 0;-moz-border-radius: 5px;border-radius: 5px;-moz-box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);box-shadow: 0px 4px 5px 0px rgba(0, 0, 0, 0.1);padding: 10px;}
 .ui-datepicker .ui-datepicker-header {background: transparent;border: 0;}
@@ -267,7 +268,8 @@ a:hover{text-decoration: none;}
 .ui-datepicker .ui-datepicker-prev:before {content: "\f104";display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;}
 .ui-datepicker .ui-datepicker-next:before{content: "\f105";display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;}
 .ui-state-default, .ui-widget-content .ui-state-default, .ui-widget-header .ui-state-default, .ui-button, html .ui-button.ui-state-disabled:hover, html .ui-button.ui-state-disabled:active {border: 0;background: transparent;font-weight: normal;color: inherit;text-align: center;padding: 5px;}
-.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight {border: 1px solid #fec107;background: #fec107;color: #333;}
+.ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-widget-header .ui-state-highlight 
+{border: 1px solid #ff9400;background: #ff9400;color: #ffffff;}
 /*service*/
 .inner-box {position: relative;text-align: center;border: 4px solid rgba(255,255,255,.2);padding: 15px;transition-timing-function: ease-in-out;-moz-transition-timing-function: ease-in-out;-webkit-transition-timing-function: ease-in-out;-o-transition-timing-function: ease-in-out;transition-duration: .2s;-moz-transition-duration: .2s;-webkit-transition-duration: .2s;-o-transition-duration: .2s;}
 .inner-box:hover {border: 4px solid #fec107;padding: 15px;}
@@ -280,7 +282,7 @@ a:hover{text-decoration: none;}
 .owl-theme .owl-controls .owl-buttons .owl-prev {left: -30px;}
 .owl-theme .owl-controls .owl-buttons .owl-next {right: -30px;}
 /* Common style */
-.grid figure {position: relative;z-index: 1;display: inline-block;overflow: hidden;width: 100%;background: #fff;text-align: center;cursor: pointer;}
+.grid figure {position: relative;z-index: 1;display: inline-block;overflow: hidden;width: 100%;background: #004d9c;text-align: center;cursor: pointer;}
 .grid figure img {position: relative;display: block;min-height: 100%;opacity: 1;}
 .grid figure figcaption {padding: 20px;color: #fff;font-size: 1.25em;-webkit-backface-visibility: hidden;backface-visibility: hidden;}
 .grid figure figcaption::before, .grid figure figcaption::after {pointer-events: none;}
@@ -295,7 +297,7 @@ figure.effect-milo:hover .block {opacity: 0;}
 .block .price {float: right;}
 figure.effect-milo .effect-block {margin-top: 30px;padding: 0 0 0 10px;text-align: center;opacity: 0;-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;transition: opacity 0.35s, transform 0.35s;-webkit-transform: translate3d(0, 160px, 0);transform: translate3d(0.160px, 0);}
 figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opacity: 1;-webkit-transform: translate3d(0, 0, 0);transform: translate3d(0, 0, 0);}
-.effect-block h3 {color: #000;margin: 0 0 20px;font-size: 21px;}
+.effect-block h3 {color: #ffffff;margin: 0 0 20px;font-size: 18px;}
 .effect-block span {color: #373737;display: block;font-size: 15px;letter-spacing: 0.5px;}
 .effect-block h4 {font-size: 30px;color: #373737;font-weight: 700;margin: 0 0 20px;}
 /*destination*/
@@ -309,8 +311,8 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .destination-grid:hover img {-webkit-transform: scale(10);transform: scale(10);opacity: 0;}
 .destination-grid .mask{top: 0;left: 0;width: 100%;height: 100%;padding: 20px;position: absolute;overflow: hidden;/*background-color: rgba(0, 0, 0, 0.3);*/}
 .destination-grid:hover .mask {background-color: #fff;box-shadow: none;}
-.destination-grid .mask h2 {margin: 15px 0;transform: scale(0);color: #333;font-size: 25px;font-weight: 700;}
-.destination-grid .mask p {margin: 0;color: #333;opacity: 0;font-size: 14px;transform: scale(0);}
+.destination-grid .mask h2 {margin: 15px 0;transform: scale(0);color: #004d9c;font-size: 18px;font-weight: 600;}
+.destination-grid .mask p {margin: 0;color: #666;opacity: 0;font-size: 12px;transform: scale(0);line-height: 17px;}
 .destination-grid .mask .thm-btn {margin-top: 15px;padding: 10px 20px;transform: scale(0);opacity: 0;}
 .destination-grid .dest-name{position: absolute;top: 20px;right: 20px;color: #fff;text-align: right;-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;transition: opacity 0.35s, transform 0.35s;}
 .destination-grid:hover .dest-name{opacity: 0;}
@@ -319,7 +321,7 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .destination-grid .dest-icon {position: absolute;bottom: 0;left: 0;width: 100%;background-image: -moz-linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);background-image: -ms-linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);background-image: -o-linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);background-image: -webkit-linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);background-image: -webkit-gradient(linear, center top, center bottom, from(rgba(0,0,0,0)), to(rgba(0,0,0,0.7)));background-image: linear-gradient(to bottom,rgba(0,0,0,0) 0, rgba(0,0,0,0.4) 50%, rgba(0,0,0,.7) 100%);padding: 20px;}
 .destination-grid .dest-icon i {color: #fff;font-size: 18px;padding: 0 5px;cursor: pointer;}
 .destination-grid:hover .dest-icon{background-image: none;}
-.destination-grid:hover .dest-icon i{color: #222;}
+.destination-grid:hover .dest-icon i{color: #ff9400;}
 .destination-grid:hover h2, .destination-grid:hover p, .destination-grid:hover .thm-btn {transform: scale(1);opacity: 1;}
 /*counter*/
 .counter-inner {padding: 130px 0;background-image: url(../images/counter-bg.png);background-repeat: no-repeat;background-size: cover;background-attachment: fixed;}
@@ -337,9 +339,9 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .effect-block .package-ratting{font-size: 12px;margin-bottom: 15px;}
 .package-wiget figure.effect-milo .thm-btn {margin-top: 0;padding: 9px 17px;font-size: 11px;}
 .package-content{padding: 15px;}
-.package-content h5 {color: #000;margin: 0;font-size: 13px;text-transform: uppercase;letter-spacing: 1px;}
-.package-price {color: #bebebe;font-size: 12px;line-height: 20px;letter-spacing: 1px;margin-top: 10px;}
-.package-price .price {font-weight: 300;margin: 0;line-height: 30px;display: inline-block;}
+.package-content h5 {color: #004d9c;margin: 0;font-size: 14px;text-transform: none;letter-spacing: 0px;font-weight: 600;}
+.package-price {color: #666666;font-size: 12px;line-height: 20px;letter-spacing: 0px;margin-top: 10px;}
+.package-price .price {color:#ff9400;font-weight: 300;margin: 0;line-height: 30px;display: inline-block;}
 .package-price .price span {font-size: 16px;}
 /*reference*/
 .reference.home-ref{padding: 100px 0 80px;position: relative;background-image: url(../images/header-1920x1135-1.jpg);background-repeat: no-repeat;background-position: center center;background-attachment: fixed;}
@@ -361,11 +363,11 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .hotel-item:hover .hotel-image .img:after {-webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);-moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);}
 .hotel-item .hotel-body {padding: 15px;width: 42%;display: table-cell;vertical-align: middle;}
 .hotel-item .hotel-body .ratting i {font-size: 11px;}
-.hotel-item .hotel-body h3 {margin: 5px 0;font-weight: 600;font-size: 14px;text-transform: uppercase;letter-spacing: 1px;}
-.hotel-item .hotel-body p {color: #bebebe;font-size: 13px;line-height: 21px;}
+.hotel-item .hotel-body h3 {margin: 5px 0;font-weight: 600;font-size: 14px;text-transform: none;letter-spacing: 0px;color: #004d9c;}
+.hotel-item .hotel-body p {color: #666666;font-size: 12px;line-height: 17px;letter-spacing: 0px;}
 .hotel-item .hotel-body .free-service i {font-size: 18px;margin-right: 10px;color: #868686;cursor: pointer;}
 .hotel-right {width: 23%;text-align: center;background: #fff;padding: 15px;display: table-cell;vertical-align: middle;border-left: 1px solid #ddd;}
-.hotel-person {font-size: 14px;line-height: 18px;letter-spacing: 0px;}
+.hotel-person {font-size: 12px;line-height: 10px;letter-spacing: 0px;}
 .hotel-person span {display: block;font-size: 30px;margin: 15px 0px 13px 2px;font-weight: 700;}
 .hotel-item .thm-btn{margin-top: 20px;}
 /*Newsletter*/
@@ -468,11 +470,11 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .grid-item-inner{position: relative;overflow: hidden;color: #fff;}
 .grid-content{/*background-color: rgba(0,0,0,0.3);*/position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;}
 .grid-text{position:absolute;bottom:0;left:0;padding: 15px;width:100%;}
-.place-name {display: inline-block;padding: 5px 7px;font-size: 12px;line-height: 10px;background-color: #f94141;}
+.place-name {display: inline-block;padding: 5px 7px;font-size: 12px;line-height: 10px;background-color: #004d9c;}
 .travel-times h4{font-size:16px;color: #fff;}
 .travel-times span {position: relative;top: 10px;}
 .grid-price{float:right;padding-top: 22px;font-weight: 700;padding: 15px;display:inline-block;transform:scale(0);-webkit-transform:scale(0);-moz-transform:scale(0);-o-transform:scale(0);transition:all 0.3s ease-in-out;-webkit-transition:all 0.3s ease-in-out;-moz-transition:all 0.3s ease-in-out;-o-transition:all 0.3s ease-in-out;}
-.grid-price  span{font-size:28px;color: #fec107;}
+.grid-price  span{font-size:28px;color: #ff9400;}
 .grid-price  span sub{font-size:14px;position: relative;top: 0px;}
 .grid-item-inner:hover .grid-price{transform:scale(1);-webkit-transform:scale(1);-moz-transform:scale(1);-o-transform:scale(1);}
 /*pagination*/
@@ -489,11 +491,11 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 /*category list*/
 .sidber-box {overflow: hidden;background-color: #fff;margin-bottom: 20px;position: relative;}
 .sidber-box:before, .tools-ber:before{content: '';width: 0;height: 0;border-top: 8px solid #fec107;border-right: 8px solid transparent;position: absolute;left: 0;top: 0;}
-.cats-title {padding: 15px 30px;border-bottom: 1px solid #ddd;font-weight: 700;font-size: 16px;position: relative}
+.cats-title {padding: 15px 30px;border-bottom: 1px solid #ddd;font-weight: 400;font-size: 16px;position: relative;color:#004d9c;}
 .cats-title span {font-size: 10px;padding: 2px 6px;border-radius: 25px;color: #fff;margin-left: 10px;}
 .cats-widget ul {padding: 0px;line-height: 18px;font-size: 14px;font-weight: 500;padding: 30px;}
 .cats-widget ul li {list-style: outside none none;border-bottom: 1px solid #eee;margin-bottom: 10px;padding-bottom: 10px;font-family: 'Ubuntu', sans-serif;}
-.cats-widget ul li a{ color: #797986;}
+.cats-widget ul li a{ color: #666666;}
 .cats-widget ul li span {float: right;}
 /*star*/
 .checkbox-star, .facility, .help-widget, .price-Pips{padding: 30px;}
@@ -597,7 +599,7 @@ ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set
 /*** 21. Tour page
 ------------------------------------------------------------------------------*/
 .ribbon {position: absolute;z-index: 1;overflow: hidden;width: 75px;height: 75px;text-align: center;}
-.ribbon span {font-size: 10px;font-weight: 700;color: #FFF;text-transform: uppercase;line-height: 20px;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);width: 100px;display: block;background: #f94141;background: linear-gradient(#f94141 0,#f94141 100%);text-shadow: 1px 1px 2px rgba(0,0,0,.25);
+.ribbon span {font-size: 10px;font-weight: 600;color: #FFF;text-transform: uppercase;line-height: 20px;transform: rotate(-45deg);-webkit-transform: rotate(-45deg);width: 100px;display: block;background: #ff9400;background: linear-gradient(#ff9400 0,#ff9400 100%);text-shadow:none;);
               position: absolute;top: 19px;left: -21px;}
 /*** 22. Tour details page
 ------------------------------------------------------------------------------*/
@@ -612,7 +614,7 @@ ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set
 .booking_price .price strong {font-size: 50px;display: inline-block;margin-right: 10px;}
 .booking_price ul.list-ok li {line-height: 30px;}
 .booking_price .offer {margin-top: 12px;}
-.tour_view_map #map{height: 350px;width: 100%;}
+.tour_view_map #map{height: 500px;width: 100%;}
 .box_map {position: relative;padding-left: 70px;margin-bottom: 30px;}
 .box_map i {font-size: 45px;position: absolute;left: 0;top: -10px;}
 /*** 23. About page
@@ -620,11 +622,11 @@ ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set
 .about-section{padding: 100px 0 0;}
 .about-inner{padding-bottom: 70px;}
 .about-inner p{font-size: 14px;}
-.about-title h2{font-weight: 800;}
+.about-title h2{font-weight: 300; color:#004d9c;}
 .about-title h3 {font-size: 26px;line-height: 25px;color: rgb(121, 121, 121);margin-top: 0;font-weight: 300;}
 .middle-content{margin: 50px 0;}
-.content-left h4 {font-weight: 800;}
-.content-list li {position: relative;line-height: 20px;padding: 8px 0px 8px 25px;color: #7d7d7d;}
+.content-left h4 {font-weight: 400;color:#004d9c;}
+.content-list li {position: relative;line-height: 20px;padding: 8px 0px 8px 25px;color: #666666;font-weight:400;}
 .content-list li::before {content:"\f061";position: absolute;top: 50%;left: 0px;font-size: 12px;font-family: FontAwesome;transform: translateY(-50%);}
 .content-left span {font-weight: 700;text-transform: uppercase;margin-top: 10px;display: block;}
 /*testimonial*/
@@ -659,15 +661,16 @@ blockquote .author {width: 100%;display: block;font-weight: 100;margin: 10px 0 0
 ------------------------------------------------------------------------------*/
 .contact_map #map{height: 350px;width: 100%;margin-bottom: 70px;}
 .contact-icon{margin-top: 30px;margin-bottom: 30px;}
-.contact-icon a{color: #151515;}/*Cambio de color*/
+.contact-icon a{color: #fff;}
 .contact-icon i{font-size: 40px}
 .contact-icon h5{letter-spacing: 0.5px;font-size: 16px;}
 .contact-content {margin-bottom: 30px;}
 /*** 25. Footer
 ------------------------------------------------------------------------------*/
-footer {background-color: #242121;color: #fff;width: 100%;position: fixed;bottom: 0;z-index: 0;padding-top: 100px;}
-footer .footer-title {margin: 0 0 30px;font-size: 20px;font-weight: 700;}
+footer {background-color: #004d9c;color: #fff;width: 100%;position: fixed;bottom: 0;z-index: 0;padding-top: 100px;}
+footer .footer-title {margin: 0 0 30px;font-size: 20px;font-weight: 400;}
 .footer-box{padding: 0 0 70px;}
+.footer-box li a {color: #fff;font-weight: 300;}
 /*address*/
 .address {position: relative;line-height: 1.6;margin-bottom: 0;color: #fff;}
 .address i {position: absolute;font-size: 18px;top: -2px;color: #fff;font-weight: 500;}
@@ -684,11 +687,11 @@ footer .footer-title {margin: 0 0 30px;font-size: 20px;font-weight: 700;}
 .gallery-list li {float: left;margin: 0 0 4px 5px;width: 30%;}
 .gallery-list li img{border-radius: 5px;}
 /*sub footer*/
-.sub-footer {border-top: 1px solid rgba(255,255,255,0.1);background-color: #242121;padding: 20px 0;}
+.sub-footer {border-top: 1px solid rgba(255,255,255,0.1);background-color: #002b56;padding: 10px 0;}
 .sub-footer p {margin: 0;color: #fff;}
 .footer-menu ul{text-align: right;position: relative;}
 .footer-menu ul li {position: relative;display: inline-block;}
-.footer-menu ul li a {color: #fff;padding: 0 10px}
+.footer-menu ul li a {color: #fff;padding: 0 10px;font-weight: 300;font-size: 12px;}
 /*back to top*/
 #toTop {position: fixed;bottom: 20px;right: 20px;cursor: pointer;display: none;z-index: 100;}
 .btn-top {color: #fff;border-color: #fec107;padding: 8px 12px;}

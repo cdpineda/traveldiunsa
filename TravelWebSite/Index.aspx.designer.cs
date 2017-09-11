@@ -31,6 +31,15 @@ namespace TravelWebSite {
         protected global::System.Web.UI.WebControls.Literal LtDestinoPopular;
         
         /// <summary>
+        /// LtRecomendados control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtRecomendados;
+        
+        /// <summary>
         /// LtBoletin control.
         /// </summary>
         /// <remarks>
