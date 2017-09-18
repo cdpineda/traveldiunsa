@@ -16,6 +16,7 @@
         <link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
+ <form runat="server">
         <div class="se-pre-con"></div>
         <div id="page-content">
             <!-- navber -->
@@ -48,11 +49,15 @@
                             <li><a href="destination.html">Destinos</a></li>
                             <li><a href="#">Hoteles</a></li>
                             <li><a  target="_blank" href="https://www.rentacar2go.com/">Autos</a></li>
-                            <li><a href="about.html">Acerca de </a></li>
                             <li><a href="Contacto.aspx">Contactenos</a></li>
-                        </ul>
-                        <ul class="nav navbar-nav navbar-right hidden-sm">
-                            <li><a class="nav-btn" href="#"><div class="thm-btn">Comunicate</div></a></li>
+                            <li id="Desplegar" class="dropdown">
+                                <asp:LinkButton ID="LbRegistrarPerfil" runat="server" class="thm-btn" OnClick="LbSubmit_ClickRegistrar"><%= correo %></asp:LinkButton>
+                                
+                                <ul class="dropdown-menu">
+                                    <li><a href="InformacionAdicional.aspx">Perfil</a></li>
+                                    <li><a href="#" onclick="Salir()">Salir </a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </div> <!-- /.navbar-collapse --> 
                 </div> <!-- /.container --> 
@@ -91,21 +96,24 @@ Diunsa Plaza Pedregal</p>
                         </div>
                     </div>
                     <div class="col-sm-8 col-md-6">
-                        <div class="row">
-                            <div class="col-md-4 col-sm-4">
-                                <div class="footer-box">
-                                    <h4 class="footer-title">Información</h4>
-                                    <ul class="categoty">
-                                        <li><a href="#">Inicio</a></li>
-                                        <li><a href="#">Acerda de</a></li>
-                                        <li><a href="#">Contacto en linea</a></li>
-                                        <li><a href="#">Llamanos</a></li>
-                                        <li><a href="#">Terminos y condiciones</a></li>
-                                        <li><a href="#">Privacidad</a></li>
+                       
+
+        
+                            <div class="row">
+                                <div class="col-md-4 col-sm-4">
+                                    <div class="footer-box">
+                                        <h4 class="footer-title">Información</h4>
+                                        <ul class="categoty">
+                                            <li><a><asp:LinkButton ID="LbAcercaDe" runat="server" OnClick="LbAcercaDe_Click">Acerca De</asp:LinkButton></a></li>
+                                            <li><a><asp:LinkButton ID="LbSucursales" runat="server" OnClick="LbSucursales_Click">Sucursales</asp:LinkButton></a></li>
+                                            <li><a><asp:LinkButton ID="LbFormasPago" runat="server" OnClick="LbFormasPago_Click">Formas de Pago</asp:LinkButton></a></li>
+                                            <li><a><asp:LinkButton ID="LbDocumentosViaje" runat="server" OnClick="LbDocumentosViaje_Click">Documentos de Viaje</asp:LinkButton></a></li>
+                                            <li><a><asp:LinkButton ID="LbTerminosUso" runat="server" OnClick="LbTerminosUso_Click">Términos de Uso</asp:LinkButton></a></li>
+                                            <li><a><asp:LinkButton ID="LbPoliticasPrivacidad" runat="server" OnClick="LbPoliticasPrivacidad_Click">Políticas de Privacidad</asp:LinkButton></a></li>
                                         
-                                    </ul>
+                                        </ul>
+                                    </div>
                                 </div>
-                            </div>
                            
                             <div class="col-md-4 col-sm-4">
                                 <div class="footer-box">
@@ -172,5 +180,18 @@ Diunsa Plaza Pedregal</p>
 <script src="assets/js/custom.js" type="text/javascript"></script>
 <!-- google maps -->
  <%--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2ZKLv37_TtWKfPXcT5OcDotXT0KhqY08"></script>--%>
+<script>
+    var validar = '<%=correo.Trim()%>';
+  
+    if (validar == "Registrarse") {
+        document.getElementById("Desplegar").className = "";
+    }
+
+    function Salir() {
+        __doPostBack('Salir', '')
+    }
+</script>
+</form>
+
 </body>
 </html>

@@ -10,78 +10,105 @@
 namespace TravelWebSite {
     
     
-    public partial class SiteMaster {
+    public partial class ActualizarInformacionAdicional {
         
         /// <summary>
-        /// LbRegistrarPerfil control.
+        /// LbNombres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarPerfil;
+        protected global::System.Web.UI.WebControls.TextBox LbNombres;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// LbApellidos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox LbApellidos;
         
         /// <summary>
-        /// LbAcercaDe control.
+        /// LbFechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbAcercaDe;
+        protected global::System.Web.UI.WebControls.TextBox LbFechaNacimiento;
         
         /// <summary>
-        /// LbSucursales control.
+        /// LbCiudadResidencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbSucursales;
+        protected global::System.Web.UI.WebControls.TextBox LbCiudadResidencia;
         
         /// <summary>
-        /// LbFormasPago control.
+        /// LbTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbFormasPago;
+        protected global::System.Web.UI.WebControls.TextBox LbTelefono;
         
         /// <summary>
-        /// LbDocumentosViaje control.
+        /// LbCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbDocumentosViaje;
+        protected global::System.Web.UI.WebControls.TextBox LbCelular;
         
         /// <summary>
-        /// LbTerminosUso control.
+        /// LbPasaporte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbTerminosUso;
+        protected global::System.Web.UI.WebControls.TextBox LbPasaporte;
         
         /// <summary>
-        /// LbPoliticasPrivacidad control.
+        /// LbPasaporteFecVenc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbPoliticasPrivacidad;
+        protected global::System.Web.UI.WebControls.TextBox LbPasaporteFecVenc;
+        
+        /// <summary>
+        /// LbVisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LbVisa;
+        
+        /// <summary>
+        /// LbVisaFechVenc control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox LbVisaFechVenc;
+        
+        /// <summary>
+        /// LbGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LbGuardar;
     }
 }

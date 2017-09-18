@@ -10,78 +10,87 @@
 namespace TravelWebSite {
     
     
-    public partial class SiteMaster {
+    public partial class Login {
         
         /// <summary>
-        /// LbRegistrarPerfil control.
+        /// form1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarPerfil;
+        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// TxtCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
         
         /// <summary>
-        /// LbAcercaDe control.
+        /// TxtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbAcercaDe;
+        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
         
         /// <summary>
-        /// LbSucursales control.
+        /// LbIniciarSesion control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbSucursales;
+        protected global::System.Web.UI.WebControls.LinkButton LbIniciarSesion;
         
         /// <summary>
-        /// LbFormasPago control.
+        /// LbRegistrarse control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbFormasPago;
+        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarse;
         
         /// <summary>
-        /// LbDocumentosViaje control.
+        /// CorreoFBASP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbDocumentosViaje;
+        protected global::System.Web.UI.WebControls.HiddenField CorreoFBASP;
         
         /// <summary>
-        /// LbTerminosUso control.
+        /// NombreFBASP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbTerminosUso;
+        protected global::System.Web.UI.WebControls.HiddenField NombreFBASP;
         
         /// <summary>
-        /// LbPoliticasPrivacidad control.
+        /// CorreoGmailASP control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbPoliticasPrivacidad;
+        protected global::System.Web.UI.WebControls.HiddenField CorreoGmailASP;
+        
+        /// <summary>
+        /// NombreGmailASP control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField NombreGmailASP;
     }
 }

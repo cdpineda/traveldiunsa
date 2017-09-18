@@ -10,42 +10,42 @@
 namespace TravelWebSite {
     
     
-    public partial class Index {
+    public partial class Registrarse {
         
         /// <summary>
-        /// LtPaquetePopular control.
+        /// TxtCorreo control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtPaquetePopular;
+        protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
         
         /// <summary>
-        /// LtDestinoPopular control.
+        /// TxtPassword control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtDestinoPopular;
+        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
         
         /// <summary>
-        /// LtRecomendados control.
+        /// TxtUser control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtRecomendados;
+        protected global::System.Web.UI.WebControls.TextBox TxtUser;
         
         /// <summary>
-        /// LtBoletin control.
+        /// LbInsertUsuario control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LtBoletin;
+        protected global::System.Web.UI.WebControls.LinkButton LbInsertUsuario;
     }
 }
