@@ -29,6 +29,8 @@ namespace TravelWebSite.PaqueteWS {
     [System.Web.Services.WebServiceBindingAttribute(Name="PaquetesPopularesWSSoapBinding", Namespace="TravelAdmin")]
     public partial class PaquetesPopularesWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback BUSQUEDAPAQUETESOperationCompleted;
+        
         private System.Threading.SendOrPostCallback SELECCIONARPAGINACONTENIDOOperationCompleted;
         
         private System.Threading.SendOrPostCallback PAGINACONTENIDOOperationCompleted;
@@ -48,6 +50,8 @@ namespace TravelWebSite.PaqueteWS {
         private System.Threading.SendOrPostCallback CONTACTOALMACENAROperationCompleted;
         
         private System.Threading.SendOrPostCallback CONTACTOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback CATEGORIASBUSQUEDAOperationCompleted;
         
         private System.Threading.SendOrPostCallback REGISTROUSUARIOOperationCompleted;
         
@@ -96,6 +100,9 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
+        public event BUSQUEDAPAQUETESCompletedEventHandler BUSQUEDAPAQUETESCompleted;
+        
+        /// <remarks/>
         public event SELECCIONARPAGINACONTENIDOCompletedEventHandler SELECCIONARPAGINACONTENIDOCompleted;
         
         /// <remarks/>
@@ -126,6 +133,9 @@ namespace TravelWebSite.PaqueteWS {
         public event CONTACTOCompletedEventHandler CONTACTOCompleted;
         
         /// <remarks/>
+        public event CATEGORIASBUSQUEDACompletedEventHandler CATEGORIASBUSQUEDACompleted;
+        
+        /// <remarks/>
         public event REGISTROUSUARIOCompletedEventHandler REGISTROUSUARIOCompleted;
         
         /// <remarks/>
@@ -136,6 +146,38 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event RECOMENDADOSCompletedEventHandler RECOMENDADOSCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.BUSQUEDAPAQUETES", RequestElementName="PaquetesPopularesWS.BUSQUEDAPAQUETES", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.BUSQUEDAPAQUETESResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Busquedahtml")]
+        public string BUSQUEDAPAQUETES(short Tipo, double Valor) {
+            object[] results = this.Invoke("BUSQUEDAPAQUETES", new object[] {
+                        Tipo,
+                        Valor});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void BUSQUEDAPAQUETESAsync(short Tipo, double Valor) {
+            this.BUSQUEDAPAQUETESAsync(Tipo, Valor, null);
+        }
+        
+        /// <remarks/>
+        public void BUSQUEDAPAQUETESAsync(short Tipo, double Valor, object userState) {
+            if ((this.BUSQUEDAPAQUETESOperationCompleted == null)) {
+                this.BUSQUEDAPAQUETESOperationCompleted = new System.Threading.SendOrPostCallback(this.OnBUSQUEDAPAQUETESOperationCompleted);
+            }
+            this.InvokeAsync("BUSQUEDAPAQUETES", new object[] {
+                        Tipo,
+                        Valor}, this.BUSQUEDAPAQUETESOperationCompleted, userState);
+        }
+        
+        private void OnBUSQUEDAPAQUETESOperationCompleted(object arg) {
+            if ((this.BUSQUEDAPAQUETESCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.BUSQUEDAPAQUETESCompleted(this, new BUSQUEDAPAQUETESCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.SELECCIONARPAGINACONTENIDO", RequestElementName="PaquetesPopularesWS.SELECCIONARPAGINACONTENIDO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -438,6 +480,34 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.CATEGORIASBUSQUEDA", RequestElementName="PaquetesPopularesWS.CATEGORIASBUSQUEDA", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.CATEGORIASBUSQUEDAResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Catbusquedahtml")]
+        public string CATEGORIASBUSQUEDA() {
+            object[] results = this.Invoke("CATEGORIASBUSQUEDA", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CATEGORIASBUSQUEDAAsync() {
+            this.CATEGORIASBUSQUEDAAsync(null);
+        }
+        
+        /// <remarks/>
+        public void CATEGORIASBUSQUEDAAsync(object userState) {
+            if ((this.CATEGORIASBUSQUEDAOperationCompleted == null)) {
+                this.CATEGORIASBUSQUEDAOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCATEGORIASBUSQUEDAOperationCompleted);
+            }
+            this.InvokeAsync("CATEGORIASBUSQUEDA", new object[0], this.CATEGORIASBUSQUEDAOperationCompleted, userState);
+        }
+        
+        private void OnCATEGORIASBUSQUEDAOperationCompleted(object arg) {
+            if ((this.CATEGORIASBUSQUEDACompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CATEGORIASBUSQUEDACompleted(this, new CATEGORIASBUSQUEDACompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.REGISTROUSUARIO", RequestElementName="PaquetesPopularesWS.REGISTROUSUARIO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.REGISTROUSUARIOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
         public short REGISTROUSUARIO(string Usuarionombre, string Usuariopassword, string Usuarioemail) {
@@ -585,6 +655,32 @@ namespace TravelWebSite.PaqueteWS {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void BUSQUEDAPAQUETESCompletedEventHandler(object sender, BUSQUEDAPAQUETESCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class BUSQUEDAPAQUETESCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal BUSQUEDAPAQUETESCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
         }
     }
     
@@ -835,6 +931,32 @@ namespace TravelWebSite.PaqueteWS {
         private object[] results;
         
         internal CONTACTOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void CATEGORIASBUSQUEDACompletedEventHandler(object sender, CATEGORIASBUSQUEDACompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CATEGORIASBUSQUEDACompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CATEGORIASBUSQUEDACompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

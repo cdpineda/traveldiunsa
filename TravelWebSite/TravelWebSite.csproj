@@ -273,6 +273,7 @@
     <Content Include="assets\owl-carousel\owl.carousel.min.js" />
     <Content Include="assets\owl-carousel\owl.theme.css" />
     <Content Include="assets\owl-carousel\owl.transitions.css" />
+    <Content Include="Busqueda.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Contenido.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -391,6 +392,13 @@
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Busqueda.aspx.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Busqueda.aspx.designer.cs">
+      <DependentUpon>Busqueda.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

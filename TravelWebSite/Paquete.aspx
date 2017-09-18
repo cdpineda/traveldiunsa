@@ -4,11 +4,15 @@
 
                    
     <asp:Literal ID="LtDetallePaquete" runat="server"></asp:Literal>
+    
     <!-- boletin suscripción -->
     <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>
     <asp:Label ID="lblLat1" runat="server" Text="Label" Style="display: none;"></asp:Label>
     <asp:Label ID="lblLat2" runat="server" Text="Label" Style="display: none;"></asp:Label>
+    
     <!-- google maps -->
+   <!-- addthis--> 
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-59beb1df8ebe4285"></script>  
  <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA2ZKLv37_TtWKfPXcT5OcDotXT0KhqY08"></script>
             <script type="text/javascript">
                 var Latitude1 = document.getElementById('<%=lblLat1.ClientID%>').innerText;

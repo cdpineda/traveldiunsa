@@ -2,6 +2,21 @@
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="TravelAdmin" xmlns:wsdlns="TravelAdmin" name="PaquetesPopularesWS" targetNamespace="TravelAdmin" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="TravelAdmin">
+      <xsd:element name="PaquetesPopularesWS.BUSQUEDAPAQUETES">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tipo" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Valor" type="xsd:double" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.BUSQUEDAPAQUETESResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Busquedahtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.SELECCIONARPAGINACONTENIDO">
         <xsd:complexType>
           <xsd:sequence>
@@ -138,6 +153,18 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CATEGORIASBUSQUEDA">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CATEGORIASBUSQUEDAResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Catbusquedahtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.REGISTROUSUARIO">
         <xsd:complexType>
           <xsd:sequence>
@@ -201,6 +228,12 @@
       </xsd:element>
     </xsd:schema>
   </types>
+  <message name="PaquetesPopularesWS.BUSQUEDAPAQUETESSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.BUSQUEDAPAQUETES" />
+  </message>
+  <message name="PaquetesPopularesWS.BUSQUEDAPAQUETESSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.BUSQUEDAPAQUETESResponse" />
+  </message>
   <message name="PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDO" />
   </message>
@@ -261,6 +294,12 @@
   <message name="PaquetesPopularesWS.CONTACTOSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.CONTACTOResponse" />
   </message>
+  <message name="PaquetesPopularesWS.CATEGORIASBUSQUEDASoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CATEGORIASBUSQUEDA" />
+  </message>
+  <message name="PaquetesPopularesWS.CATEGORIASBUSQUEDASoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CATEGORIASBUSQUEDAResponse" />
+  </message>
   <message name="PaquetesPopularesWS.REGISTROUSUARIOSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.REGISTROUSUARIO" />
   </message>
@@ -286,6 +325,10 @@
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECOMENDADOSResponse" />
   </message>
   <portType name="PaquetesPopularesWSSoapPort">
+    <operation name="BUSQUEDAPAQUETES">
+      <input message="wsdlns:PaquetesPopularesWS.BUSQUEDAPAQUETESSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.BUSQUEDAPAQUETESSoapOut" />
+    </operation>
     <operation name="SELECCIONARPAGINACONTENIDO">
       <input message="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapOut" />
@@ -326,6 +369,10 @@
       <input message="wsdlns:PaquetesPopularesWS.CONTACTOSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.CONTACTOSoapOut" />
     </operation>
+    <operation name="CATEGORIASBUSQUEDA">
+      <input message="wsdlns:PaquetesPopularesWS.CATEGORIASBUSQUEDASoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.CATEGORIASBUSQUEDASoapOut" />
+    </operation>
     <operation name="REGISTROUSUARIO">
       <input message="wsdlns:PaquetesPopularesWS.REGISTROUSUARIOSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.REGISTROUSUARIOSoapOut" />
@@ -345,6 +392,15 @@
   </portType>
   <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="BUSQUEDAPAQUETES">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.BUSQUEDAPAQUETES" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="SELECCIONARPAGINACONTENIDO">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.SELECCIONARPAGINACONTENIDO" />
       <input>
@@ -428,6 +484,15 @@
     </operation>
     <operation name="CONTACTO">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.CONTACTO" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CATEGORIASBUSQUEDA">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.CATEGORIASBUSQUEDA" />
       <input>
         <soap:body use="literal" />
       </input>
