@@ -30,6 +30,7 @@ namespace TravelWebSite
                 Lat2 = coordenadas[1];
                 lblLat1.Text = Lat1;
                 lblLat2.Text = Lat2;
+                lblPaqueteId.Text = IdValue;
             }
             catch (Exception)
             {

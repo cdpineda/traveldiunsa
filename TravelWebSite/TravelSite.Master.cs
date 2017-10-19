@@ -10,9 +10,25 @@ namespace TravelWebSite
 {
     public partial class SiteMaster : MasterPage
     {
+        public string correo;
         protected void Page_Load(object sender, EventArgs e)
         {
-            
+            if (Login.UsuarioCorreo != "")
+            {
+                correo = Login.UsuarioCorreo;
+            }
+            else
+            {
+                correo = "Registrarse";
+            }
+
+            if (Page.IsPostBack)
+            {
+                if (Request.Params["__EVENTTARGET"] == "Salir")
+                {
+                    Salir();
+                }
+            }
         }
         protected void LbAcercaDe_Click(object sender, EventArgs e)
         {
@@ -110,7 +126,40 @@ namespace TravelWebSite
             }
         }
 
+        protected void LbSubmit_ClickRegistrar(object sender, EventArgs e)
+        {
+            try
+            {
+                if (correo == "Registrarse")
+                {
+                    Response.Redirect("Login.aspx");
+                }
+                else
+                {
+                    Response.Redirect("InformacionAdicional.aspx");
+                }
+            }
+            catch (Exception ex)
+            {
 
+                throw;
+            }
+        }
+
+        protected void Salir()
+        {
+            try
+            {
+                Login.UsuarioCorreo = "";
+                Response.Redirect("Index.aspx");
+
+            }
+            catch (Exception ex)
+            {
+
+                throw;
+            }
+        }
 
     }
 }

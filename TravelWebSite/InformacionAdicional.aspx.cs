@@ -10,54 +10,56 @@ namespace TravelWebSite
 {
     public partial class InformacionAdicional : System.Web.UI.Page
     {
+        public string Nombres;
+        public string Apellidos;
+        public string Correo;
+        public DateTime FechaNacimiento;
+        public string Ciudad;
+        public string Telefono;
+        public string Celular;
+        public string Pasaporte;
+        public DateTime PasaporteFechaVenc;
+        public string Visa;
+        public DateTime VisaFechaVenc;
+        public string Trama;
         protected void Page_Load(object sender, EventArgs e)
-        {
-
-        }
-        protected void LbSubmit_Click(object sender, EventArgs e)
         {
             try
             {
                 PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
-                string vTelefono = TxtTelefono.Text;
-                string vCelular = TxtCelular.Text;
-                string vPasaporte = TxtPasaporte.Text;
-                string FechaVencimiento = TxtFechaVencePasaporte.Text;
-                
+                Trama = paquetesWS.GETINFORMACIONADICIONAL(Login.UsuarioCorreo);
+                string[] Valores = Trama.Split('|');
+                Nombres = Valores[0];
+                Apellidos = Valores[1];
 
-                if (Login.UsuarioCorreo != "")
+                if (Valores[2] != "/  /")
                 {
-                    if (vTelefono != "" && vCelular != "" && vPasaporte != "" && FechaVencimiento != "")
-                    {
-                        DateTime vFechaVencePasaporte = Convert.ToDateTime(FechaVencimiento);
-                        int Estado = paquetesWS.INFORMACIONADICIONAL(Login.UsuarioCorreo, vTelefono, vCelular, vPasaporte, vFechaVencePasaporte);
-                        if (Estado == 0)
-                        {
-                            string script = @"alert('Información Actualizada Satisfactoriamente');
-                            window.location.href='Index.aspx';";
-                            ScriptManager.RegisterStartupScript(this, typeof(Page), "alerta", script, true);
-                        }
-                        else
-                        {
-                            Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Por favor debe iniciar sesión primero.');", true);
-                        }
-                    }
-                    else
-                    {
-                        Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Debe llenar todos los campos.');", true);
-                    }
-                }
-                else
-                {
-                    Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Debe iniciar sesión para completar esta información.');", true);
+                    FechaNacimiento = Convert.ToDateTime(Valores[2]);
                 }
 
+                Ciudad = Valores[3];
+                Telefono = Valores[4];
+                Celular = Valores[5];
+                Pasaporte = Valores[6];
+                if (Valores[7] != "/  /")
+                {
+                    PasaporteFechaVenc = Convert.ToDateTime(Valores[7]);
+                }
+
+                Visa = Valores[8];
+
+                if (Valores[9] != "/  /")
+                {
+                    VisaFechaVenc = Convert.ToDateTime(Valores[9]);
+                }
+
+                Correo = Login.UsuarioCorreo;
             }
             catch (Exception ex)
             {
 
-                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Formato de fecha incorrecto. Ejemplo: Día/Mes/Año');", true);
             }
         }
+
     }
 }

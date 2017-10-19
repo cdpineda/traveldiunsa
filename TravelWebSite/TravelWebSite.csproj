@@ -107,6 +107,7 @@
     <Folder Include="App_Data\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ActualizarInformacionAdicional.aspx" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -280,6 +281,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Cotizar.aspx" />
+    <Content Include="EnvioCotizazionSite.asmx" />
     <Content Include="EnvioMailCotizacion.asmx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -338,6 +340,7 @@
     <Content Include="Login.aspx" />
     <Content Include="Paquete.aspx" />
     <Content Include="Registrarse.aspx" />
+    <Content Include="Registro.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -390,6 +393,13 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ActualizarInformacionAdicional.aspx.cs">
+      <DependentUpon>ActualizarInformacionAdicional.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarInformacionAdicional.aspx.designer.cs">
+      <DependentUpon>ActualizarInformacionAdicional.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Busqueda.aspx.cs">
@@ -419,6 +429,10 @@
     </Compile>
     <Compile Include="Cotizar.aspx.designer.cs">
       <DependentUpon>Cotizar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="EnvioCotizazionSite.asmx.cs">
+      <DependentUpon>EnvioCotizazionSite.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="EnvioMailCotizacion.asmx.cs">
       <DependentUpon>EnvioMailCotizacion.asmx</DependentUpon>
@@ -467,6 +481,13 @@
     </Compile>
     <Compile Include="Registrarse.aspx.designer.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Registro.aspx.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Registro.aspx.designer.cs">
+      <DependentUpon>Registro.aspx</DependentUpon>
     </Compile>
     <Compile Include="TravelSite.Master.cs">
       <DependentUpon>TravelSite.Master</DependentUpon>

@@ -10,7 +10,7 @@
 namespace TravelWebSite {
     
     
-    public partial class Login {
+    public partial class ActualizarInformacionAdicional {
         
         /// <summary>
         /// MensajeError control.
@@ -22,93 +22,102 @@ namespace TravelWebSite {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl MensajeError;
         
         /// <summary>
-        /// TxtCorreo control.
+        /// LbNombres control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtCorreo;
+        protected global::System.Web.UI.WebControls.TextBox LbNombres;
         
         /// <summary>
-        /// TxtPassword control.
+        /// LbApellidos control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TxtPassword;
+        protected global::System.Web.UI.WebControls.TextBox LbApellidos;
         
         /// <summary>
-        /// LbIniciarSesion control.
+        /// LbFechaNacimiento control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbIniciarSesion;
+        protected global::System.Web.UI.WebControls.TextBox LbFechaNacimiento;
         
         /// <summary>
-        /// LbRegistrarse control.
+        /// LbCiudadResidencia control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarse;
+        protected global::System.Web.UI.WebControls.TextBox LbCiudadResidencia;
         
         /// <summary>
-        /// CorreoFBASP control.
+        /// LbTelefono control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField CorreoFBASP;
+        protected global::System.Web.UI.WebControls.TextBox LbTelefono;
         
         /// <summary>
-        /// NombreFBASP control.
+        /// LbCelular control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField NombreFBASP;
+        protected global::System.Web.UI.WebControls.TextBox LbCelular;
         
         /// <summary>
-        /// CorreoGmailASP control.
+        /// LbPasaporte control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField CorreoGmailASP;
+        protected global::System.Web.UI.WebControls.TextBox LbPasaporte;
         
         /// <summary>
-        /// NombreGmailASP control.
+        /// LbPasaporteFecVenc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.HiddenField NombreGmailASP;
+        protected global::System.Web.UI.WebControls.TextBox LbPasaporteFecVenc;
         
         /// <summary>
-        /// PopupRegistroFB control.
+        /// LbVisa control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PopupRegistroFB;
+        protected global::System.Web.UI.WebControls.TextBox LbVisa;
         
         /// <summary>
-        /// PopupRegistro control.
+        /// LbVisaFechVenc control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button PopupRegistro;
+        protected global::System.Web.UI.WebControls.TextBox LbVisaFechVenc;
+        
+        /// <summary>
+        /// LbGuardar control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LbGuardar;
     }
 }

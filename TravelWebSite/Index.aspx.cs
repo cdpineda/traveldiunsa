@@ -27,6 +27,11 @@ namespace TravelWebSite
 
 
         }
-        
+        protected void lbBusqueda(object sender, EventArgs e)
+        {
+            Response.Redirect("Busqueda.aspx");
+        }
+
+
     }
 }

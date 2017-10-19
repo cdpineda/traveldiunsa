@@ -10,7 +10,7 @@
 namespace TravelWebSite {
     
     
-    public partial class Login {
+    public partial class Registro {
         
         /// <summary>
         /// MensajeError control.
@@ -40,6 +40,24 @@ namespace TravelWebSite {
         protected global::System.Web.UI.WebControls.TextBox TxtPassword;
         
         /// <summary>
+        /// TxtPasswordConfirmacion control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TxtPasswordConfirmacion;
+        
+        /// <summary>
+        /// LbInsertUsuario control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton LbInsertUsuario;
+        
+        /// <summary>
         /// LbIniciarSesion control.
         /// </summary>
         /// <remarks>
@@ -47,15 +65,6 @@ namespace TravelWebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton LbIniciarSesion;
-        
-        /// <summary>
-        /// LbRegistrarse control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarse;
         
         /// <summary>
         /// CorreoFBASP control.

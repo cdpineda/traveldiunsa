@@ -29,6 +29,10 @@ namespace TravelWebSite.PaqueteWS {
     [System.Web.Services.WebServiceBindingAttribute(Name="PaquetesPopularesWSSoapBinding", Namespace="TravelAdmin")]
     public partial class PaquetesPopularesWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback VERIFICARUSUARIOREDESOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GETINFORMACIONADICIONALOperationCompleted;
+        
         private System.Threading.SendOrPostCallback BUSQUEDAPAQUETESOperationCompleted;
         
         private System.Threading.SendOrPostCallback SELECCIONARPAGINACONTENIDOOperationCompleted;
@@ -56,6 +60,8 @@ namespace TravelWebSite.PaqueteWS {
         private System.Threading.SendOrPostCallback REGISTROUSUARIOOperationCompleted;
         
         private System.Threading.SendOrPostCallback INICIARSESIONOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback OBTNERINFORMACIONADICIONALOperationCompleted;
         
         private System.Threading.SendOrPostCallback INFORMACIONADICIONALOperationCompleted;
         
@@ -100,6 +106,12 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
+        public event VERIFICARUSUARIOREDESCompletedEventHandler VERIFICARUSUARIOREDESCompleted;
+        
+        /// <remarks/>
+        public event GETINFORMACIONADICIONALCompletedEventHandler GETINFORMACIONADICIONALCompleted;
+        
+        /// <remarks/>
         public event BUSQUEDAPAQUETESCompletedEventHandler BUSQUEDAPAQUETESCompleted;
         
         /// <remarks/>
@@ -142,10 +154,73 @@ namespace TravelWebSite.PaqueteWS {
         public event INICIARSESIONCompletedEventHandler INICIARSESIONCompleted;
         
         /// <remarks/>
+        public event OBTNERINFORMACIONADICIONALCompletedEventHandler OBTNERINFORMACIONADICIONALCompleted;
+        
+        /// <remarks/>
         public event INFORMACIONADICIONALCompletedEventHandler INFORMACIONADICIONALCompleted;
         
         /// <remarks/>
         public event RECOMENDADOSCompletedEventHandler RECOMENDADOSCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.VERIFICARUSUARIOREDES", RequestElementName="PaquetesPopularesWS.VERIFICARUSUARIOREDES", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.VERIFICARUSUARIOREDESResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
+        public short VERIFICARUSUARIOREDES(string Usuarioemail) {
+            object[] results = this.Invoke("VERIFICARUSUARIOREDES", new object[] {
+                        Usuarioemail});
+            return ((short)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void VERIFICARUSUARIOREDESAsync(string Usuarioemail) {
+            this.VERIFICARUSUARIOREDESAsync(Usuarioemail, null);
+        }
+        
+        /// <remarks/>
+        public void VERIFICARUSUARIOREDESAsync(string Usuarioemail, object userState) {
+            if ((this.VERIFICARUSUARIOREDESOperationCompleted == null)) {
+                this.VERIFICARUSUARIOREDESOperationCompleted = new System.Threading.SendOrPostCallback(this.OnVERIFICARUSUARIOREDESOperationCompleted);
+            }
+            this.InvokeAsync("VERIFICARUSUARIOREDES", new object[] {
+                        Usuarioemail}, this.VERIFICARUSUARIOREDESOperationCompleted, userState);
+        }
+        
+        private void OnVERIFICARUSUARIOREDESOperationCompleted(object arg) {
+            if ((this.VERIFICARUSUARIOREDESCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.VERIFICARUSUARIOREDESCompleted(this, new VERIFICARUSUARIOREDESCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.GETINFORMACIONADICIONAL", RequestElementName="PaquetesPopularesWS.GETINFORMACIONADICIONAL", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.GETINFORMACIONADICIONALResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Tramainformacionadicional")]
+        public string GETINFORMACIONADICIONAL(string Usuarioemail) {
+            object[] results = this.Invoke("GETINFORMACIONADICIONAL", new object[] {
+                        Usuarioemail});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GETINFORMACIONADICIONALAsync(string Usuarioemail) {
+            this.GETINFORMACIONADICIONALAsync(Usuarioemail, null);
+        }
+        
+        /// <remarks/>
+        public void GETINFORMACIONADICIONALAsync(string Usuarioemail, object userState) {
+            if ((this.GETINFORMACIONADICIONALOperationCompleted == null)) {
+                this.GETINFORMACIONADICIONALOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGETINFORMACIONADICIONALOperationCompleted);
+            }
+            this.InvokeAsync("GETINFORMACIONADICIONAL", new object[] {
+                        Usuarioemail}, this.GETINFORMACIONADICIONALOperationCompleted, userState);
+        }
+        
+        private void OnGETINFORMACIONADICIONALOperationCompleted(object arg) {
+            if ((this.GETINFORMACIONADICIONALCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GETINFORMACIONADICIONALCompleted(this, new GETINFORMACIONADICIONALCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.BUSQUEDAPAQUETES", RequestElementName="PaquetesPopularesWS.BUSQUEDAPAQUETES", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.BUSQUEDAPAQUETESResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -510,28 +585,28 @@ namespace TravelWebSite.PaqueteWS {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.REGISTROUSUARIO", RequestElementName="PaquetesPopularesWS.REGISTROUSUARIO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.REGISTROUSUARIOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
-        public short REGISTROUSUARIO(string Usuarionombre, string Usuariopassword, string Usuarioemail) {
+        public short REGISTROUSUARIO(string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
             object[] results = this.Invoke("REGISTROUSUARIO", new object[] {
-                        Usuarionombre,
                         Usuariopassword,
-                        Usuarioemail});
+                        Usuarioemail,
+                        Usuariotipologin});
             return ((short)(results[0]));
         }
         
         /// <remarks/>
-        public void REGISTROUSUARIOAsync(string Usuarionombre, string Usuariopassword, string Usuarioemail) {
-            this.REGISTROUSUARIOAsync(Usuarionombre, Usuariopassword, Usuarioemail, null);
+        public void REGISTROUSUARIOAsync(string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
+            this.REGISTROUSUARIOAsync(Usuariopassword, Usuarioemail, Usuariotipologin, null);
         }
         
         /// <remarks/>
-        public void REGISTROUSUARIOAsync(string Usuarionombre, string Usuariopassword, string Usuarioemail, object userState) {
+        public void REGISTROUSUARIOAsync(string Usuariopassword, string Usuarioemail, string Usuariotipologin, object userState) {
             if ((this.REGISTROUSUARIOOperationCompleted == null)) {
                 this.REGISTROUSUARIOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnREGISTROUSUARIOOperationCompleted);
             }
             this.InvokeAsync("REGISTROUSUARIO", new object[] {
-                        Usuarionombre,
                         Usuariopassword,
-                        Usuarioemail}, this.REGISTROUSUARIOOperationCompleted, userState);
+                        Usuarioemail,
+                        Usuariotipologin}, this.REGISTROUSUARIOOperationCompleted, userState);
         }
         
         private void OnREGISTROUSUARIOOperationCompleted(object arg) {
@@ -574,34 +649,105 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
-        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.INFORMACIONADICIONAL", RequestElementName="PaquetesPopularesWS.INFORMACIONADICIONAL", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.INFORMACIONADICIONALResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
-        public short INFORMACIONADICIONAL(string Usuarioemail, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime Usuariofechavenc) {
-            object[] results = this.Invoke("INFORMACIONADICIONAL", new object[] {
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.OBTNERINFORMACIONADICIONAL", RequestElementName="PaquetesPopularesWS.OBTNERINFORMACIONADICIONAL", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.OBTNERINFORMACIONADICIONALResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public void OBTNERINFORMACIONADICIONAL(ref string Usuarioemail, ref string Usuarionombre, ref string Usuarioapellidos, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] ref System.DateTime Usuariofechanacimiento, ref string Usuariociudadresidencia, ref string Usuariotelefono, ref string Usuariocelular, ref string Usuariopasaporte, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] ref System.DateTime Usuariofechavenc, ref string Usuariovisa, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] ref System.DateTime Usuariovisafechavenc) {
+            object[] results = this.Invoke("OBTNERINFORMACIONADICIONAL", new object[] {
                         Usuarioemail,
+                        Usuarionombre,
+                        Usuarioapellidos,
+                        Usuariofechanacimiento,
+                        Usuariociudadresidencia,
                         Usuariotelefono,
                         Usuariocelular,
                         Usuariopasaporte,
-                        Usuariofechavenc});
+                        Usuariofechavenc,
+                        Usuariovisa,
+                        Usuariovisafechavenc});
+            Usuarioemail = ((string)(results[0]));
+            Usuarionombre = ((string)(results[1]));
+            Usuarioapellidos = ((string)(results[2]));
+            Usuariofechanacimiento = ((System.DateTime)(results[3]));
+            Usuariociudadresidencia = ((string)(results[4]));
+            Usuariotelefono = ((string)(results[5]));
+            Usuariocelular = ((string)(results[6]));
+            Usuariopasaporte = ((string)(results[7]));
+            Usuariofechavenc = ((System.DateTime)(results[8]));
+            Usuariovisa = ((string)(results[9]));
+            Usuariovisafechavenc = ((System.DateTime)(results[10]));
+        }
+        
+        /// <remarks/>
+        public void OBTNERINFORMACIONADICIONALAsync(string Usuarioemail, string Usuarionombre, string Usuarioapellidos, System.DateTime Usuariofechanacimiento, string Usuariociudadresidencia, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc, string Usuariovisa, System.DateTime Usuariovisafechavenc) {
+            this.OBTNERINFORMACIONADICIONALAsync(Usuarioemail, Usuarionombre, Usuarioapellidos, Usuariofechanacimiento, Usuariociudadresidencia, Usuariotelefono, Usuariocelular, Usuariopasaporte, Usuariofechavenc, Usuariovisa, Usuariovisafechavenc, null);
+        }
+        
+        /// <remarks/>
+        public void OBTNERINFORMACIONADICIONALAsync(string Usuarioemail, string Usuarionombre, string Usuarioapellidos, System.DateTime Usuariofechanacimiento, string Usuariociudadresidencia, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc, string Usuariovisa, System.DateTime Usuariovisafechavenc, object userState) {
+            if ((this.OBTNERINFORMACIONADICIONALOperationCompleted == null)) {
+                this.OBTNERINFORMACIONADICIONALOperationCompleted = new System.Threading.SendOrPostCallback(this.OnOBTNERINFORMACIONADICIONALOperationCompleted);
+            }
+            this.InvokeAsync("OBTNERINFORMACIONADICIONAL", new object[] {
+                        Usuarioemail,
+                        Usuarionombre,
+                        Usuarioapellidos,
+                        Usuariofechanacimiento,
+                        Usuariociudadresidencia,
+                        Usuariotelefono,
+                        Usuariocelular,
+                        Usuariopasaporte,
+                        Usuariofechavenc,
+                        Usuariovisa,
+                        Usuariovisafechavenc}, this.OBTNERINFORMACIONADICIONALOperationCompleted, userState);
+        }
+        
+        private void OnOBTNERINFORMACIONADICIONALOperationCompleted(object arg) {
+            if ((this.OBTNERINFORMACIONADICIONALCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.OBTNERINFORMACIONADICIONALCompleted(this, new OBTNERINFORMACIONADICIONALCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.INFORMACIONADICIONAL", RequestElementName="PaquetesPopularesWS.INFORMACIONADICIONAL", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.INFORMACIONADICIONALResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
+        public short INFORMACIONADICIONAL(string Usuarionombre, string Usuarioapellidos, string Usuarioemail, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime Usuariofechanacimiento, string Usuariociudadresidencia, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime Usuariofechavenc, string Usuariovisa, [System.Xml.Serialization.XmlElementAttribute(DataType="date")] System.DateTime Usuariovisafechavenc) {
+            object[] results = this.Invoke("INFORMACIONADICIONAL", new object[] {
+                        Usuarionombre,
+                        Usuarioapellidos,
+                        Usuarioemail,
+                        Usuariofechanacimiento,
+                        Usuariociudadresidencia,
+                        Usuariotelefono,
+                        Usuariocelular,
+                        Usuariopasaporte,
+                        Usuariofechavenc,
+                        Usuariovisa,
+                        Usuariovisafechavenc});
             return ((short)(results[0]));
         }
         
         /// <remarks/>
-        public void INFORMACIONADICIONALAsync(string Usuarioemail, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc) {
-            this.INFORMACIONADICIONALAsync(Usuarioemail, Usuariotelefono, Usuariocelular, Usuariopasaporte, Usuariofechavenc, null);
+        public void INFORMACIONADICIONALAsync(string Usuarionombre, string Usuarioapellidos, string Usuarioemail, System.DateTime Usuariofechanacimiento, string Usuariociudadresidencia, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc, string Usuariovisa, System.DateTime Usuariovisafechavenc) {
+            this.INFORMACIONADICIONALAsync(Usuarionombre, Usuarioapellidos, Usuarioemail, Usuariofechanacimiento, Usuariociudadresidencia, Usuariotelefono, Usuariocelular, Usuariopasaporte, Usuariofechavenc, Usuariovisa, Usuariovisafechavenc, null);
         }
         
         /// <remarks/>
-        public void INFORMACIONADICIONALAsync(string Usuarioemail, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc, object userState) {
+        public void INFORMACIONADICIONALAsync(string Usuarionombre, string Usuarioapellidos, string Usuarioemail, System.DateTime Usuariofechanacimiento, string Usuariociudadresidencia, string Usuariotelefono, string Usuariocelular, string Usuariopasaporte, System.DateTime Usuariofechavenc, string Usuariovisa, System.DateTime Usuariovisafechavenc, object userState) {
             if ((this.INFORMACIONADICIONALOperationCompleted == null)) {
                 this.INFORMACIONADICIONALOperationCompleted = new System.Threading.SendOrPostCallback(this.OnINFORMACIONADICIONALOperationCompleted);
             }
             this.InvokeAsync("INFORMACIONADICIONAL", new object[] {
+                        Usuarionombre,
+                        Usuarioapellidos,
                         Usuarioemail,
+                        Usuariofechanacimiento,
+                        Usuariociudadresidencia,
                         Usuariotelefono,
                         Usuariocelular,
                         Usuariopasaporte,
-                        Usuariofechavenc}, this.INFORMACIONADICIONALOperationCompleted, userState);
+                        Usuariofechavenc,
+                        Usuariovisa,
+                        Usuariovisafechavenc}, this.INFORMACIONADICIONALOperationCompleted, userState);
         }
         
         private void OnINFORMACIONADICIONALOperationCompleted(object arg) {
@@ -655,6 +801,58 @@ namespace TravelWebSite.PaqueteWS {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void VERIFICARUSUARIOREDESCompletedEventHandler(object sender, VERIFICARUSUARIOREDESCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class VERIFICARUSUARIOREDESCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal VERIFICARUSUARIOREDESCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public short Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((short)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GETINFORMACIONADICIONALCompletedEventHandler(object sender, GETINFORMACIONADICIONALCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GETINFORMACIONADICIONALCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GETINFORMACIONADICIONALCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
         }
     }
     
@@ -1018,6 +1216,112 @@ namespace TravelWebSite.PaqueteWS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((short)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void OBTNERINFORMACIONADICIONALCompletedEventHandler(object sender, OBTNERINFORMACIONADICIONALCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class OBTNERINFORMACIONADICIONALCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal OBTNERINFORMACIONADICIONALCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Usuarioemail {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuarionombre {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[1]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuarioapellidos {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[2]));
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Usuariofechanacimiento {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[3]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuariociudadresidencia {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[4]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuariotelefono {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[5]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuariocelular {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[6]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuariopasaporte {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[7]));
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Usuariofechavenc {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[8]));
+            }
+        }
+        
+        /// <remarks/>
+        public string Usuariovisa {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[9]));
+            }
+        }
+        
+        /// <remarks/>
+        public System.DateTime Usuariovisafechavenc {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((System.DateTime)(this.results[10]));
             }
         }
     }
