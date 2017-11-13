@@ -104,7 +104,8 @@
         </div>
         <br/>
         <div class="row Fondo">
-            <div class="col-sm-12">
+            <asp:Literal ID="LtTeOfrecemos" runat="server"></asp:Literal>
+            <!--<div class="col-sm-12">
                 <h5 style="text-align:center"><strong>Te Ofrecemos:</strong></h5>
                 <hr />
                 <ul>
@@ -112,13 +113,13 @@
                     <li type="disc">Los precios más baratos del mercado.</li>
                     <li type="disc">La mejor asistencia para viajar tranquilo.</li>
                 </ul>
-            </div>       
+            </div>       -->
             <!-- Capturar información javascritp a asp.net -->
             <asp:HiddenField ID="CorreoFBASP" runat="server" />
             <asp:HiddenField ID="NombreFBASP" runat="server" />
             <asp:HiddenField ID="CorreoGmailASP" runat="server" />
-            <asp:HiddenField ID="NombreGmailASP" runat="server" />     
-        </div>
+            <asp:HiddenField ID="NombreGmailASP" runat="server" /> 
+        </div>    
         <asp:button clientidmode="Static" id="PopupRegistroFB" class="hide" runat="server" text=""></asp:button>
         <asp:button clientidmode="Static" id="PopupRegistro" class="hide" runat="server" text=""></asp:button>
     </div>

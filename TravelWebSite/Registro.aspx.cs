@@ -18,6 +18,9 @@ namespace TravelWebSite
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
+            string resultado = paquetesWS.TEOFRECEMOS("REGISTRO TE OFRECEMOS");
+            LtTeOfrecemos.Text = resultado;
             nombreFacebook = NombreFBASP.Value;
             nombreGmail = NombreGmailASP.Value;
             if (Page.IsPostBack)

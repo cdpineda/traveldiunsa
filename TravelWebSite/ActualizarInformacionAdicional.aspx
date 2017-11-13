@@ -1,8 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/TravelSite.Master" AutoEventWireup="true" CodeBehind="ActualizarInformacionAdicional.aspx.cs" Inherits="TravelWebSite.ActualizarInformacionAdicional" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
 <!-- Contenido de la página -->
+<script>
+$(function() {
+    $( "#<%= LbFechaNacimiento.ClientID %>" ).datepicker();
+});
+</script>
 <div class="container">
-
     <!-- Encabezado de página / Breadcrumb -->
     <div class="row">
         <div class="col-md-12">
@@ -32,6 +36,7 @@
         		<ul class="list-group list-primary">
         			<a href="InformacionAdicional.aspx" class="list-group-item">Mi perfil</a>
         			<a href="ActualizarInformacionAdicional.aspx" class="list-group-item">Configurar Perfil</a>
+                    <a href="PreguntasConfiguradas.aspx" class="list-group-item">Preguntas de Seguridad</a>
     			</ul>
     		</div>
             <!-- Fin Barra vertical de opciones del perfil de usuario -->
@@ -45,7 +50,7 @@
             </div>
             <!-- Inicio del div central parte de formulario información básica -->
             <div class="col-md-12" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey; background: #f1f3f6;">
-                <div class="col-md-8 col-md-offset-2">
+                <div class="col-md-10 col-md-offset-1">
     	                
     	                <div class="control-group form-group">
     	                    <div class="controls">
@@ -75,12 +80,23 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Fecha de nacimiento</label>
-                                                <asp:TextBox ID="LbFechaNacimiento" class="form-control" placeholder="dd/mm/yyyy" required="" runat="server"></asp:TextBox>
+                                                <label>Nacionalidad</label>
+                                                <asp:TextBox ID="LbNacionalidad" class="form-control" placeholder="Nacionalidad" required="" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Fecha de nacimiento</label>
+                                                <div class="icon-addon">
+                                                   <asp:TextBox ID="LbFechaNacimiento" class="form-control" placeholder="Fecha" required="" runat="server"></asp:TextBox>
+                                                   <asp:LinkButton ID="btnFechaNacimiento" runat="server" onclick="btnFechaNacimiento_Click"><span class="glyphicon glyphicon-calendar"></span></asp:LinkButton> 
+                                                   <asp:Calendar ID="CalendarFechaNacimiento" Visible="False" OnSelectionChanged="CalendarNacimiento_SelectionChanged" runat="server"></asp:Calendar>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Ciudad de Residencia</label>
                                                 <asp:TextBox ID="LbCiudadResidencia" class="form-control" placeholder="Ciudad que reside" required="" runat="server"></asp:TextBox>
@@ -89,21 +105,21 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Número de teléfono</label>
+                                                <label>Número de Teléfono Fijo</label>
                                                 <asp:TextBox ID="LbTelefono" class="form-control" placeholder="Número de teléfono" required="" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Número de celular</label>
+                                                <label>Número de Celular</label>
                                                 <asp:TextBox ID="LbCelular" class="form-control" placeholder="Número de celular" required="" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>No. de pasaporte</label>
+                                                <label>Número de Pasaporte</label>
                                                 <asp:TextBox ID="LbPasaporte" class="form-control" placeholder="Número de pasaporte" required="" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -111,13 +127,17 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Fecha de vencimiento</label>
-                                                <asp:TextBox ID="LbPasaporteFecVenc" class="form-control" placeholder="dd/mm/yyyy" required="" runat="server"></asp:TextBox>
+                                                <div class="icon-addon">
+                                                   <asp:TextBox ID="LbPasaporteFecVenc" class="form-control" placeholder="Fecha" required="" runat="server"></asp:TextBox>
+                                                   <asp:Calendar ID="CalendarPasaporte" Visible="False" OnSelectionChanged="CalendarPasaporte_SelectionChanged" runat="server"></asp:Calendar>
+                                                   <asp:LinkButton ID="btnPasaporteFecha" runat="server" onclick="btnPasaporteFecha_Click"><span class="glyphicon glyphicon-calendar"></span></asp:LinkButton> 
+                                                </div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>No. de visa</label>
+                                                <label>Número de Visa de Estados Unidos</label>
                                                 <asp:TextBox ID="LbVisa" class="form-control" placeholder="Número de visa" required="" runat="server"></asp:TextBox>
                                             </div>
                                         </div>
@@ -125,7 +145,11 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Fecha de vencimiento</label>
-                                                <asp:TextBox ID="LbVisaFechVenc" class="form-control" placeholder="dd/mm/yyyy" required="" runat="server"></asp:TextBox>
+                                                <div class="icon-addon">
+                                                   <asp:TextBox ID="LbVisaFechVenc" class="form-control" placeholder="Fecha" required="" runat="server"></asp:TextBox>
+                                                   <asp:Calendar ID="CalendarVisa" Visible="False" OnSelectionChanged="CalendarVisa_SelectionChanged" runat="server"></asp:Calendar>
+                                                   <asp:LinkButton ID="btnVisaFecha" runat="server" onclick="btnVisaFecha_Click"><span class="glyphicon glyphicon-calendar"></span></asp:LinkButton> 
+                                                </div>
                                             </div>
                                         </div>
                                             
@@ -158,5 +182,5 @@
     </div>
     <!-- Fin Campos del formulario de contacto con validación de campos -->
     <hr>
-</div>
+
 </asp:Content>

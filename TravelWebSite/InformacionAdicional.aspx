@@ -72,7 +72,14 @@
                                                 <div><%=Correo %></div>
                                             </div>
                                         </div>
-                                            
+                                           
+                                        <div class="col-md-6">
+                                            <div class="form-group">
+                                                <label>Nacionalidad</label>
+                                                <div><%= Nacionalidad %></div>
+                                            </div>
+                                        </div>
+
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Fecha de nacimiento</label>
@@ -80,30 +87,30 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-md-6">
+                                        <div class="col-md-12">
                                             <div class="form-group">
                                                 <label>Ciudad de Residencia</label>
                                                 <div><%= Ciudad %></div>
                                             </div>
                                         </div>
-
+                                        
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Número de teléfono</label>
+                                                <label>Número de Teléfono Fijo</label>
                                                 <div><%= Telefono %></div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>Número de celular</label>
+                                                <label>Número de Celular</label>
                                                 <div><%= Celular %></div>
                                             </div>
                                         </div>
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>No. de pasaporte</label>
+                                                <label>Número de Pasaporte</label>
                                                 <div><%= Pasaporte %></div>
                                             </div>
                                         </div>
@@ -117,7 +124,7 @@
 
                                         <div class="col-md-6">
                                             <div class="form-group">
-                                                <label>No. de visa</label>
+                                                <label>Número de Visa de Estados Unidos</label>
                                                 <div><%= Visa %></div>
                                             </div>
                                         </div>

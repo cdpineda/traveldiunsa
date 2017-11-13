@@ -2,6 +2,20 @@
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="TravelAdmin" xmlns:wsdlns="TravelAdmin" name="PaquetesPopularesWS" targetNamespace="TravelAdmin" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="TravelAdmin">
+      <xsd:element name="PaquetesPopularesWS.TEOFRECEMOS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tipopag" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.TEOFRECEMOSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Paginacontenidohtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.VERIFICARUSUARIOREDES">
         <xsd:complexType>
           <xsd:sequence>
@@ -224,40 +238,6 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
-      <xsd:element name="PaquetesPopularesWS.OBTNERINFORMACIONADICIONAL">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarionombre" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioapellidos" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariofechanacimiento" type="xsd:date" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariociudadresidencia" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariotelefono" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariocelular" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopasaporte" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariofechavenc" type="xsd:date" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisa" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisafechavenc" type="xsd:date" />
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
-      <xsd:element name="PaquetesPopularesWS.OBTNERINFORMACIONADICIONALResponse">
-        <xsd:complexType>
-          <xsd:sequence>
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarionombre" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioapellidos" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariofechanacimiento" type="xsd:date" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariociudadresidencia" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariotelefono" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariocelular" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopasaporte" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariofechavenc" type="xsd:date" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisa" type="xsd:string" />
-            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisafechavenc" type="xsd:date" />
-          </xsd:sequence>
-        </xsd:complexType>
-      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.INFORMACIONADICIONAL">
         <xsd:complexType>
           <xsd:sequence>
@@ -272,6 +252,7 @@
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuariofechavenc" type="xsd:date" />
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisa" type="xsd:string" />
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuariovisafechavenc" type="xsd:date" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarionacionalidad" type="xsd:string" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -296,6 +277,12 @@
       </xsd:element>
     </xsd:schema>
   </types>
+  <message name="PaquetesPopularesWS.TEOFRECEMOSSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.TEOFRECEMOS" />
+  </message>
+  <message name="PaquetesPopularesWS.TEOFRECEMOSSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.TEOFRECEMOSResponse" />
+  </message>
   <message name="PaquetesPopularesWS.VERIFICARUSUARIOREDESSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.VERIFICARUSUARIOREDES" />
   </message>
@@ -392,12 +379,6 @@
   <message name="PaquetesPopularesWS.INICIARSESIONSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.INICIARSESIONResponse" />
   </message>
-  <message name="PaquetesPopularesWS.OBTNERINFORMACIONADICIONALSoapIn">
-    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTNERINFORMACIONADICIONAL" />
-  </message>
-  <message name="PaquetesPopularesWS.OBTNERINFORMACIONADICIONALSoapOut">
-    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTNERINFORMACIONADICIONALResponse" />
-  </message>
   <message name="PaquetesPopularesWS.INFORMACIONADICIONALSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.INFORMACIONADICIONAL" />
   </message>
@@ -411,6 +392,10 @@
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECOMENDADOSResponse" />
   </message>
   <portType name="PaquetesPopularesWSSoapPort">
+    <operation name="TEOFRECEMOS">
+      <input message="wsdlns:PaquetesPopularesWS.TEOFRECEMOSSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.TEOFRECEMOSSoapOut" />
+    </operation>
     <operation name="VERIFICARUSUARIOREDES">
       <input message="wsdlns:PaquetesPopularesWS.VERIFICARUSUARIOREDESSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.VERIFICARUSUARIOREDESSoapOut" />
@@ -475,10 +460,6 @@
       <input message="wsdlns:PaquetesPopularesWS.INICIARSESIONSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.INICIARSESIONSoapOut" />
     </operation>
-    <operation name="OBTNERINFORMACIONADICIONAL">
-      <input message="wsdlns:PaquetesPopularesWS.OBTNERINFORMACIONADICIONALSoapIn" />
-      <output message="wsdlns:PaquetesPopularesWS.OBTNERINFORMACIONADICIONALSoapOut" />
-    </operation>
     <operation name="INFORMACIONADICIONAL">
       <input message="wsdlns:PaquetesPopularesWS.INFORMACIONADICIONALSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.INFORMACIONADICIONALSoapOut" />
@@ -490,6 +471,15 @@
   </portType>
   <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="TEOFRECEMOS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.TEOFRECEMOS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="VERIFICARUSUARIOREDES">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.VERIFICARUSUARIOREDES" />
       <input>
@@ -627,15 +617,6 @@
     </operation>
     <operation name="INICIARSESION">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.INICIARSESION" />
-      <input>
-        <soap:body use="literal" />
-      </input>
-      <output>
-        <soap:body use="literal" />
-      </output>
-    </operation>
-    <operation name="OBTNERINFORMACIONADICIONAL">
-      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.OBTNERINFORMACIONADICIONAL" />
       <input>
         <soap:body use="literal" />
       </input>

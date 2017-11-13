@@ -23,6 +23,7 @@ namespace TravelWebSite
         public DateTime VisaFechaVenc;
         public string Mensaje;
         public string Trama;
+        public string Nacionalidad;
         PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -53,6 +54,7 @@ namespace TravelWebSite
                 {
                     VisaFechaVenc = Convert.ToDateTime(Valores[9]);
                 }
+                Nacionalidad = Valores[10];
 
                 Correo = Login.UsuarioCorreo;
                 LbNombres.Attributes["placeholder"] = Nombres;
@@ -65,6 +67,7 @@ namespace TravelWebSite
                 LbPasaporteFecVenc.Attributes["placeholder"] = PasaporteFechaVenc.ToString();
                 LbVisa.Attributes["placeholder"] = Visa;
                 LbVisaFechVenc.Attributes["placeholder"] = VisaFechaVenc.ToString();
+                LbNacionalidad.Attributes["placeholder"] = Nacionalidad;
             }
             catch (Exception ex)
             {
@@ -87,6 +90,7 @@ namespace TravelWebSite
                 string PasaporteFecVenc = "";
                 string vVisa = "";
                 string VisaFecVenc = "";
+                string vNacionalidad = "";
                 if (LbNombres.Text == "")
                 {
                     vNombres = Nombres;
@@ -172,10 +176,19 @@ namespace TravelWebSite
                     VisaFecVenc = LbVisaFechVenc.Text;
                 }
 
+                if (LbNacionalidad.Text == "")
+                {
+                    vNacionalidad = Nacionalidad;
+                }
+                else
+                {
+                    vNacionalidad = LbNacionalidad.Text;
+                }
+
                 DateTime vFechaNacimiento = Convert.ToDateTime(FechaNacimiento);
                 DateTime vPasaporteFecVenc = Convert.ToDateTime(PasaporteFecVenc);
                 DateTime vVisaFecVenc = Convert.ToDateTime(VisaFecVenc);
-                int Estado = paquetesWS.INFORMACIONADICIONAL(vNombres, vApellidos, Login.UsuarioCorreo, vFechaNacimiento, vCiudadResidencia, vTelefono, vCelular, vPasaporte, vPasaporteFecVenc, vVisa, vVisaFecVenc);
+                int Estado = paquetesWS.INFORMACIONADICIONAL(vNombres, vApellidos, Login.UsuarioCorreo, vFechaNacimiento, vCiudadResidencia, vTelefono, vCelular, vPasaporte, vPasaporteFecVenc, vVisa, vVisaFecVenc, vNacionalidad);
                 Response.Redirect("InformacionAdicional.aspx");
 
             }

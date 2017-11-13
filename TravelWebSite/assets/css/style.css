@@ -127,12 +127,41 @@ a:hover{text-decoration: none;}
 .thm-btn-register, .region, .portfolio-sorting li a span, .pagination-inner .pager li > a, .pagination > li > a:hover,
 .pagination-inner .pagination > .active > a,.cats-title span, .ui.tag:hover{
     background-color: #67b500 !important;
+    border-color: #67b500 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
 }
 
 /*background color yellow*/
 .thm-btn, .btn-top, .region, .portfolio-sorting li a span, .pagination-inner .pager li > a, .pagination > li > a:hover,
 .pagination-inner .pagination > .active > a,.cats-title span, .ui.tag:hover{
     background-color: #ff9400 !important;
+    border-color: #ff9400 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+}
+
+.thm-btn:hover{
+    background-color: white !important;
+    color: #fec107 !important;
+    border-color: #fec107 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+}
+
+.thm-btn-register:hover{
+    background-color: white !important;
+    color:#67b500 !important;
+    border-color: #67b500 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
+}
+.thm-btn-crearcuenta:hover{
+    background-color: white !important;
+    color: #fec107 !important;
+    border-color: #fec107 !important;
+    border-style: solid !important;
+    border-width: 1px !important;
 }
 
 /*** 06. Page padding
@@ -164,7 +193,7 @@ a:hover{text-decoration: none;}
 .thm-btn-crearcuenta:hover:before, .thm-btn-crearcuenta:focus:before, .thm-btn-crearcuenta:active:before {opacity: 1;}
 
 .thm-btn-register {padding: 12px 30px;color: #ffffff;font-weight: 700;font-size: 13px;border: 0; text-align: center;border-radius: 4px;text-decoration: none;display: inline-block;vertical-align: middle;-webkit-transform: perspective(1px) translateZ(0);transform: perspective(1px) translateZ(0);box-shadow: 0 0 1px transparent;position: relative;}
-.thm-btn-register:before {content: '';position: absolute;border: #67b500 solid 2px;border-radius: 4px;top: 3px;left: 3px;right: 3px;bottom: 3px;opacity: 0;-webkit-transition-duration: 0.3s;transition-duration: 0.3s;-webkit-transition-property: opacity;transition-property: opacity;}
+.thm-btn-register:before {content: '';position: absolute;border: #67b500 solid 2px;opacity: 0;-webkit-transition-duration: 0.3s;transition-duration: 0.3s;-webkit-transition-property: opacity;transition-property: opacity;}
 .thm-btn-register:hover:before, .thm-btn-register:focus:before, .thm-btn-register:active:before {opacity: 1;}
 /*** 10. Navigation
 ------------------------------------------------------------------------------*/
@@ -173,7 +202,7 @@ a:hover{text-decoration: none;}
 .navbar .navbar-header .navbar-brand:hover, .navbar .navbar-header .navbar-brand:focus {color: #fcbd20;}
 .navbar .navbar-header .navbar-toggle {font-size: 12px;color: #222222;padding: 5px 10px;}
 .navbar .navbar-header .navbar-toggle i{font-size: 20px;}
-.navbar .nav > li > a, .navbar .nav > li > a:focus {color: #222222;font-weight: 700;text-transform: uppercase;letter-spacing: 2px;font-size: 11px;background-color: transparent;}
+.navbar .nav > li > a, .navbar .nav > li > a:focus {color: #222222;font-weight: 700;text-transform: uppercase;letter-spacing: 0px;font-size: 11px;background-color: transparent;}
 .navbar .nav > li > a:hover, .navbar .nav > li > a:focus:hover {color: #fdcc52;background-color: transparent;}
 .navbar .nav > li.active > a, .navbar .nav > li.active > a:focus {color: #fdcc52 !important;background-color: transparent;}
 .navbar .nav > li.active > a:hover, .navbar .nav > li.active > a:focus:hover {background-color: transparent;}
@@ -213,7 +242,7 @@ a:hover{text-decoration: none;}
 }
 /*** 11. Slider
 ------------------------------------------------------------------------------*/
-.slider-wrapper{position:relative;overflow:hidden;width:100%;margin:0 auto;background-image: url(../images/destination-bg.jpg);background-size: cover;position: relative;background-position: center top;background-repeat: no-repeat;background-attachment: fixed;}
+.slider-wrapper{position:relative;overflow:hidden;width:100%; min-height: 600px; margin:0 auto;background-image: url(../images/slider1.jpg);background-size: cover;position: relative;background-position: center top;background-repeat: no-repeat;}
 .slider-wrapper:before, .home-ref:before{width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;/*background-color: rgba(0,0,0,0.5);*/}
 .slider{position:relative;width:100%;height:700px;margin:0 auto;}
 /* Slider Element Style */
@@ -387,25 +416,25 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .home-ref .testimonials blockquote::before {color: #fec107;}
 /*hotel*/
 .hotel-inner, .tour-inner{background: #f8f8f8;}
-.hotel-item {background: #fff;margin-bottom: 20px;position: relative;box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);}
+.hotel-item {background: #fff;margin-bottom: 20px; height: 120px; position: relative;box-shadow: 4px 3px 5px 0px rgba(0, 0, 0, 0.03);}
 .hotel-item:hover, .package-wiget:hover{-webkit-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2);-moz-box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2);box-shadow: 1px 0px 5px 0px rgba(0, 0, 0, 0.2);}
-.hotel-item .hotel-image {position: relative;z-index: 1;overflow: hidden;margin-bottom: 0;width: 35%;display: table-cell;}
-.hotel-item .hotel-image:before {content: '';position: absolute;z-index: 2;top: 0;right: -15%;height: 100%;width: 30%;-webkit-transform: skew(15deg);-moz-transform: skew(15deg);-ms-transform: skew(15deg);-o-transform: skew(15deg);transform: skew(15deg);background: #fff;}
-.hotel-item .hotel-image .img {position: relative;z-index: 1;}
-.hotel-item .hotel-image .img:before, .hotel-item .hotel-image .img:after{content: '';z-index: 1;top: 0;height: 100%;width: 100%;position: absolute;-webkit-transition: all 0.35s;-moz-transition: all 0.35s;-o-transition: all 0.35s;transition: all 0.35s;}
+.hotel-item .hotel-image {position: relative; z-index: 1;overflow: hidden;margin-bottom: 0;display: table-cell;}
+
+.hotel-item .hotel-image .img {position: relative;z-index: 1; height: 100%}
+
 .hotel-item .hotel-image .img:before {left: 0;background: #ffc107;opacity: 0;}
 .hotel-item:hover .hotel-image .img:before { opacity: 0.3;}
 .hotel-item .hotel-image .img:after {right: -90%;opacity: 0.2;background: #ffffff;-webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, -22%, 0);-moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, -22%, 0);transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, -22%, 0);}
 .hotel-item:hover .hotel-image .img:after {-webkit-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);-moz-transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);transform: scale3d(1.9, 1.4, 1) rotate3d(0, 0, 1, 101deg) translate3d(0, 130%, 0);}
-.hotel-item .hotel-body {padding: 15px;width: 42%;display: table-cell;vertical-align: middle;}
+.hotel-item .hotel-body {padding:15px 15px 0px 15px; display: table-cell;vertical-align: middle;}
 .hotel-item .hotel-body .ratting i {font-size: 11px;}
 .hotel-item .hotel-body h3 {margin: 5px 0;font-weight: 600;font-size: 14px;text-transform: none;letter-spacing: 0px;color: #1a72cc;}
 .hotel-item .hotel-body p {color: #666666;font-size: 12px;line-height: 17px;letter-spacing: 0px;}
 .hotel-item .hotel-body .free-service i {font-size: 18px;margin-right: 10px;color: #06d26c;cursor: pointer;}
-.hotel-right {width: 23%;text-align: center;background: #fff;padding: 15px;display: table-cell;vertical-align: middle;border-left: 1px solid #ddd;}
+.hotel-right {text-align: center;background: #fff;padding-bottom: 0px; padding-right: 15px; padding-left: 15px; padding-top: 0px; display: table-cell;vertical-align: middle;border-left: 1px solid #ddd;}
 .hotel-person {font-size: 12px;line-height: 10px;letter-spacing: 0px; color: #1a72cc;}
 .hotel-person span {display: block;font-size: 30px;margin: 15px 0px 13px 2px;font-weight: 700;}
-.hotel-item .thm-btn{margin-top: 20px;}
+.hotel-item .thm-btn{margin-top: 10px; height: 40px;}
 .hotel-item .thm-btn-crearcuenta{margin-top: 20px;}
 .hotel-item .thm-btn-register{margin-top: 20px;}
 /*Newsletter*/
@@ -505,7 +534,7 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 /*grid item*/
 .grid-margin{margin-left: -10px;margin-right: -10px;}
 .grid-item{margin-bottom: 20px;padding-right: 10px;padding-left: 10px;}
-.grid-item-inner{position: relative;overflow: hidden;color: #fff;}
+.grid-item-inner{position: relative;overflow: hidden;color: #fff; text-align: center;}
 .grid-content{/*background-color: rgba(0,0,0,0.3);*/position:absolute;top:0;left:0;width:100%;height:100%;pointer-events: none;}
 .grid-text{position:absolute;bottom:0;left:0;padding: 15px;width:100%;}
 .place-name {display: inline-block;padding: 5px 7px;font-size: 12px;line-height: 10px;background-color: #004d9c;}
@@ -821,4 +850,31 @@ footer .footer-title {margin: 0 0 30px;font-size: 20px;font-weight: 400;}
     .hotel-item .hotel-body h3 {font-size: 16px;}
     .hotel-item .hotel-body p {font-size: 12px;line-height: 18px;}
     .hotel-item .hotel-body .free-service i {font-size: 14px;}
+}
+
+
+.tituloPaq{
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: -.5em;
+    line-height: 1.3em;
+    color: #004d9c;
+}
+
+.subPaq{
+    font-size: .9em;
+    color: #57656d;
+}
+
+.icoMenu{
+    font-size: 20px;
+}
+
+.hotelImgT{
+    width: 300px;
+    height: 120px;
+}
+
+.container.boking-inner{
+    margin-top: 350px;
 }

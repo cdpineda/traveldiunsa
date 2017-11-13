@@ -22,6 +22,7 @@ namespace TravelWebSite
         public string Visa;
         public DateTime VisaFechaVenc;
         public string Trama;
+        public string Nacionalidad;
         protected void Page_Load(object sender, EventArgs e)
         {
             try
@@ -54,6 +55,7 @@ namespace TravelWebSite
                 }
 
                 Correo = Login.UsuarioCorreo;
+                Nacionalidad = Valores[10];
             }
             catch (Exception ex)
             {
