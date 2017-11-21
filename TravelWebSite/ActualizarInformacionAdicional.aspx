@@ -12,7 +12,7 @@ $(function() {
         <div class="col-md-12">
             <br />
             <br />
-            <h1 class="page-header">Perfil de usuario
+            <h1 class="page-header headerPerfil">Administración de Cuenta
             </h1>
         </div>
     </div>
@@ -46,10 +46,10 @@ $(function() {
         <!-- Parte central -->
         <div class="col-md-9">
             <div class="col-md-12" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey;">
-                <h3 style="text-align: center">Mi perfil</h3>
+                <h3 style="text-align: center; color:#004d9c;">Perfil de Usuario</h3>
             </div>
             <!-- Inicio del div central parte de formulario información básica -->
-            <div class="col-md-12" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey; background: #f1f3f6;">
+            <div class="col-md-12" style="border-width: 0px 1px 1px 1px; border-style: solid; border-color: lightgrey; background: white;">
                 <div class="col-md-10 col-md-offset-1">
     	                
     	                <div class="control-group form-group">

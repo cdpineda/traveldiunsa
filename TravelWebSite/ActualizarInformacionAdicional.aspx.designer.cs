@@ -58,6 +58,24 @@ namespace TravelWebSite {
         protected global::System.Web.UI.WebControls.TextBox LbFechaNacimiento;
         
         /// <summary>
+        /// btnFechaNacimiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnFechaNacimiento;
+        
+        /// <summary>
+        /// CalendarFechaNacimiento control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarFechaNacimiento;
+        
+        /// <summary>
         /// LbCiudadResidencia control.
         /// </summary>
         /// <remarks>
@@ -103,6 +121,24 @@ namespace TravelWebSite {
         protected global::System.Web.UI.WebControls.TextBox LbPasaporteFecVenc;
         
         /// <summary>
+        /// CalendarPasaporte control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarPasaporte;
+        
+        /// <summary>
+        /// btnPasaporteFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnPasaporteFecha;
+        
+        /// <summary>
         /// LbVisa control.
         /// </summary>
         /// <remarks>
@@ -119,6 +155,24 @@ namespace TravelWebSite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox LbVisaFechVenc;
+        
+        /// <summary>
+        /// CalendarVisa control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Calendar CalendarVisa;
+        
+        /// <summary>
+        /// btnVisaFecha control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnVisaFecha;
         
         /// <summary>
         /// LbGuardar control.

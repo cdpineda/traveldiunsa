@@ -11,15 +11,31 @@ namespace TravelWebSite
     public partial class SiteMaster : MasterPage
     {
         public string correo;
+        PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
+        public string slider;
         protected void Page_Load(object sender, EventArgs e)
         {
+            string telefono = paquetesWS.HEADERTELEFONO();
+            string publicidad = paquetesWS.HEADERPUBLICIDAD();
+            LitTelefono.Text = telefono;
+            LitPublicidad.Text = publicidad;
+            slider = paquetesWS.SLIDER();
+
             if (Login.UsuarioCorreo != "")
             {
-                correo = Login.UsuarioCorreo;
+                if (Login.UsuarioNombres != "" | Login.UsuarioApellidos != "")
+                {
+                    string nombre = Login.UsuarioNombres + " " + Login.UsuarioApellidos;
+                    correo = nombre.Substring(0, 23) + "...";
+                }
+                else
+                {
+                    correo = Login.UsuarioCorreo;
+                }
             }
             else
             {
-                correo = "Registrarse";
+                correo = "Iniciar Sesión";
             }
 
             if (Page.IsPostBack)
@@ -130,7 +146,7 @@ namespace TravelWebSite
         {
             try
             {
-                if (correo == "Registrarse")
+                if (correo == "Iniciar Sesión")
                 {
                     Response.Redirect("Login.aspx");
                 }
@@ -151,6 +167,8 @@ namespace TravelWebSite
             try
             {
                 Login.UsuarioCorreo = "";
+                Login.UsuarioNombres = "";
+                Login.UsuarioApellidos = "";
                 Response.Redirect("Index.aspx");
 
             }

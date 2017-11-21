@@ -10,96 +10,69 @@
 namespace TravelWebSite {
     
     
-    public partial class SiteMaster {
+    public partial class ConfigurarPreguntas {
         
         /// <summary>
-        /// LitTelefono control.
+        /// MensajeError control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LitTelefono;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl MensajeError;
         
         /// <summary>
-        /// LbRegistrarPerfil control.
+        /// ddlComputedColumns control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbRegistrarPerfil;
+        protected global::System.Web.UI.WebControls.DropDownList ddlComputedColumns;
         
         /// <summary>
-        /// LitPublicidad control.
+        /// txtRespuesta1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal LitPublicidad;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta1;
         
         /// <summary>
-        /// ContentPlaceHolder1 control.
+        /// combo2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder ContentPlaceHolder1;
+        protected global::System.Web.UI.WebControls.DropDownList combo2;
         
         /// <summary>
-        /// LbAcercaDe control.
+        /// txtRespuesta2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbAcercaDe;
+        protected global::System.Web.UI.WebControls.TextBox txtRespuesta2;
         
         /// <summary>
-        /// LbSucursales control.
+        /// LbModificar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbSucursales;
+        protected global::System.Web.UI.WebControls.LinkButton LbModificar;
         
         /// <summary>
-        /// LbFormasPago control.
+        /// LbCancelar control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbFormasPago;
-        
-        /// <summary>
-        /// LbDocumentosViaje control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbDocumentosViaje;
-        
-        /// <summary>
-        /// LbTerminosUso control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbTerminosUso;
-        
-        /// <summary>
-        /// LbPoliticasPrivacidad control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton LbPoliticasPrivacidad;
+        protected global::System.Web.UI.WebControls.LinkButton LbCancelar;
     }
 }

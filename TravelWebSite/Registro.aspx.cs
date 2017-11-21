@@ -47,11 +47,13 @@ namespace TravelWebSite
                 string vPasswordConfirmar = TxtPasswordConfirmacion.Text;
                 string vPassword = TxtPassword.Text;
                 string vCorreo = TxtCorreo.Text;
+                string vNombres = txtNombres.Text;
+                string vApellidos = txtApellidos.Text;
                 int validar = 0;
 
                 if (validar == 0)
                 {
-                    if (vCorreo != "" || vPassword != "" || vPasswordConfirmar != "")
+                    if (vNombres != "" || vApellidos !="" || vCorreo != "" || vPassword != "" || vPasswordConfirmar != "")
                     {
                         // Validamos que por lo menos un campo este lleno para asi personalizar los mensajes.
                         validar = 1;
@@ -65,57 +67,79 @@ namespace TravelWebSite
 
                 if (validar == 1)
                 {
-                    if (vCorreo != "")
+                    if (vNombres != "")
                     {
-                        if (vPassword != "")
+                        if (vApellidos != "")
                         {
-                            if (vPasswordConfirmar != "")
+                            if (vCorreo != "")
                             {
-                                if (vPassword == vPasswordConfirmar)
+                                if (vPassword != "")
                                 {
-                                    int Estado = paquetesWS.REGISTROUSUARIO(vPassword, vCorreo, "PG");
-
-                                    if (Estado == 0)
+                                    if (vPasswordConfirmar != "")
                                     {
-                                        Login.UsuarioCorreo = vCorreo;
-                                        Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Bienvenido');", true);
-                                        Response.Redirect("Index.aspx");
+                                        if (vPassword == vPasswordConfirmar)
+                                        {
+                                            int Estado = paquetesWS.REGISTROUSUARIO(vNombres, vApellidos, vPassword, vCorreo, "PG");
+
+                                            if (Estado == 0)
+                                            {
+                                                Login.UsuarioCorreo = vCorreo;
+                                                Login.UsuarioNombres= vNombres;
+                                                Login.UsuarioApellidos = vApellidos;
+                                                Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Bienvenido');", true);
+                                                Response.Redirect("Preguntas.aspx");
+                                            }
+                                            else
+                                            {
+                                                Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
+                                                MensajeError.Attributes["class"] = "show";
+                                                TxtCorreo.Text = "";
+                                                txtNombres.Text = "";
+                                                txtApellidos.Text = "";
+                                                TxtCorreo.Focus();
+                                            }
+                                        }
+                                        else
+                                        {
+                                            Mensaje = "Las contraseñas no coinciden.";
+                                            MensajeError.Attributes["class"] = "show";
+                                            TxtPassword.Focus();
+                                        }
+
                                     }
                                     else
                                     {
-                                        Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
+                                        Mensaje = "Debe ingresar ambas contraseñas.";
                                         MensajeError.Attributes["class"] = "show";
-                                        TxtCorreo.Text = "";
-                                        TxtCorreo.Focus();
+                                        TxtPassword.Focus();
                                     }
                                 }
                                 else
                                 {
-                                    Mensaje = "Las contraseñas no coinciden.";
+                                    Mensaje = "Debe ingresar ambas contraseñas.";
                                     MensajeError.Attributes["class"] = "show";
                                     TxtPassword.Focus();
                                 }
-
                             }
                             else
                             {
-                                Mensaje = "Debe ingresar ambas contraseñas.";
+                                Mensaje = "Debe ingresar un correo electrónico.";
                                 MensajeError.Attributes["class"] = "show";
-                                TxtPassword.Focus();
+                                TxtCorreo.Focus();
                             }
                         }
                         else
                         {
-                            Mensaje = "Debe ingresar ambas contraseñas.";
+                            Mensaje = "Debe ingresar al menos un apellido.";
                             MensajeError.Attributes["class"] = "show";
-                            TxtPassword.Focus();
+                            txtApellidos.Focus();
                         }
                     }
                     else
                     {
-                        Mensaje = "Debe ingresar un correo electrónico.";
+                        Mensaje = "Debe ingresar al menos un nombre.";
                         MensajeError.Attributes["class"] = "show";
-                        TxtCorreo.Focus();
+                        txtNombres.Focus();
                     }
                 }
 
@@ -156,16 +180,20 @@ namespace TravelWebSite
                 {
                     if (correoRegistro != "")
                     {
-                        int Estado = paquetesWS.REGISTROUSUARIO("", correoRegistro, "FB");
+                        int Estado = paquetesWS.REGISTROUSUARIO("", "", "", correoRegistro, "FB");
 
                         if (Estado == 0)
                         {
                             Login.UsuarioCorreo = correoRegistro;
-                            Response.Redirect("Index.aspx");
+                            Response.Redirect("ActualizarInformacionAdicional.aspx");
                         }
                         else
                         {
                             Login.UsuarioCorreo = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(Login.UsuarioCorreo);
+                            string[] Valores = trama.Split('|');
+                            Login.UsuarioNombres = Valores[0];
+                            Login.UsuarioApellidos = Valores[1];
                             Response.Redirect("Index.aspx");
                             //Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";
@@ -211,16 +239,20 @@ namespace TravelWebSite
                 {
                     if (correoRegistro != "")
                     {
-                        int Estado = paquetesWS.REGISTROUSUARIO("", correoRegistro, "G+");
+                        int Estado = paquetesWS.REGISTROUSUARIO("", "", "", correoRegistro, "G+");
 
                         if (Estado == 0)
                         {
                             Login.UsuarioCorreo = correoRegistro;
-                            Response.Redirect("Index.aspx");
+                            Response.Redirect("ActualizarInformacionAdicional.aspx");
                         }
                         if (Estado == 1)
                         {
                             Login.UsuarioCorreo = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(Login.UsuarioCorreo);
+                            string[] Valores = trama.Split('|');
+                            Login.UsuarioNombres = Valores[0];
+                            Login.UsuarioApellidos = Valores[1];
                             Response.Redirect("Index.aspx");
                             //Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";

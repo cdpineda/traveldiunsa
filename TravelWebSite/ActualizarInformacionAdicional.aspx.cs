@@ -13,14 +13,14 @@ namespace TravelWebSite
         public string Nombres;
         public string Apellidos;
         public string Correo;
-        public DateTime FechaNacimientoG;
+        public string FechaNacimientoG;
         public string Ciudad;
         public string Telefono;
         public string Celular;
         public string Pasaporte;
-        public DateTime PasaporteFechaVenc;
+        public string PasaporteFechaVenc;
         public string Visa;
-        public DateTime VisaFechaVenc;
+        public string VisaFechaVenc;
         public string Mensaje;
         public string Trama;
         public string Nacionalidad;
@@ -36,7 +36,7 @@ namespace TravelWebSite
 
                 if (Valores[2] != "/  /")
                 {
-                    FechaNacimientoG = Convert.ToDateTime(Valores[2]);
+                    FechaNacimientoG = Valores[2];
                 }
 
                 Ciudad = Valores[3];
@@ -45,14 +45,14 @@ namespace TravelWebSite
                 Pasaporte = Valores[6];
                 if (Valores[7] != "/  /")
                 {
-                    PasaporteFechaVenc = Convert.ToDateTime(Valores[7]);
+                    PasaporteFechaVenc = Valores[7];
                 }
 
                 Visa = Valores[8];
 
                 if (Valores[9] != "/  /")
                 {
-                    VisaFechaVenc = Convert.ToDateTime(Valores[9]);
+                    VisaFechaVenc = Valores[9];
                 }
                 Nacionalidad = Valores[10];
 
@@ -74,6 +74,62 @@ namespace TravelWebSite
 
             }
 
+        }
+        
+        protected void btnFechaNacimiento_Click(object sender, EventArgs e)
+        {
+            if (CalendarFechaNacimiento.Visible)
+            {
+                CalendarFechaNacimiento.Visible = false;
+            }
+            else
+            {
+                CalendarFechaNacimiento.Visible = true;
+            }
+        }
+
+        protected void CalendarNacimiento_SelectionChanged(object sender, EventArgs e)
+        {
+            LbFechaNacimiento.Text = CalendarFechaNacimiento.SelectedDate.ToLongDateString();
+            CalendarFechaNacimiento.Visible = false;
+        }
+
+
+        protected void btnPasaporteFecha_Click(object sender, EventArgs e)
+        {
+            if (CalendarPasaporte.Visible)
+            {
+                CalendarPasaporte.Visible = false;
+            }
+            else
+            {
+                CalendarPasaporte.Visible = true;
+            }
+        }
+
+        protected void CalendarPasaporte_SelectionChanged(object sender, EventArgs e)
+        {
+            LbPasaporteFecVenc.Text = CalendarPasaporte.SelectedDate.ToLongDateString();
+            CalendarPasaporte.Visible = false;
+        }
+
+
+        protected void btnVisaFecha_Click(object sender, EventArgs e)
+        {
+            if (CalendarVisa.Visible)
+            {
+                CalendarVisa.Visible = false;
+            }
+            else
+            {
+                CalendarVisa.Visible = true;
+            }
+        }
+
+        protected void CalendarVisa_SelectionChanged(object sender, EventArgs e)
+        {
+            LbVisaFechVenc.Text = CalendarVisa.SelectedDate.ToLongDateString();
+            CalendarVisa.Visible = false;
         }
 
         protected void LbSubmit_Guardar(object sender, EventArgs e)

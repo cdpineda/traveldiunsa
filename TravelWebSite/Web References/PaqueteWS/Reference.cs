@@ -29,6 +29,22 @@ namespace TravelWebSite.PaqueteWS {
     [System.Web.Services.WebServiceBindingAttribute(Name="PaquetesPopularesWSSoapBinding", Namespace="TravelAdmin")]
     public partial class PaquetesPopularesWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback OBTENERPREGUNTASOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SLIDEROperationCompleted;
+        
+        private System.Threading.SendOrPostCallback HEADERPUBLICIDADOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback HEADERTELEFONOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback GUARDARPREGUNTASOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RECUPERARPREGUNTASROperationCompleted;
+        
+        private System.Threading.SendOrPostCallback RECUPERARVALUEPREGUNTASROperationCompleted;
+        
+        private System.Threading.SendOrPostCallback ACTUALIZARPASSWORDOperationCompleted;
+        
         private System.Threading.SendOrPostCallback TEOFRECEMOSOperationCompleted;
         
         private System.Threading.SendOrPostCallback VERIFICARUSUARIOREDESOperationCompleted;
@@ -38,6 +54,8 @@ namespace TravelWebSite.PaqueteWS {
         private System.Threading.SendOrPostCallback BUSQUEDAPAQUETESOperationCompleted;
         
         private System.Threading.SendOrPostCallback SELECCIONARPAGINACONTENIDOOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback OBTENERNOMBREAPELLIDOOperationCompleted;
         
         private System.Threading.SendOrPostCallback PAGINACONTENIDOOperationCompleted;
         
@@ -106,6 +124,30 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
+        public event OBTENERPREGUNTASCompletedEventHandler OBTENERPREGUNTASCompleted;
+        
+        /// <remarks/>
+        public event SLIDERCompletedEventHandler SLIDERCompleted;
+        
+        /// <remarks/>
+        public event HEADERPUBLICIDADCompletedEventHandler HEADERPUBLICIDADCompleted;
+        
+        /// <remarks/>
+        public event HEADERTELEFONOCompletedEventHandler HEADERTELEFONOCompleted;
+        
+        /// <remarks/>
+        public event GUARDARPREGUNTASCompletedEventHandler GUARDARPREGUNTASCompleted;
+        
+        /// <remarks/>
+        public event RECUPERARPREGUNTASRCompletedEventHandler RECUPERARPREGUNTASRCompleted;
+        
+        /// <remarks/>
+        public event RECUPERARVALUEPREGUNTASRCompletedEventHandler RECUPERARVALUEPREGUNTASRCompleted;
+        
+        /// <remarks/>
+        public event ACTUALIZARPASSWORDCompletedEventHandler ACTUALIZARPASSWORDCompleted;
+        
+        /// <remarks/>
         public event TEOFRECEMOSCompletedEventHandler TEOFRECEMOSCompleted;
         
         /// <remarks/>
@@ -119,6 +161,9 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event SELECCIONARPAGINACONTENIDOCompletedEventHandler SELECCIONARPAGINACONTENIDOCompleted;
+        
+        /// <remarks/>
+        public event OBTENERNOMBREAPELLIDOCompletedEventHandler OBTENERNOMBREAPELLIDOCompleted;
         
         /// <remarks/>
         public event PAGINACONTENIDOCompletedEventHandler PAGINACONTENIDOCompleted;
@@ -161,6 +206,248 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event RECOMENDADOSCompletedEventHandler RECOMENDADOSCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.OBTENERPREGUNTAS", RequestElementName="PaquetesPopularesWS.OBTENERPREGUNTAS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.OBTENERPREGUNTASResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Tramapreguntas")]
+        public string OBTENERPREGUNTAS() {
+            object[] results = this.Invoke("OBTENERPREGUNTAS", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void OBTENERPREGUNTASAsync() {
+            this.OBTENERPREGUNTASAsync(null);
+        }
+        
+        /// <remarks/>
+        public void OBTENERPREGUNTASAsync(object userState) {
+            if ((this.OBTENERPREGUNTASOperationCompleted == null)) {
+                this.OBTENERPREGUNTASOperationCompleted = new System.Threading.SendOrPostCallback(this.OnOBTENERPREGUNTASOperationCompleted);
+            }
+            this.InvokeAsync("OBTENERPREGUNTAS", new object[0], this.OBTENERPREGUNTASOperationCompleted, userState);
+        }
+        
+        private void OnOBTENERPREGUNTASOperationCompleted(object arg) {
+            if ((this.OBTENERPREGUNTASCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.OBTENERPREGUNTASCompleted(this, new OBTENERPREGUNTASCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.SLIDER", RequestElementName="PaquetesPopularesWS.SLIDER", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.SLIDERResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Slider")]
+        public string SLIDER() {
+            object[] results = this.Invoke("SLIDER", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SLIDERAsync() {
+            this.SLIDERAsync(null);
+        }
+        
+        /// <remarks/>
+        public void SLIDERAsync(object userState) {
+            if ((this.SLIDEROperationCompleted == null)) {
+                this.SLIDEROperationCompleted = new System.Threading.SendOrPostCallback(this.OnSLIDEROperationCompleted);
+            }
+            this.InvokeAsync("SLIDER", new object[0], this.SLIDEROperationCompleted, userState);
+        }
+        
+        private void OnSLIDEROperationCompleted(object arg) {
+            if ((this.SLIDERCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SLIDERCompleted(this, new SLIDERCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.HEADERPUBLICIDAD", RequestElementName="PaquetesPopularesWS.HEADERPUBLICIDAD", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.HEADERPUBLICIDADResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Paginacontenidohtml")]
+        public string HEADERPUBLICIDAD() {
+            object[] results = this.Invoke("HEADERPUBLICIDAD", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void HEADERPUBLICIDADAsync() {
+            this.HEADERPUBLICIDADAsync(null);
+        }
+        
+        /// <remarks/>
+        public void HEADERPUBLICIDADAsync(object userState) {
+            if ((this.HEADERPUBLICIDADOperationCompleted == null)) {
+                this.HEADERPUBLICIDADOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHEADERPUBLICIDADOperationCompleted);
+            }
+            this.InvokeAsync("HEADERPUBLICIDAD", new object[0], this.HEADERPUBLICIDADOperationCompleted, userState);
+        }
+        
+        private void OnHEADERPUBLICIDADOperationCompleted(object arg) {
+            if ((this.HEADERPUBLICIDADCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.HEADERPUBLICIDADCompleted(this, new HEADERPUBLICIDADCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.HEADERTELEFONO", RequestElementName="PaquetesPopularesWS.HEADERTELEFONO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.HEADERTELEFONOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Paginacontenidohtml")]
+        public string HEADERTELEFONO() {
+            object[] results = this.Invoke("HEADERTELEFONO", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void HEADERTELEFONOAsync() {
+            this.HEADERTELEFONOAsync(null);
+        }
+        
+        /// <remarks/>
+        public void HEADERTELEFONOAsync(object userState) {
+            if ((this.HEADERTELEFONOOperationCompleted == null)) {
+                this.HEADERTELEFONOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnHEADERTELEFONOOperationCompleted);
+            }
+            this.InvokeAsync("HEADERTELEFONO", new object[0], this.HEADERTELEFONOOperationCompleted, userState);
+        }
+        
+        private void OnHEADERTELEFONOOperationCompleted(object arg) {
+            if ((this.HEADERTELEFONOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.HEADERTELEFONOCompleted(this, new HEADERTELEFONOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.GUARDARPREGUNTAS", RequestElementName="PaquetesPopularesWS.GUARDARPREGUNTAS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.GUARDARPREGUNTASResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
+        public short GUARDARPREGUNTAS(string Usuarioemail, string Usuariopregunta1, string Usuariorespuesta1, string Usuariopregunta2, string Usuariorespuesta2) {
+            object[] results = this.Invoke("GUARDARPREGUNTAS", new object[] {
+                        Usuarioemail,
+                        Usuariopregunta1,
+                        Usuariorespuesta1,
+                        Usuariopregunta2,
+                        Usuariorespuesta2});
+            return ((short)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void GUARDARPREGUNTASAsync(string Usuarioemail, string Usuariopregunta1, string Usuariorespuesta1, string Usuariopregunta2, string Usuariorespuesta2) {
+            this.GUARDARPREGUNTASAsync(Usuarioemail, Usuariopregunta1, Usuariorespuesta1, Usuariopregunta2, Usuariorespuesta2, null);
+        }
+        
+        /// <remarks/>
+        public void GUARDARPREGUNTASAsync(string Usuarioemail, string Usuariopregunta1, string Usuariorespuesta1, string Usuariopregunta2, string Usuariorespuesta2, object userState) {
+            if ((this.GUARDARPREGUNTASOperationCompleted == null)) {
+                this.GUARDARPREGUNTASOperationCompleted = new System.Threading.SendOrPostCallback(this.OnGUARDARPREGUNTASOperationCompleted);
+            }
+            this.InvokeAsync("GUARDARPREGUNTAS", new object[] {
+                        Usuarioemail,
+                        Usuariopregunta1,
+                        Usuariorespuesta1,
+                        Usuariopregunta2,
+                        Usuariorespuesta2}, this.GUARDARPREGUNTASOperationCompleted, userState);
+        }
+        
+        private void OnGUARDARPREGUNTASOperationCompleted(object arg) {
+            if ((this.GUARDARPREGUNTASCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.GUARDARPREGUNTASCompleted(this, new GUARDARPREGUNTASCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.RECUPERARPREGUNTASR", RequestElementName="PaquetesPopularesWS.RECUPERARPREGUNTASR", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.RECUPERARPREGUNTASRResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Tramarp")]
+        public string RECUPERARPREGUNTASR(string Usuarioemail) {
+            object[] results = this.Invoke("RECUPERARPREGUNTASR", new object[] {
+                        Usuarioemail});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RECUPERARPREGUNTASRAsync(string Usuarioemail) {
+            this.RECUPERARPREGUNTASRAsync(Usuarioemail, null);
+        }
+        
+        /// <remarks/>
+        public void RECUPERARPREGUNTASRAsync(string Usuarioemail, object userState) {
+            if ((this.RECUPERARPREGUNTASROperationCompleted == null)) {
+                this.RECUPERARPREGUNTASROperationCompleted = new System.Threading.SendOrPostCallback(this.OnRECUPERARPREGUNTASROperationCompleted);
+            }
+            this.InvokeAsync("RECUPERARPREGUNTASR", new object[] {
+                        Usuarioemail}, this.RECUPERARPREGUNTASROperationCompleted, userState);
+        }
+        
+        private void OnRECUPERARPREGUNTASROperationCompleted(object arg) {
+            if ((this.RECUPERARPREGUNTASRCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RECUPERARPREGUNTASRCompleted(this, new RECUPERARPREGUNTASRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.RECUPERARVALUEPREGUNTASR", RequestElementName="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASR", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Tramarp")]
+        public string RECUPERARVALUEPREGUNTASR(string Usuarioemail) {
+            object[] results = this.Invoke("RECUPERARVALUEPREGUNTASR", new object[] {
+                        Usuarioemail});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RECUPERARVALUEPREGUNTASRAsync(string Usuarioemail) {
+            this.RECUPERARVALUEPREGUNTASRAsync(Usuarioemail, null);
+        }
+        
+        /// <remarks/>
+        public void RECUPERARVALUEPREGUNTASRAsync(string Usuarioemail, object userState) {
+            if ((this.RECUPERARVALUEPREGUNTASROperationCompleted == null)) {
+                this.RECUPERARVALUEPREGUNTASROperationCompleted = new System.Threading.SendOrPostCallback(this.OnRECUPERARVALUEPREGUNTASROperationCompleted);
+            }
+            this.InvokeAsync("RECUPERARVALUEPREGUNTASR", new object[] {
+                        Usuarioemail}, this.RECUPERARVALUEPREGUNTASROperationCompleted, userState);
+        }
+        
+        private void OnRECUPERARVALUEPREGUNTASROperationCompleted(object arg) {
+            if ((this.RECUPERARVALUEPREGUNTASRCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RECUPERARVALUEPREGUNTASRCompleted(this, new RECUPERARVALUEPREGUNTASRCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.ACTUALIZARPASSWORD", RequestElementName="PaquetesPopularesWS.ACTUALIZARPASSWORD", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.ACTUALIZARPASSWORDResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
+        public short ACTUALIZARPASSWORD(string Usuarioemail, string Usuariopassword) {
+            object[] results = this.Invoke("ACTUALIZARPASSWORD", new object[] {
+                        Usuarioemail,
+                        Usuariopassword});
+            return ((short)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ACTUALIZARPASSWORDAsync(string Usuarioemail, string Usuariopassword) {
+            this.ACTUALIZARPASSWORDAsync(Usuarioemail, Usuariopassword, null);
+        }
+        
+        /// <remarks/>
+        public void ACTUALIZARPASSWORDAsync(string Usuarioemail, string Usuariopassword, object userState) {
+            if ((this.ACTUALIZARPASSWORDOperationCompleted == null)) {
+                this.ACTUALIZARPASSWORDOperationCompleted = new System.Threading.SendOrPostCallback(this.OnACTUALIZARPASSWORDOperationCompleted);
+            }
+            this.InvokeAsync("ACTUALIZARPASSWORD", new object[] {
+                        Usuarioemail,
+                        Usuariopassword}, this.ACTUALIZARPASSWORDOperationCompleted, userState);
+        }
+        
+        private void OnACTUALIZARPASSWORDOperationCompleted(object arg) {
+            if ((this.ACTUALIZARPASSWORDCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ACTUALIZARPASSWORDCompleted(this, new ACTUALIZARPASSWORDCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.TEOFRECEMOS", RequestElementName="PaquetesPopularesWS.TEOFRECEMOS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.TEOFRECEMOSResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -311,6 +598,36 @@ namespace TravelWebSite.PaqueteWS {
             if ((this.SELECCIONARPAGINACONTENIDOCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SELECCIONARPAGINACONTENIDOCompleted(this, new SELECCIONARPAGINACONTENIDOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.OBTENERNOMBREAPELLIDO", RequestElementName="PaquetesPopularesWS.OBTENERNOMBREAPELLIDO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.OBTENERNOMBREAPELLIDOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Trama")]
+        public string OBTENERNOMBREAPELLIDO(string Usuarioemail) {
+            object[] results = this.Invoke("OBTENERNOMBREAPELLIDO", new object[] {
+                        Usuarioemail});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void OBTENERNOMBREAPELLIDOAsync(string Usuarioemail) {
+            this.OBTENERNOMBREAPELLIDOAsync(Usuarioemail, null);
+        }
+        
+        /// <remarks/>
+        public void OBTENERNOMBREAPELLIDOAsync(string Usuarioemail, object userState) {
+            if ((this.OBTENERNOMBREAPELLIDOOperationCompleted == null)) {
+                this.OBTENERNOMBREAPELLIDOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnOBTENERNOMBREAPELLIDOOperationCompleted);
+            }
+            this.InvokeAsync("OBTENERNOMBREAPELLIDO", new object[] {
+                        Usuarioemail}, this.OBTENERNOMBREAPELLIDOOperationCompleted, userState);
+        }
+        
+        private void OnOBTENERNOMBREAPELLIDOOperationCompleted(object arg) {
+            if ((this.OBTENERNOMBREAPELLIDOCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.OBTENERNOMBREAPELLIDOCompleted(this, new OBTENERNOMBREAPELLIDOCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -615,8 +932,10 @@ namespace TravelWebSite.PaqueteWS {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.REGISTROUSUARIO", RequestElementName="PaquetesPopularesWS.REGISTROUSUARIO", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.REGISTROUSUARIOResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
-        public short REGISTROUSUARIO(string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
+        public short REGISTROUSUARIO(string Usuarionombre, string Usuarioapellidos, string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
             object[] results = this.Invoke("REGISTROUSUARIO", new object[] {
+                        Usuarionombre,
+                        Usuarioapellidos,
                         Usuariopassword,
                         Usuarioemail,
                         Usuariotipologin});
@@ -624,16 +943,18 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
-        public void REGISTROUSUARIOAsync(string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
-            this.REGISTROUSUARIOAsync(Usuariopassword, Usuarioemail, Usuariotipologin, null);
+        public void REGISTROUSUARIOAsync(string Usuarionombre, string Usuarioapellidos, string Usuariopassword, string Usuarioemail, string Usuariotipologin) {
+            this.REGISTROUSUARIOAsync(Usuarionombre, Usuarioapellidos, Usuariopassword, Usuarioemail, Usuariotipologin, null);
         }
         
         /// <remarks/>
-        public void REGISTROUSUARIOAsync(string Usuariopassword, string Usuarioemail, string Usuariotipologin, object userState) {
+        public void REGISTROUSUARIOAsync(string Usuarionombre, string Usuarioapellidos, string Usuariopassword, string Usuarioemail, string Usuariotipologin, object userState) {
             if ((this.REGISTROUSUARIOOperationCompleted == null)) {
                 this.REGISTROUSUARIOOperationCompleted = new System.Threading.SendOrPostCallback(this.OnREGISTROUSUARIOOperationCompleted);
             }
             this.InvokeAsync("REGISTROUSUARIO", new object[] {
+                        Usuarionombre,
+                        Usuarioapellidos,
                         Usuariopassword,
                         Usuarioemail,
                         Usuariotipologin}, this.REGISTROUSUARIOOperationCompleted, userState);
@@ -648,12 +969,12 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.INICIARSESION", RequestElementName="PaquetesPopularesWS.INICIARSESION", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.INICIARSESIONResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
-        [return: System.Xml.Serialization.XmlElementAttribute("Valido")]
-        public short INICIARSESION(string Usuarioemail, string Usuariopassword) {
+        [return: System.Xml.Serialization.XmlElementAttribute("Trama")]
+        public string INICIARSESION(string Usuarioemail, string Usuariopassword) {
             object[] results = this.Invoke("INICIARSESION", new object[] {
                         Usuarioemail,
                         Usuariopassword});
-            return ((short)(results[0]));
+            return ((string)(results[0]));
         }
         
         /// <remarks/>
@@ -774,6 +1095,214 @@ namespace TravelWebSite.PaqueteWS {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void OBTENERPREGUNTASCompletedEventHandler(object sender, OBTENERPREGUNTASCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class OBTENERPREGUNTASCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal OBTENERPREGUNTASCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void SLIDERCompletedEventHandler(object sender, SLIDERCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SLIDERCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SLIDERCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void HEADERPUBLICIDADCompletedEventHandler(object sender, HEADERPUBLICIDADCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class HEADERPUBLICIDADCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal HEADERPUBLICIDADCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void HEADERTELEFONOCompletedEventHandler(object sender, HEADERTELEFONOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class HEADERTELEFONOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal HEADERTELEFONOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void GUARDARPREGUNTASCompletedEventHandler(object sender, GUARDARPREGUNTASCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class GUARDARPREGUNTASCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal GUARDARPREGUNTASCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public short Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((short)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void RECUPERARPREGUNTASRCompletedEventHandler(object sender, RECUPERARPREGUNTASRCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RECUPERARPREGUNTASRCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RECUPERARPREGUNTASRCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void RECUPERARVALUEPREGUNTASRCompletedEventHandler(object sender, RECUPERARVALUEPREGUNTASRCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RECUPERARVALUEPREGUNTASRCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RECUPERARVALUEPREGUNTASRCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void ACTUALIZARPASSWORDCompletedEventHandler(object sender, ACTUALIZARPASSWORDCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ACTUALIZARPASSWORDCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ACTUALIZARPASSWORDCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public short Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((short)(this.results[0]));
+            }
         }
     }
     
@@ -903,6 +1432,32 @@ namespace TravelWebSite.PaqueteWS {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((int)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void OBTENERNOMBREAPELLIDOCompletedEventHandler(object sender, OBTENERNOMBREAPELLIDOCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class OBTENERNOMBREAPELLIDOCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal OBTENERNOMBREAPELLIDOCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }
@@ -1211,10 +1766,10 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
-        public short Result {
+        public string Result {
             get {
                 this.RaiseExceptionIfNecessary();
-                return ((short)(this.results[0]));
+                return ((string)(this.results[0]));
             }
         }
     }

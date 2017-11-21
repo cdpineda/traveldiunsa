@@ -14,6 +14,8 @@ namespace TravelWebSite
         protected string correoRegistro;
         public string Mensaje;
         public static string UsuarioCorreo = "";
+        public static string UsuarioNombres = "";
+        public static string UsuarioApellidos = "";
         public int EstadoGM = 2;
         public PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
         protected void Page_Load(object sender, EventArgs e)
@@ -45,11 +47,16 @@ namespace TravelWebSite
             {
                 string vPassword = TxtPassword.Text;
                 string vCorreo = TxtCorreo.Text;
-                int Estado = paquetesWS.INICIARSESION(vCorreo, vPassword);
-                switch (Estado)
+                string trama = paquetesWS.INICIARSESION(vCorreo, vPassword);
+
+                string[] valores = trama.Split('|');
+                int estado = Int32.Parse(valores[0]);
+                switch (estado)
                 {
                     case 0:
                         UsuarioCorreo = vCorreo;
+                        UsuarioNombres = valores[1];
+                        UsuarioApellidos = valores[2];
                         Response.Redirect("Index.aspx");
                         break;
                     case 1:
@@ -61,6 +68,12 @@ namespace TravelWebSite
                     case 2:
                         Console.WriteLine("<script>function alerta(){alertify.alert('<b>Blog Reaccion Estudio</b> probando Alertify', function() {});}</script>");
                         Mensaje = "El correo electrónico y la contraseña que ingresaste no existen en nuestros registros. Por favor, registrate o intenta con otro correo electrónico.";
+                        MensajeError.Attributes["class"] = "show";
+                        TxtCorreo.Focus();
+                        break;
+                    case 3:
+                        Console.WriteLine("<script>function alerta(){alertify.alert('<b>Blog Reaccion Estudio</b> probando Alertify', function() {});}</script>");
+                        Mensaje = "El correo electrónico está registrado con Facebook o Google +. Por favor, inicie sesión a través de dichas redes sociales.";
                         MensajeError.Attributes["class"] = "show";
                         TxtCorreo.Focus();
                         break;
@@ -127,16 +140,21 @@ namespace TravelWebSite
                 {
                     if (correoRegistro != "")
                     {
-                        int Estado = paquetesWS.REGISTROUSUARIO("", correoRegistro, "FB");
+                        int Estado = paquetesWS.REGISTROUSUARIO("", "", "", correoRegistro, "FB");
 
                         if (Estado == 0)
                         {
                             UsuarioCorreo = correoRegistro;
-                            Response.Redirect("Index.aspx");
+                            Response.Redirect("ActualizarInformacionAdicional.aspx");
                         }
                         else
                         {
                             UsuarioCorreo = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(UsuarioCorreo);
+                            string[] Valores = trama.Split('|');
+                            UsuarioNombres = Valores[0];
+                            UsuarioApellidos = Valores[1];
+
                             Response.Redirect("Index.aspx");
                             //Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";
@@ -181,16 +199,20 @@ namespace TravelWebSite
                 {
                     if (correoRegistro != "")
                     {
-                        int Estado = paquetesWS.REGISTROUSUARIO("", correoRegistro, "G+");
+                        int Estado = paquetesWS.REGISTROUSUARIO("","","", correoRegistro, "G+");
 
                         if (Estado == 0)
                         {
                             UsuarioCorreo = correoRegistro;
-                            Response.Redirect("Index.aspx");
+                            Response.Redirect("ActualizarInformacionAdicional.aspx");
                         }
                         if (Estado == 1)
                         {
                             UsuarioCorreo = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(UsuarioCorreo);
+                            string[] Valores = trama.Split('|');
+                            UsuarioNombres = Valores[0];
+                            UsuarioApellidos = Valores[1];
                             Response.Redirect("Index.aspx");
                             // Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";

@@ -23,7 +23,7 @@
         <div>
             <h2>Crear una cuenta</h2>
         </div>                                    
-        <div class="row">
+        <div class="row FondoR">
             <section id="MensajeError" runat="server" class="hide">
                 <div class="col-sm-12">
                     <div class="form-group">
@@ -42,7 +42,30 @@
                 </div>
                 <div class="col-md-2"></div>
             </div>
-                                  
+
+            <div class="col-sm-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Nombres</label>
+                        <asp:TextBox ID="txtNombres" class="form-control" placeholder="Ingrese sus nombres" required="" runat="server"></asp:TextBox>
+                    </div>
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="col-md-2"></div>
+                <div class="col-md-8">
+                    <div class="form-group">
+                        <label>Apellidos</label>
+                        <asp:TextBox ID="txtApellidos" class="form-control" placeholder="Ingrese sus apellidos" required="" runat="server"></asp:TextBox>
+                    </div>  
+                </div>
+                <div class="col-md-2"></div>
+            </div>
+
+                                
             <div class="col-sm-12">
                 <div class="col-md-2"></div>
                 <div class="col-md-8">
@@ -66,7 +89,7 @@
             </div>
                                   
             <div class="col-sm-12" align="center">
-                <asp:LinkButton ID="LbInsertUsuario" runat="server" class="thm-btn-register" OnClick="LbSubmit_Registrar"><strong>Registrarse</strong></asp:LinkButton>
+                <asp:LinkButton ID="LbInsertUsuario" runat="server" class="thm-btn-register" OnClick="LbSubmit_Registrar">Registrarse</asp:LinkButton>
             </div>
         </div>
         </div>
@@ -77,9 +100,9 @@
             <br/>
             <h4>¿Ya tienes una cuenta?</h4>
         </div>
-        <div class="row Fondo">
+        <div class="row FondoI">
             <div class="col-sm-12" align="center">
-                <asp:LinkButton ID="LbIniciarSesion" runat="server" class="thm-btn-crearcuenta" OnClick="LbSubmit_IniciarSesion"><strong>Iniciar Sesión</strong></asp:LinkButton>
+                <asp:LinkButton ID="LbIniciarSesion" runat="server" class="thm-btn-crearcuenta" OnClick="LbSubmit_IniciarSesion">Iniciar Sesión</asp:LinkButton>
             </div>
             <div class="col-sm-12">
                 <div class="col-md-5"><hr/></div>
@@ -103,10 +126,10 @@
             </div>
         </div>
         <br/>
-        <div class="row Fondo">
+        <div class="row FondoI">
             <asp:Literal ID="LtTeOfrecemos" runat="server"></asp:Literal>
             <!--<div class="col-sm-12">
-                <h5 style="text-align:center"><strong>Te Ofrecemos:</strong></h5>
+                <h5 style="text-align:center">Te Ofrecemos:</h5>
                 <hr />
                 <ul>
                     <li type="disc">Vacaciones personalizadas.</li>
@@ -188,7 +211,7 @@
       document.getElementById("<%=CorreoFBASP.ClientID%>").value = response.email;
       document.getElementById("<%=NombreFBASP.ClientID%>").value = response.name;
       // Registramos al usuario
-        document.getElementById("dialogFB").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + response.email + "</strong></span></div></form></div>";
+        document.getElementById("dialogFB").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group FondoPC'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + response.email + "</strong></span></div></form></div>";
         // Registramos al usuario
         document.getElementById('PopupRegistroFB').click();
     },
@@ -235,7 +258,7 @@
             if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
         }
         document.getElementById("<%=CorreoGmailASP.ClientID%>").value = primaryEmail;
-        document.getElementById("dialog").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + primaryEmail + "</strong></span></div></form></div>";
+        document.getElementById("dialog").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group FondoPC'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + primaryEmail + "</strong></span></div></form></div>";
         // Registramos al usuario
         document.getElementById('PopupRegistro').click();
        // __doPostBack('RegistrarGM', '');
@@ -256,13 +279,13 @@ $('#PopupRegistro').click(function (e) {
    modal: true,
    draggable: false,
    resizable: false,
-   title: "Registro ",
+   title: "Confirmar Registro",
    width: 500,
    height: 300,
    show : "slide",
    hide : "puff",
   buttons: {
-   "Registrarse": function () {
+      "Continuar": function () {
        __doPostBack('RegistrarGM', '');
        document.getElementById("dialog").className = "hide";
        $(this).dialog("destroy");
@@ -282,13 +305,13 @@ $(document).ready(function () {
             modal: true,
             draggable: false,
             resizable: false,
-            title: "Registro ",
+            title: "Confirmar Registro",
             width: 500,
             height: 300,
             show: "slide",
             hide: "puff",
             buttons: {
-                "Registrarse": function () {
+                "Continuar": function () {
                     __doPostBack('RegistrarFB', '');
                     document.getElementById("dialogFB").className = "hide";
                     $(this).dialog("destroy");
@@ -304,16 +327,23 @@ $(document).ready(function () {
 /*Para cambiar el fondo de la cabecera*/
 .ui-dialog .ui-widget-header
 {
-background: #ff9400;
+background: #ff9500;
 }
 
 /*Para cambiar el contenido de la cabecera, tamaño de fuente, color de fuente, ...*/
 .ui-dialog .ui-dialog-titlebar
 {
 color: #FFFFFF;
-font-family: arial;
+font-family: 'Lato';
 }
 
+.ui-dialog-buttonset {
+   color: #004d9c;
+}
+
+.ui-widget-content{
+    border: 1px solid #ff9500;
+}
 </style>
 
 <br />

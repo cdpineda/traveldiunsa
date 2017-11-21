@@ -75,15 +75,44 @@ Creation date: 01/12/2016 07:42
 .flaticon-wifi:before { content: "\f12f"; }
 
 
-/*
-Iniciar Sesión
-*/
+
 .Fondo{ 
     padding: 20px;
     font-size: 14px;
     background-color: #fff;
     border: 1px solid #d8dee2;
 }
+
+/*
+Iniciar Sesión
+*/
+.FondoI{ 
+    padding: 20px;
+    font-size: 13px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    font-family: "Lato";
+    color: #004d9c;
+}
+
+/*
+Registrarse
+*/
+.FondoR{ 
+    padding: 20px;
+    font-size: 13px;
+    font-family: "Lato";
+    color: #004d9c;
+}
+
+/*
+PopupConfirmacion
+*/
+.FondoPC{ 
+    font-family: "Lato";
+    color: #004d9c;
+}
+
 
 .Logo-InicioSesion{
     width: 60%;

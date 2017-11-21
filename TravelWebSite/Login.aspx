@@ -22,12 +22,11 @@
                             <div class="col-sm-8">
                                 <br>
                                 <div align="center">
-                                    <img class="Logo-InicioSesion" src="assets/images/logo-traveldiunsa.png">
-                                    <h2>Iniciar Sesión</h2>
+                                    <h2>Acceder</h2>
                                 </div>
                             </div>
                             <div class="col-sm-2"></div>
-                            <div class="row Fondo">
+                            <div class="row FondoI">
                                 <section id="MensajeError" runat="server" class="hide">
                                     <div class="col-sm-12">
                                         <div class="form-group">
@@ -49,11 +48,18 @@
                                 </div>
                                 <div class="col-sm-12">
                                     <div class="col-md-6" align="center">
-                                        <asp:LinkButton ID="LbIniciarSesion" runat="server" class="thm-btn" OnClick="LbSubmit_Click"><strong>Iniciar Sesión</strong></asp:LinkButton>
+                                        <asp:LinkButton ID="LbIniciarSesion" runat="server" class="thm-btn" OnClick="LbSubmit_Click">INICIAR SESIÓN</asp:LinkButton>
                                     </div>
                                     <div class="col-md-6" align="center">
-                                        <asp:LinkButton ID="LbRegistrarse" runat="server" class="thm-btn-crearcuenta" OnClick="LbSubmit_ClickRegistrar"><strong>Crear Cuenta Gratis</strong></asp:LinkButton>
+                                        <asp:LinkButton ID="LbRegistrarse" runat="server" class="thm-btn-crearcuenta" OnClick="LbSubmit_ClickRegistrar">CREAR CUENTA GRATIS</asp:LinkButton>
                                     </div>
+                                </div>
+
+                                <div class="col-sm-12">
+                                    <br />
+                                    <div class="col-md-2" align="center"></div>
+                                    <div class="col-md-8" align="center"><a href="RPCorreo.aspx">¿Has olvidado tu contraseña?</a></div>
+                                    <div class="col-md-2" align="center"></div>
                                 </div>
 
                                 <div class="col-sm-12" align="center"><br /></div>
@@ -157,7 +163,7 @@
     FB.api('/me?fields=id,name,email,permissions', function(response) {
       document.getElementById("<%=CorreoFBASP.ClientID%>").value = response.email;
         document.getElementById("<%=NombreFBASP.ClientID%>").value = response.name;
-        document.getElementById("dialogFB").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + response.email + "</strong></span></div></form></div>";
+        document.getElementById("dialogFB").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group FondoPC'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + response.email + "</strong></span></div></form></div>";
       // Registramos al usuario
         document.getElementById('PopupRegistroFB').click();
     },
@@ -204,7 +210,7 @@
             if (resp.emails[i].type === 'account') primaryEmail = resp.emails[i].value;
         }
         document.getElementById("<%=CorreoGmailASP.ClientID%>").value = primaryEmail;
-        document.getElementById("dialog").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + primaryEmail + "</strong></span></div></form></div>";
+        document.getElementById("dialog").innerHTML = "<div class='contact-form'><form><div align='center'><h4>Registrate y conectate a Travel Diunsa</h4></div><div class='form-group FondoPC'><br/><span>Correo electrónico: <strong style='margin-left: 31%'>" + primaryEmail + "</strong></span></div></form></div>";
         //var Estado = "paquetesWS.VERIFICARUSUARIOREDES(correoGmail)%>";
         //alert(primaryEmail);
         //alert("correoGmail%>");
@@ -238,13 +244,13 @@ $('#PopupRegistro').click(function (e) {
    modal: true,
    draggable: false,
    resizable: false,
-   title: "Registro ",
+   title: "Confirmar Registro",
    width: 500,
    height: 300,
    show : "slide",
    hide : "puff",
   buttons: {
-   "Registrarse": function () {
+      "Continuar": function () {
        __doPostBack('RegistrarGM', '');
        document.getElementById("dialog").className = "hide";
        $(this).dialog("destroy");
@@ -264,13 +270,13 @@ $(document).ready(function () {
             modal: true,
             draggable: false,
             resizable: false,
-            title: "Registro ",
+            title: "Confirmar Registro",
             width: 500,
             height: 300,
             show: "slide",
             hide: "puff",
             buttons: {
-                "Registrarse": function () {
+                "Continuar": function () {
                     __doPostBack('RegistrarFB', '');
                     document.getElementById("dialogFB").className = "hide";
                     $(this).dialog("destroy");
@@ -286,14 +292,22 @@ $(document).ready(function () {
 /*Para cambiar el fondo de la cabecera*/
 .ui-dialog .ui-widget-header
 {
-background: #ff9400;
+background: #ff9500;
 }
 
 /*Para cambiar el contenido de la cabecera, tamaño de fuente, color de fuente, ...*/
 .ui-dialog .ui-dialog-titlebar
 {
 color: #FFFFFF;
-font-family: arial;
+font-family: 'Lato';
+}
+
+.ui-dialog-buttonset {
+   color: #004d9c;
+}
+
+.ui-widget-content{
+    border: 1px solid #ff9500;
 }
 </style>
 </asp:Content>

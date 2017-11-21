@@ -108,6 +108,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="ActualizarInformacionAdicional.aspx" />
+    <Content Include="ActualizarPassword.aspx" />
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
@@ -281,7 +282,10 @@
     <Content Include="assets\owl-carousel\owl.carousel.min.js" />
     <Content Include="assets\owl-carousel\owl.theme.css" />
     <Content Include="assets\owl-carousel\owl.transitions.css" />
+    <Content Include="assets\style.css" />
     <Content Include="Busqueda.aspx" />
+    <Content Include="ConfigurarPreguntas.aspx" />
+    <Content Include="Contactenos.aspx" />
     <Content Include="Contacto.aspx" />
     <Content Include="Contenido.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -346,8 +350,12 @@
     <Content Include="InformacionAdicional.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Paquete.aspx" />
+    <Content Include="Preguntas.aspx" />
+    <Content Include="PreguntasConfiguradas.aspx" />
+    <Content Include="RecuperarPassword.aspx" />
     <Content Include="Registrarse.aspx" />
     <Content Include="Registro.aspx" />
+    <Content Include="RPCorreo.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -407,6 +415,13 @@
     <Compile Include="ActualizarInformacionAdicional.aspx.designer.cs">
       <DependentUpon>ActualizarInformacionAdicional.aspx</DependentUpon>
     </Compile>
+    <Compile Include="ActualizarPassword.aspx.cs">
+      <DependentUpon>ActualizarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ActualizarPassword.aspx.designer.cs">
+      <DependentUpon>ActualizarPassword.aspx</DependentUpon>
+    </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Busqueda.aspx.cs">
@@ -415,6 +430,20 @@
     </Compile>
     <Compile Include="Busqueda.aspx.designer.cs">
       <DependentUpon>Busqueda.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConfigurarPreguntas.aspx.cs">
+      <DependentUpon>ConfigurarPreguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConfigurarPreguntas.aspx.designer.cs">
+      <DependentUpon>ConfigurarPreguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Contactenos.aspx.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Contactenos.aspx.designer.cs">
+      <DependentUpon>Contactenos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contacto.aspx.cs">
       <DependentUpon>Contacto.aspx</DependentUpon>
@@ -476,11 +505,32 @@
     <Compile Include="Paquete.aspx.designer.cs">
       <DependentUpon>Paquete.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Preguntas.aspx.cs">
+      <DependentUpon>Preguntas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Preguntas.aspx.designer.cs">
+      <DependentUpon>Preguntas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PreguntasConfiguradas.aspx.cs">
+      <DependentUpon>PreguntasConfiguradas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PreguntasConfiguradas.aspx.designer.cs">
+      <DependentUpon>PreguntasConfiguradas.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="RecuperarPassword.aspx.cs">
+      <DependentUpon>RecuperarPassword.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RecuperarPassword.aspx.designer.cs">
+      <DependentUpon>RecuperarPassword.aspx</DependentUpon>
     </Compile>
     <Compile Include="Registrarse.aspx.cs">
       <DependentUpon>Registrarse.aspx</DependentUpon>
@@ -495,6 +545,13 @@
     </Compile>
     <Compile Include="Registro.aspx.designer.cs">
       <DependentUpon>Registro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="RPCorreo.aspx.cs">
+      <DependentUpon>RPCorreo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="RPCorreo.aspx.designer.cs">
+      <DependentUpon>RPCorreo.aspx</DependentUpon>
     </Compile>
     <Compile Include="TravelSite.Master.cs">
       <DependentUpon>TravelSite.Master</DependentUpon>

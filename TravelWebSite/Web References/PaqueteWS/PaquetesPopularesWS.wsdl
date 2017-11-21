@@ -2,6 +2,115 @@
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="TravelAdmin" xmlns:wsdlns="TravelAdmin" name="PaquetesPopularesWS" targetNamespace="TravelAdmin" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="TravelAdmin">
+      <xsd:element name="PaquetesPopularesWS.OBTENERPREGUNTAS">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.OBTENERPREGUNTASResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tramapreguntas" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.SLIDER">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.SLIDERResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Slider" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.HEADERPUBLICIDAD">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.HEADERPUBLICIDADResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Paginacontenidohtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.HEADERTELEFONO">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.HEADERTELEFONOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Paginacontenidohtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.GUARDARPREGUNTAS">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopregunta1" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariorespuesta1" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopregunta2" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariorespuesta2" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.GUARDARPREGUNTASResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Valido" type="xsd:short" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.RECUPERARPREGUNTASR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.RECUPERARPREGUNTASRResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tramarp" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASR">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Tramarp" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.ACTUALIZARPASSWORD">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopassword" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.ACTUALIZARPASSWORDResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Valido" type="xsd:short" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.TEOFRECEMOS">
         <xsd:complexType>
           <xsd:sequence>
@@ -70,6 +179,20 @@
         <xsd:complexType>
           <xsd:sequence>
             <xsd:element minOccurs="1" maxOccurs="1" name="Paginacontid" type="xsd:int" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.OBTENERNOMBREAPELLIDO">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.OBTENERNOMBREAPELLIDOResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Trama" type="xsd:string" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -210,6 +333,8 @@
       <xsd:element name="PaquetesPopularesWS.REGISTROUSUARIO">
         <xsd:complexType>
           <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarionombre" type="xsd:string" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioapellidos" type="xsd:string" />
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuariopassword" type="xsd:string" />
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuarioemail" type="xsd:string" />
             <xsd:element minOccurs="1" maxOccurs="1" name="Usuariotipologin" type="xsd:string" />
@@ -234,7 +359,7 @@
       <xsd:element name="PaquetesPopularesWS.INICIARSESIONResponse">
         <xsd:complexType>
           <xsd:sequence>
-            <xsd:element minOccurs="1" maxOccurs="1" name="Valido" type="xsd:short" />
+            <xsd:element minOccurs="1" maxOccurs="1" name="Trama" type="xsd:string" />
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
@@ -277,6 +402,54 @@
       </xsd:element>
     </xsd:schema>
   </types>
+  <message name="PaquetesPopularesWS.OBTENERPREGUNTASSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTAS" />
+  </message>
+  <message name="PaquetesPopularesWS.OBTENERPREGUNTASSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTASResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.SLIDERSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.SLIDER" />
+  </message>
+  <message name="PaquetesPopularesWS.SLIDERSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.SLIDERResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.HEADERPUBLICIDADSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDAD" />
+  </message>
+  <message name="PaquetesPopularesWS.HEADERPUBLICIDADSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDADResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.HEADERTELEFONOSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.HEADERTELEFONO" />
+  </message>
+  <message name="PaquetesPopularesWS.HEADERTELEFONOSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.HEADERTELEFONOResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.GUARDARPREGUNTASSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.GUARDARPREGUNTAS" />
+  </message>
+  <message name="PaquetesPopularesWS.GUARDARPREGUNTASSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.GUARDARPREGUNTASResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.RECUPERARPREGUNTASRSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECUPERARPREGUNTASR" />
+  </message>
+  <message name="PaquetesPopularesWS.RECUPERARPREGUNTASRSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECUPERARPREGUNTASRResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECUPERARVALUEPREGUNTASR" />
+  </message>
+  <message name="PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.ACTUALIZARPASSWORDSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.ACTUALIZARPASSWORD" />
+  </message>
+  <message name="PaquetesPopularesWS.ACTUALIZARPASSWORDSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.ACTUALIZARPASSWORDResponse" />
+  </message>
   <message name="PaquetesPopularesWS.TEOFRECEMOSSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.TEOFRECEMOS" />
   </message>
@@ -306,6 +479,12 @@
   </message>
   <message name="PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOResponse" />
+  </message>
+  <message name="PaquetesPopularesWS.OBTENERNOMBREAPELLIDOSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTENERNOMBREAPELLIDO" />
+  </message>
+  <message name="PaquetesPopularesWS.OBTENERNOMBREAPELLIDOSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTENERNOMBREAPELLIDOResponse" />
   </message>
   <message name="PaquetesPopularesWS.PAGINACONTENIDOSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.PAGINACONTENIDO" />
@@ -392,6 +571,38 @@
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECOMENDADOSResponse" />
   </message>
   <portType name="PaquetesPopularesWSSoapPort">
+    <operation name="OBTENERPREGUNTAS">
+      <input message="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTASSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTASSoapOut" />
+    </operation>
+    <operation name="SLIDER">
+      <input message="wsdlns:PaquetesPopularesWS.SLIDERSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.SLIDERSoapOut" />
+    </operation>
+    <operation name="HEADERPUBLICIDAD">
+      <input message="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDADSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDADSoapOut" />
+    </operation>
+    <operation name="HEADERTELEFONO">
+      <input message="wsdlns:PaquetesPopularesWS.HEADERTELEFONOSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.HEADERTELEFONOSoapOut" />
+    </operation>
+    <operation name="GUARDARPREGUNTAS">
+      <input message="wsdlns:PaquetesPopularesWS.GUARDARPREGUNTASSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.GUARDARPREGUNTASSoapOut" />
+    </operation>
+    <operation name="RECUPERARPREGUNTASR">
+      <input message="wsdlns:PaquetesPopularesWS.RECUPERARPREGUNTASRSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.RECUPERARPREGUNTASRSoapOut" />
+    </operation>
+    <operation name="RECUPERARVALUEPREGUNTASR">
+      <input message="wsdlns:PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.RECUPERARVALUEPREGUNTASRSoapOut" />
+    </operation>
+    <operation name="ACTUALIZARPASSWORD">
+      <input message="wsdlns:PaquetesPopularesWS.ACTUALIZARPASSWORDSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.ACTUALIZARPASSWORDSoapOut" />
+    </operation>
     <operation name="TEOFRECEMOS">
       <input message="wsdlns:PaquetesPopularesWS.TEOFRECEMOSSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.TEOFRECEMOSSoapOut" />
@@ -411,6 +622,10 @@
     <operation name="SELECCIONARPAGINACONTENIDO">
       <input message="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.SELECCIONARPAGINACONTENIDOSoapOut" />
+    </operation>
+    <operation name="OBTENERNOMBREAPELLIDO">
+      <input message="wsdlns:PaquetesPopularesWS.OBTENERNOMBREAPELLIDOSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.OBTENERNOMBREAPELLIDOSoapOut" />
     </operation>
     <operation name="PAGINACONTENIDO">
       <input message="wsdlns:PaquetesPopularesWS.PAGINACONTENIDOSoapIn" />
@@ -471,6 +686,78 @@
   </portType>
   <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="OBTENERPREGUNTAS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.OBTENERPREGUNTAS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="SLIDER">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.SLIDER" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HEADERPUBLICIDAD">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.HEADERPUBLICIDAD" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="HEADERTELEFONO">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.HEADERTELEFONO" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="GUARDARPREGUNTAS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.GUARDARPREGUNTAS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RECUPERARPREGUNTASR">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.RECUPERARPREGUNTASR" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="RECUPERARVALUEPREGUNTASR">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.RECUPERARVALUEPREGUNTASR" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ACTUALIZARPASSWORD">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.ACTUALIZARPASSWORD" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="TEOFRECEMOS">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.TEOFRECEMOS" />
       <input>
@@ -509,6 +796,15 @@
     </operation>
     <operation name="SELECCIONARPAGINACONTENIDO">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.SELECCIONARPAGINACONTENIDO" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="OBTENERNOMBREAPELLIDO">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.OBTENERNOMBREAPELLIDO" />
       <input>
         <soap:body use="literal" />
       </input>

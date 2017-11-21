@@ -4,7 +4,7 @@
     <!-- booking -->
     <div class="container boking-inner">
         <div class="row">
-            <div class="col-sm-12">
+            <div class="col-sm-5">
                 <div class="panel1">
                     <div class="panel1-heading">
                         <ul class="nav nav-tabs">
@@ -34,7 +34,6 @@
                                             </div>
                                             <div class="col-xs-6 col-sm-4 col-md-6 hidden-sm panel-padding">
                                                 <br/>
-                                                <br/>
                                                 <label>Cuartos</label>
                                                 <!-- filters select -->
                                                 <div class="select-filters">
@@ -47,7 +46,6 @@
                                                 </div>
                                             </div>
                                             <div class="col-xs-6 col-sm-4 col-md-6 hidden-sm panel-padding">
-                                                <br/>
                                                 <br/>
                                                 <label>Personas</label>
                                                 <!-- filters select -->
@@ -62,7 +60,6 @@
                                             </div>
                                             <div class="col-xs-6 col-sm-4 col-md-2 hidden-sm panel-padding">
                                                 <br/>
-                                                <br/>
                                                 <label>Niños</label>
                                                 <!-- filters select -->
                                                 <div class="select-filters">
@@ -76,22 +73,20 @@
                                             </div>
                                             <div class="col-xs-6 col-sm-4 col-md-2 panel-padding">
                                                 <br/>
-                                                <br/>
                                                 <label>Días</label>
                                                 <!-- filters select -->
                                                 <div class="select-filters">
                                                     <select name="day" id="day">
-                                                        <option value="" selected="">1 día</option>
-                                                        <option value="2">2 días</option>
-                                                        <option value="3">3 días</option>
-                                                        <option value="4">4 días</option>
+                                                        <option value="" selected="">1</option>
+                                                        <option value="2">2</option>
+                                                        <option value="3">3</option>
+                                                        <option value="4">4</option>
                                                     </select>
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
-                                    <div class="col-xs-12 col-sm-3 col-md-4">
-                                        <br/>
+                                    <div class="col-xs-12 col-sm-7 col-md-7">
                                         <br/>
                                         <asp:LinkButton ID="LinkButton1" runat="server" class="thm-btn" OnClick="lbBusqueda" >BUSCAR PAQUETES</asp:LinkButton>
                                         <%--<button type="button" class="thm-btn">Búsqueda</button>--%>
@@ -131,7 +126,6 @@
                                                 
                                                 <div class="col-xs-12 col-sm-9 col-md-12 panel-padding">
                                                     <br/>
-                                                    <br/>
                                                     <label>Llegada</label>
                                                     <div class="icon-addon">
                                                         <input name="sd" type="text" class="form-control" id="startDate"/>
@@ -142,7 +136,6 @@
 
                                                 <div class="col-xs-12 col-sm-9 col-md-12 panel-padding">
                                                     <br/>
-                                                    <br/>
                                                     <label>Salida</label>
                                                     <div class="icon-addon">
                                                         <input name="ed" type="text" class="form-control" id="endDate"/>
@@ -151,7 +144,6 @@
                                                 </div>
 
                                                  <div class="col-xs-6 col-sm-4 col-md-6 hidden-sm panel-padding">
-                                                    <br/>
                                                     <br/>
                                                     <label>Cuartos</label>
                                                     <!-- filters select -->
@@ -168,7 +160,6 @@
 				                             
 					                                  <div class="col-xs-6 col-sm-4 col-md-6 hidden-sm panel-padding">
                                                             <br/>
-                                                            <br/>
                                                             <label>Personas</label>
                                                             <!-- filters select -->
                                                             <div class="select-filters">
@@ -181,7 +172,6 @@
                                                             </div>
                                                         </div>
                                                         <div class="col-xs-6 col-sm-4 col-md-2 hidden-sm panel-padding">
-                                                            <br/>
                                                             <br/>
                                                             <label>Niños</label>
                                                             <!-- filters select -->
@@ -196,15 +186,14 @@
                                                         </div>
                                                         <div class="col-xs-6 col-sm-4 col-md-2 panel-padding">
                                                             <br/>
-                                                            <br/>
                                                             <label>Días</label>
                                                             <!-- filters select -->
                                                             <div class="select-filters">
                                                                 <select name="day" id="day2">
-                                                                    <option value="" selected="">1 día</option>
-                                                                    <option value="2">2 días</option>
-                                                                    <option value="3">3 días</option>
-                                                                    <option value="4">4 días</option>
+                                                                    <option value="" selected="">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                    <option value="4">4</option>
                                                                 </select>
                                                             </div>
                                                         </div>
@@ -212,9 +201,8 @@
 				                    
                                             </div>
                                          </div>
-                                        <div class="col-xs-12 col-sm-3 col-md-4">
+                                        <div class="col-xs-12 col-sm-7 col-md-7">
 		                                    <br/>
-                                            <br/>
 			                                <button id="ver_precios" class="thm-btn" >Ver Precios</button>
 		                                </div>
                                             
@@ -265,4 +253,8 @@
      <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>
 
 
+
+
+
 </asp:Content>
+

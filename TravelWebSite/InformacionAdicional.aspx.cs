@@ -13,14 +13,14 @@ namespace TravelWebSite
         public string Nombres;
         public string Apellidos;
         public string Correo;
-        public DateTime FechaNacimiento;
+        public string FechaNacimiento;
         public string Ciudad;
         public string Telefono;
         public string Celular;
         public string Pasaporte;
-        public DateTime PasaporteFechaVenc;
+        public string PasaporteFechaVenc;
         public string Visa;
-        public DateTime VisaFechaVenc;
+        public string VisaFechaVenc;
         public string Trama;
         public string Nacionalidad;
         protected void Page_Load(object sender, EventArgs e)
@@ -35,7 +35,7 @@ namespace TravelWebSite
 
                 if (Valores[2] != "/  /")
                 {
-                    FechaNacimiento = Convert.ToDateTime(Valores[2]);
+                    FechaNacimiento = Valores[2];
                 }
 
                 Ciudad = Valores[3];
@@ -44,14 +44,14 @@ namespace TravelWebSite
                 Pasaporte = Valores[6];
                 if (Valores[7] != "/  /")
                 {
-                    PasaporteFechaVenc = Convert.ToDateTime(Valores[7]);
+                    PasaporteFechaVenc = Valores[7];
                 }
 
                 Visa = Valores[8];
 
                 if (Valores[9] != "/  /")
                 {
-                    VisaFechaVenc = Convert.ToDateTime(Valores[9]);
+                    VisaFechaVenc = Valores[9];
                 }
 
                 Correo = Login.UsuarioCorreo;
