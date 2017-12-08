@@ -4,6 +4,7 @@
 
                    
     <asp:Literal ID="LtDetallePaquete" runat="server"></asp:Literal>
+    <asp:Literal ID="LtPaquetesCategoria" runat="server"></asp:Literal>
     
     <!-- boletin suscripción -->
     <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>

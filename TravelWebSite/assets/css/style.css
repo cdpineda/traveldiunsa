@@ -41,7 +41,7 @@ This file contains the common info of this theme.
 ::-webkit-selection{background-color: #ff9500;color: #ffffff;}
 ::-moz-selection{background-color: #ff9500;color: #ffffff;}
 ::selection{background-color: #ff9500;color: #ffffff;}
-body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 13px;}
+body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 13px; overflow-y: scroll;overflow-x: hidden;}
 p {color: #555555;line-height: 23px;letter-spacing: 0.25px;}
 #page-content{position: relative;margin-bottom: 421px;z-index: 10;background-color: white;}
 ol, ul {padding: 0;margin:0;list-style-type: none;}
@@ -1026,7 +1026,6 @@ a.at-icon-wrapper.at-share-btn.at-svc-pinterest_share{
 }
 
 .helpHeader{
-    margin-top: 10px;
     color: #004d9c;
     font-size: 18px;
 }
@@ -1041,7 +1040,7 @@ a.at-icon-wrapper.at-share-btn.at-svc-pinterest_share{
 }
 
 .logoMP{
-    width: 60%;
+    width: 120%;
 }
 
 .headerPerfil{
@@ -1059,4 +1058,86 @@ a.at-icon-wrapper.at-share-btn.at-svc-pinterest_share{
 .btnDestinoP{
     margin-top: 2px !important;
     height: 35px !important;
+}
+
+/*Iconos Redes Sociales*/
+.RS{
+    width: 30px;
+    margin-top: 25px;
+}
+
+/*Catalogos*/
+.flex { display: -webkit-flex; display: flex; -webkit-flex-direction: row;  flex-direction: row; -webkit-justify-content: flex-start; justify-content: flex-start;}
+
+.slidere-w div {position: relative;}
+.slidere-w {margin-top: 4vw;  margin-left: 11vw;}
+.slide-i {height: 25vw;}
+.slide-i img {width: 250px; cursor: pointer;}
+.slide-c {width: 50vw; color: #004d9c; padding:3vw 18vw 3vw 9vw;}
+.slide-d {color: #0a8acb; font-size: 1.1vw; font-weight: 400; letter-spacing: 0.1vw; padding-bottom: 1.4vw;}
+.slide-t {font-size: 1.2vw; font-weight: 400; letter-spacing: 0.1vw; line-height: 1.55vw; padding-bottom: 1.8vw;}
+.slide-te {font-size: 0.80vw; line-height: 1.2vw; opacity: 0.8; padding-bottom: 4vw;  color: #666666;}
+.slide-m {font-weight: 400; letter-spacing: 0.1vw; float: left; font-size: 0.9vw;}
+.slide-b {width: 0.5vw; height: 0.5vw; background-color: #0b8bcc; border-radius: 200%; position: relative; margin-left: 1.2vw;}
+.slide-n {margin-left: 64vw; margin-top: -5.5vw;}
+
+div.overlay-blue {width: 100%; height: 100%; position: absolute; top: 0; transition: 0.5s ease all;}
+div.overlay-blue:hover {background-color: rgba(13, 27, 43, 0.5);}
+
+.arrows{width: 3.5vw; margin-top: -5.8vw; margin-left: 72vw; position: relative;}
+.arrow {display: inline-block; position: absolute; width: 1.2vw; height: 1.2vw; background: transparent; text-indent: -9999px; border-top: 0.15vw solid #ff9500; border-left: 0.15vw solid #ff9500; transition: all .1s ease-in-out; text-decoration: none; color: transparent;
+}
+.arrow:hover {border-color: #004d9c; border-width: 0.25vw;
+}
+.arrow:before {display: block; height: 200%; width: 200%; margin-left: -50%; margin-top: -50%; content: ""; transform: rotate(45deg);}
+.arrow.prev {transform: rotate(-45deg); left: 0;}
+.arrow.next {transform: rotate(135deg); right: 0;}
+
+.titleCatalogo {text-align: center;}
+.titleCatalogo h2{text-align: center;font-weight: 300;color: #004d9c;position: relative;z-index: 10; margin-top: 80px;}
+
+
+.ibox {
+  clear: both;
+  margin-bottom: 25px;
+  margin-top: 0;
+  padding: 0;
+}
+
+.ibox-title h3 {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #ffffff;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 3px 0 0;
+    color: inherit;
+    margin-bottom: 0;
+    padding: 14px 15px 7px;
+    min-height: 48px;
+}
+
+.ibox-content {
+    clear: both;
+}
+
+.ibox-content {
+    background-color: #ffffff;
+    color: inherit;
+    padding: 15px 20px 20px 20px;
+    border-color: #e7eaec;
+    border-image: none;
+    border-style: solid solid none;
+    border-width: 1px 0;
+}
+
+.m-b-sm {
+    margin-bottom: 10px;
+}
+
+.font-bold {
+    font-weight: 600;
 }

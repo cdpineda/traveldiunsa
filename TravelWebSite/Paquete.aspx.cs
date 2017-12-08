@@ -20,6 +20,8 @@ namespace TravelWebSite
             LtDetallePaquete.Text = resultado;
             resultado = paquetesWS.BOLETINFOOTER();
             LtBoletin.Text = resultado;
+            resultado = paquetesWS.PAQUETES();
+            LtPaquetesCategoria.Text = resultado;
             string coordenada;
             string Lat1,Lat2 = "";                        
             coordenada=paquetesWS.COORDENADASPAQUETE(IdNum);

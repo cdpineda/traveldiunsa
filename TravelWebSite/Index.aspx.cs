@@ -25,6 +25,9 @@ namespace TravelWebSite
             resultado = paquetesWS.RECOMENDADOS();
             LtRecomendados.Text = resultado;
 
+            resultado = paquetesWS.CATALOGOS();
+            LtCatalogos.Text = resultado;
+
 
         }
         protected void lbBusqueda(object sender, EventArgs e)

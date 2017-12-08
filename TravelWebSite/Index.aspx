@@ -223,6 +223,8 @@
     <%-- Destino Popular --%>
     <asp:Literal ID="LtDestinoPopular" runat="server"></asp:Literal>
 
+    <%-- Catalagos --%>
+    <asp:Literal ID="LtCatalogos" runat="server"></asp:Literal>
  
 
 <!-- service -->

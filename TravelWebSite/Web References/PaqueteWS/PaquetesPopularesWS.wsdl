@@ -26,6 +26,18 @@
           </xsd:sequence>
         </xsd:complexType>
       </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CATALOGOS">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.CATALOGOSResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Paginacontenidohtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.HEADERPUBLICIDAD">
         <xsd:complexType>
           <xsd:sequence />
@@ -414,6 +426,12 @@
   <message name="PaquetesPopularesWS.SLIDERSoapOut">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.SLIDERResponse" />
   </message>
+  <message name="PaquetesPopularesWS.CATALOGOSSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CATALOGOS" />
+  </message>
+  <message name="PaquetesPopularesWS.CATALOGOSSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.CATALOGOSResponse" />
+  </message>
   <message name="PaquetesPopularesWS.HEADERPUBLICIDADSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDAD" />
   </message>
@@ -579,6 +597,10 @@
       <input message="wsdlns:PaquetesPopularesWS.SLIDERSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.SLIDERSoapOut" />
     </operation>
+    <operation name="CATALOGOS">
+      <input message="wsdlns:PaquetesPopularesWS.CATALOGOSSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.CATALOGOSSoapOut" />
+    </operation>
     <operation name="HEADERPUBLICIDAD">
       <input message="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDADSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.HEADERPUBLICIDADSoapOut" />
@@ -697,6 +719,15 @@
     </operation>
     <operation name="SLIDER">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.SLIDER" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="CATALOGOS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.CATALOGOS" />
       <input>
         <soap:body use="literal" />
       </input>

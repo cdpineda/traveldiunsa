@@ -33,6 +33,8 @@ namespace TravelWebSite.PaqueteWS {
         
         private System.Threading.SendOrPostCallback SLIDEROperationCompleted;
         
+        private System.Threading.SendOrPostCallback CATALOGOSOperationCompleted;
+        
         private System.Threading.SendOrPostCallback HEADERPUBLICIDADOperationCompleted;
         
         private System.Threading.SendOrPostCallback HEADERTELEFONOOperationCompleted;
@@ -128,6 +130,9 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event SLIDERCompletedEventHandler SLIDERCompleted;
+        
+        /// <remarks/>
+        public event CATALOGOSCompletedEventHandler CATALOGOSCompleted;
         
         /// <remarks/>
         public event HEADERPUBLICIDADCompletedEventHandler HEADERPUBLICIDADCompleted;
@@ -260,6 +265,34 @@ namespace TravelWebSite.PaqueteWS {
             if ((this.SLIDERCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SLIDERCompleted(this, new SLIDERCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.CATALOGOS", RequestElementName="PaquetesPopularesWS.CATALOGOS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.CATALOGOSResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Paginacontenidohtml")]
+        public string CATALOGOS() {
+            object[] results = this.Invoke("CATALOGOS", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void CATALOGOSAsync() {
+            this.CATALOGOSAsync(null);
+        }
+        
+        /// <remarks/>
+        public void CATALOGOSAsync(object userState) {
+            if ((this.CATALOGOSOperationCompleted == null)) {
+                this.CATALOGOSOperationCompleted = new System.Threading.SendOrPostCallback(this.OnCATALOGOSOperationCompleted);
+            }
+            this.InvokeAsync("CATALOGOS", new object[0], this.CATALOGOSOperationCompleted, userState);
+        }
+        
+        private void OnCATALOGOSOperationCompleted(object arg) {
+            if ((this.CATALOGOSCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.CATALOGOSCompleted(this, new CATALOGOSCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1137,6 +1170,32 @@ namespace TravelWebSite.PaqueteWS {
         private object[] results;
         
         internal SLIDERCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void CATALOGOSCompletedEventHandler(object sender, CATALOGOSCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class CATALOGOSCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal CATALOGOSCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

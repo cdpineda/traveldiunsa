@@ -162,6 +162,7 @@
     <Content Include="assets\images\destination-370x370-8.jpg" />
     <Content Include="assets\images\destination-bg.jpg" />
     <Content Include="assets\images\down-arrow.png" />
+    <Content Include="assets\images\facebook.png" />
     <Content Include="assets\images\favicon.png" />
     <Content Include="assets\images\flickr-1.jpg" />
     <Content Include="assets\images\flickr-2.jpg" />
@@ -225,6 +226,7 @@
     <Content Include="assets\images\hotel-8.jpg" />
     <Content Include="assets\images\hotel-9.jpg" />
     <Content Include="assets\images\hotel-overview.jpg" />
+    <Content Include="assets\images\instagram.png" />
     <Content Include="assets\images\logo-traveldiunsa.png" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\marker.png" />
@@ -259,11 +261,14 @@
     <Content Include="assets\images\tour-370x370-8.jpg" />
     <Content Include="assets\images\tour-370x370-9.jpg" />
     <Content Include="assets\images\trip.jpg" />
+    <Content Include="assets\images\twitter.png" />
+    <Content Include="assets\images\youtube.png" />
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\box_hotels.js" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\hotels.maps.js" />
+    <Content Include="assets\js\index.js" />
     <Content Include="assets\js\ion.rangeSlider.min.js" />
     <Content Include="assets\js\jquery-ui.min.js" />
     <Content Include="assets\js\jquery.blockUI.js" />

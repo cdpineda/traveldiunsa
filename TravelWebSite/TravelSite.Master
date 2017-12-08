@@ -24,50 +24,59 @@
                     <!--Brand and toggle get grouped for better mobile display--> 
                     <div class="navbar-header">
                         <div class="col-xs-12 col-md-12">
-                            <div class="col-xs-1 col-md-1"></div>
-                            <div class="col-xs-10 col-md-10">
-                                <div class="col-xs-4 col-md-4">
-                                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                        <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
-                                    </button>
-                                    <a class="navbar-brand" href="Index.aspx">
-                                        <img src="assets/images/logo.png" class="img-resposive logoMP" alt="">
-                                    </a>    
-                                </div>
-                                
-                                <div class="col-xs-8 col-md-8" style="text-align: center;">
-                                    <div class="col-xs-3 col-md-3 telHeader">
-                                        <span>
-                                            <span>
-                                                <small>¡Reserva por teléfono!</small>
-                                            </span>
-                                            <br>
-                                            <span class="glyphicon glyphicon-earphone"></span>
-                                            <asp:Literal ID="LitTelefono" runat="server"></asp:Literal>
-                                        </span>
+                            <div class="col-xs-3 col-md-3">
+                                    <div class="col-xs-2 col-md-2"></div>
+                                    <div class="col-xs-10 col-md-10">                                
+                                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                            <span class="sr-only">Toggle navigation</span><i class="fa fa-bars"></i>
+                                        </button>
+                                        <a class="navbar-brand" href="Index.aspx">
+                                            <img src="assets/images/logo.png" class="img-resposive logoMP" alt="">
+                                        </a>
                                     </div>
-                                    
-                                    <div class="col-xs-2 col-md-2 helpHeader">
-                                        <h3 class="fa fa-question-circle-o"> Ayuda</h3>
-                                    </div>
-
-                                    <div class="col-xs-4 col-md-4">
-                                        <ul class="nav navbar-nav botonHeader">
-                                            <li id="Desplegar" class="dropdown">
-                                                <asp:LinkButton ID="LbRegistrarPerfil" runat="server" class="thm-btn" OnClick="LbSubmit_ClickRegistrar"><%= correo %></asp:LinkButton>
-                                                
-                                                <ul class="dropdown-menu">
-                                                    <li><a href="InformacionAdicional.aspx">Ver / Editar Perfil</a></li>
-                                                    <li><a href="#" onclick="Salir()">Cerrar Sesión</a></li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-
-                                    <asp:Literal ID="LitPublicidad" runat="server"></asp:Literal>
-                                </div>
                             </div>
-                            <div class="col-xs-1 col-md-1"></div>
+                                
+                            <div class="col-xs-9 col-md-9" style="text-align: center;">
+                                <div class="col-xs-2 col-md-2">
+                                    <a href="https://www.facebook.com/traveldiunsahn" target="_blank"><img src="assets/images/facebook.png" class="img-resposive RS" alt=""></a>
+                                    
+                                    <a href="https://www.twitter.com/TravelDiunsa" target="_blank"><img src="assets/images/twitter.png" class="img-resposive RS" alt=""></a>
+                                    
+                                    <a href="https://www.youtube.com/channel/UCxa1qXADHXY7tCdSf6t18ig" target="_blank"><img src="assets/images/youtube.png" class="img-resposive RS" alt=""></a>
+                
+                                    <a href="http://www.instagram.com/traveldiunsa" target="_blank"><img src="assets/images/instagram.png" class="img-resposive RS" alt=""></a>
+                                </div>
+                                <div class="col-xs-3 col-md-3 telHeader">
+                                    <span>
+                                        <span>
+                                            <small>¡Reserva por teléfono!</small>
+                                        </span>
+                                        <br>
+                                        <span class="glyphicon glyphicon-earphone"></span>
+                                        <asp:Literal ID="LitTelefono" runat="server"></asp:Literal>
+                                    </span>
+                                </div>
+                                    
+                                <div class="col-xs-1 col-md-1 helpHeader">
+                                    <h3 class="fa fa-question-circle-o"> Ayuda</h3>
+                                </div>
+
+                                <div class="col-xs-3 col-md-3">
+                                    <ul class="nav navbar-nav botonHeader">
+                                        <li id="Desplegar" class="dropdown">
+                                            <asp:LinkButton ID="LbRegistrarPerfil" runat="server" class="thm-btn" OnClick="LbSubmit_ClickRegistrar"><%= correo %></asp:LinkButton>
+                                                
+                                            <ul class="dropdown-menu">
+                                                <li><a href="InformacionAdicional.aspx">Ver / Editar Perfil</a></li>
+                                                <li><a href="#" onclick="Salir()">Cerrar Sesión</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </div>
+
+                                <asp:Literal ID="LitPublicidad" runat="server"></asp:Literal>
+                                <div class="col-xs-1 col-md-1"></div>
+                            </div>
                         </div>
                     </div>
 
@@ -356,5 +365,9 @@ function doSlideshow(){
 <script> var _ctct_m = "4ae672563504d26456fcae1f2a47b699"; </script>
 <script id="signupScript" src="//static.ctctcdn.com/js/signup-form-widget/current/signup-form-widget.min.js" async defer></script>
 <!-- End Constant Contact Active Forms -->
+<!-- Slider De catalogos -->
+<script src='https://cdnjs.cloudflare.com/ajax/libs/gsap/1.19.1/TweenMax.min.js'></script>
+<script src="assets/js/index.js"></script>
+
 </body>
 </html>

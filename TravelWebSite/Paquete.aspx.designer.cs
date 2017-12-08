@@ -22,6 +22,15 @@ namespace TravelWebSite {
         protected global::System.Web.UI.WebControls.Literal LtDetallePaquete;
         
         /// <summary>
+        /// LtPaquetesCategoria control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal LtPaquetesCategoria;
+        
+        /// <summary>
         /// LtBoletin control.
         /// </summary>
         /// <remarks>
