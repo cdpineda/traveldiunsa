@@ -41,7 +41,7 @@ This file contains the common info of this theme.
 ::-webkit-selection{background-color: #ff9500;color: #ffffff;}
 ::-moz-selection{background-color: #ff9500;color: #ffffff;}
 ::selection{background-color: #ff9500;color: #ffffff;}
-body{font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;font-size: 13px; overflow-y: scroll;overflow-x: hidden;}
+body{font-family: "Open Sans", Helvetica, Arial, sans-serif !important;font-size: 13px; overflow-y: scroll;overflow-x: hidden;}
 p {color: #555555;line-height: 23px;letter-spacing: 0.25px;}
 #page-content{position: relative;margin-bottom: 421px;z-index: 10;background-color: white;}
 ol, ul {padding: 0;margin:0;list-style-type: none;}
@@ -360,7 +360,7 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .effect-block span {color: #373737;display: block;font-size: 15px;letter-spacing: 0.5px;}
 .effect-block h4 {font-size: 30px;color: #373737;font-weight: 700;margin: 0 0 20px;}
 /*destination*/
-.destination{position: relative;background-image: url(../images/destination-bg.jpg);background-repeat: no-repeat;background-size: cover;padding-bottom: 50px;}
+.destination{position: relative;/*background-image: url(../images/destination-bg.jpg);background-repeat: no-repeat;background-size: cover;*/padding-bottom: 50px;}
 .destination::before {width: 100%;content: " ";height: 100%;position: absolute;left: 0;top: 0;display: block !important;/*background-color: rgba(255, 255, 255, 0.8);*/}
 .destination .thm-margin {margin-right: -10px;margin-left: -10px;}
 .destination .thm-padding {padding-left: 10px;padding-right: 10px;padding-bottom: 20px;}
@@ -604,7 +604,7 @@ figure.effect-milo:hover .effect-block, .package-wiget:hover .effect-block{opaci
 .hotels-details-inner p, .tour-details-inner p, .hotels-details-inner h3, .tour-details-inner h3{margin-bottom: 20px;}
 #sync1 .item, #sync2 .item {margin: 5px;}
 ul.list-ok li {position: relative;padding-left: 25px;line-height: 25px;color: #7d7d7d;}
-ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set_1;font-size: 14px;content: "\2713";position: absolute;left: 0;top: 0;}
+ul.list-ok li::before {font-style: normal;font-weight: 700;font-family: icon_set_1;font-size: 14px;content: "\2022"/* "\2713 para checkmark"*/;position: absolute;left: 0;top: 0;}
 .hotel-review{position: relative;}
 .hotel-review .hotel-review-ratting{position: absolute;top: 0;right: 0;padding: 12px 20px;background-color: #fff;font-size: 13px;}
 .review-text h4{margin: 0 0 20px;}

@@ -3,13 +3,13 @@
  
 
                    
-    <asp:Literal ID="LtDetallePaquete" runat="server"></asp:Literal>
+    <asp:Literal ID="LtDetallePaquete" runat="server"></asp:Literal>   
     <asp:Literal ID="LtPaquetesCategoria" runat="server"></asp:Literal>
     
     <!-- boletin suscripción -->
     <asp:Literal ID="LtBoletin" runat="server"></asp:Literal>
     <asp:Label ID="lblLat1" runat="server" Text="Label" Style="display: none;"></asp:Label>
-    <asp:Label ID="lblLat2" runat="server" Text="Label" Style="display: none;"></asp:Label>
+    <asp:Label ID="lblLat2" runat="server" Text="Label" Style="display: none;"></asp:Label>    
     <asp:Label ID="lblPaqueteId" runat="server" Text="Label" Style="display: none;"></asp:Label>
     
     <!-- google maps -->

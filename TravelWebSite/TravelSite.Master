@@ -14,10 +14,14 @@
         <link rel="shortcut icon" href="assets/images/favicon.png" type="image/x-icon">       
         <!-- Base Css -->
         <link href="assets/css/base.css" rel="stylesheet" type="text/css"/>
+        <link href="assets/css/comun.css" rel="stylesheet" type="text/css" />
+        <link href="assets/css/ui/css/smoothness/jquery-ui-1.10.4.custom.min.css" rel="stylesheet">
+        <link href="assets/css/loader.css" rel="stylesheet" />
+        <%--<link href="assets/css/estilosHotels.css" rel="stylesheet" />--%>
 </head>
 
 <body>
- <form runat="server">
+ <%--<form runat="server">--%>
         <div class="se-pre-con"></div>
         <div id="page-content">
              <nav id="mainNav" class="navbar navbar-fixed-top">
@@ -64,8 +68,8 @@
                                 <div class="col-xs-3 col-md-3">
                                     <ul class="nav navbar-nav botonHeader">
                                         <li id="Desplegar" class="dropdown">
-                                            <asp:LinkButton ID="LbRegistrarPerfil" runat="server" class="thm-btn" OnClick="LbSubmit_ClickRegistrar"><%= correo %></asp:LinkButton>
-                                                
+                                            <%--<asp:LinkButton ID="LbRegistrarPerfil" runat="server" class="thm-btn" OnClick="LbSubmit_ClickRegistrar"><%= correo %></asp:LinkButton>--%>                                          
+                                            <a  href="Login.aspx" ID="LbRegistrarPerfil" runat="server" class="thm-btn" ><%= correo %></a>
                                             <ul class="dropdown-menu">
                                                 <li><a href="InformacionAdicional.aspx">Ver / Editar Perfil</a></li>
                                                 <li><a href="#" onclick="Salir()">Cerrar Sesión</a></li>
@@ -102,9 +106,10 @@
                                     </li>
                                     <li><a href="#"><span class="icoMenu fa fa-bus"></span>Tours</a></li>
                                     <li><a href="destination.html"><span class="icoMenu fa fa-plane"></span>Destinos</a></li>
-                                    <li><a href="#"><span class="icoMenu fa fa-hotel"></span>Hoteles</a></li>
+                                    <li><a href="Hoteles.aspx"><span class="icoMenu fa fa-hotel"></span>Hoteles</a></li>
                                     <li><a  target="_blank" href="https://www.rentacar2go.com/"><span class="icoMenu fa fa-automobile"></span>Autos</a></li>
-                                    <li><a href="#" target="popup" onclick="window.open('Contactenos.aspx','popup','width=600,height=600'); return false;"><span class="icoMenu fa fa-drivers-license-o"></span>Contactenos</a></li>
+                                    <%--<li><a href="#" target="popup" onclick="window.open('Contactenos.aspx','popup','width=600,height=600'); return false;"><span class="icoMenu fa fa-drivers-license-o"></span>Contactenos</a></li>--%>
+                                    <li><a href="Contacto.aspx"><span class="icoMenu fa fa-drivers-license-o"></span>Contactenos</a></li>
                                 </ul>
                             </div>
                             <div class="col-xs-1 col-md-1"></div>
@@ -157,17 +162,22 @@ Diunsa Plaza Pedregal</p>
                                             <hr>
                                         </h4>
                                         <div class="col-md-6 col-sm-6">
-                                             <ul class="categoty">
+                                            <ul class="categoty">
+                                                <li><a href="Contenido.aspx?id=6"><span class="glyphicon glyphicon-folder-open"></span><br/>Acerca De</a></li>
+                                                <li><a href="Contenido.aspx?id=2"><span class="glyphicon glyphicon-globe"></span><br/>Sucursales</a></li>
+                                                <li><a href="Contenido.aspx?id=1"><span class="glyphicon glyphicon-usd"></span><br/>Formas de Pago</a></li>
+                                            </ul>    
+                                            <%-- <ul class="categoty">
                                                 <li><a><span class="glyphicon glyphicon-folder-open"></span><br/><asp:LinkButton ID="LbAcercaDe" runat="server" OnClick="LbAcercaDe_Click">Acerca De</asp:LinkButton></a></li>
                                                 <li><a><span class="glyphicon glyphicon-globe"></span><br/><asp:LinkButton ID="LbSucursales" runat="server" OnClick="LbSucursales_Click">Sucursales</asp:LinkButton></a></li>
                                                 <li><a><span class="glyphicon glyphicon-usd"></span><br/><asp:LinkButton ID="LbFormasPago" runat="server" OnClick="LbFormasPago_Click">Formas de Pago</asp:LinkButton></a></li>
-                                            </ul>
+                                            </ul>--%>
                                         </div>
                                         <div class="col-md-6 col-sm-6">
                                              <ul class="categoty">
-                                                <li><a><span class="glyphicon glyphicon-file"></span><br/><asp:LinkButton ID="LbDocumentosViaje" runat="server" OnClick="LbDocumentosViaje_Click">Documentos de Viaje</asp:LinkButton></a></li>
-                                                <li><a><span class="glyphicon glyphicon-list-alt"></span><br/><asp:LinkButton ID="LbTerminosUso" runat="server" OnClick="LbTerminosUso_Click">Términos de Uso</asp:LinkButton></a></li>
-                                                <li><a><span class="glyphicon glyphicon-lock"></span><br/><asp:LinkButton ID="LbPoliticasPrivacidad" runat="server" OnClick="LbPoliticasPrivacidad_Click">Políticas de Privacidad</asp:LinkButton></a></li>
+                                                <li><a href="Contenido.aspx?id=5"><span class="glyphicon glyphicon-file"></span><br/>Documentos de Viaje</a></li>
+                                                <li><a href="Contenido.aspx?id=4"><span class="glyphicon glyphicon-list-alt"></span><br/>Términos de Uso</a></li>
+                                                <li><a href="Contenido.aspx?id=3"><span class="glyphicon glyphicon-lock"></span><br/>Políticas de Privacidad</a></li>
                                             
                                             </ul>
                                         </div>
@@ -247,6 +257,9 @@ Diunsa Plaza Pedregal</p>
 <!--Busqueda hotels -->
 <script src="assets/js/jquery.blockUI.js"></script>
 <script src="assets/js/box_hotels.js"></script>	
+<script src="assets/js/comun.js"></script>	
+     <%--<script src="assets/css/ui/js/jquery-1.9.1.js"></script>--%>
+     <script src="assets/css/ui/js/jquery-ui-1.10.4.custom.js"></script>
 <!--Slider-->
 <script src="ãssets/js/jquery.backstretch.min.js"></script>
 <!-- google maps -->
@@ -355,7 +368,7 @@ function doSlideshow(){
 }
 </script>
 
-</form>
+<%--</form>--%>
 <script type="text/javascript">
     (function(d, src, c) { var t=d.scripts[d.scripts.length - 1],s=d.createElement('script');s.id='la_x2s6df8d';s.async=true;s.src=src;s.onload=s.onreadystatechange=function(){var rs=this.readyState;if(rs&&(rs!='complete')&&(rs!='loaded')){return;}c(this);};t.parentElement.insertBefore(s,t.nextSibling);})(document,
     'https://traveldiunsa.ladesk.com/scripts/track.js',

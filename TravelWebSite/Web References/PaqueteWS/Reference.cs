@@ -65,6 +65,8 @@ namespace TravelWebSite.PaqueteWS {
         
         private System.Threading.SendOrPostCallback BOLETINFOOTEROperationCompleted;
         
+        private System.Threading.SendOrPostCallback DESTINOPOPULAROperationCompleted;
+        
         private System.Threading.SendOrPostCallback DESTINOSOperationCompleted;
         
         private System.Threading.SendOrPostCallback DESTINODETALLEOperationCompleted;
@@ -178,6 +180,9 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event BOLETINFOOTERCompletedEventHandler BOLETINFOOTERCompleted;
+        
+        /// <remarks/>
+        public event DESTINOPOPULARCompletedEventHandler DESTINOPOPULARCompleted;
         
         /// <remarks/>
         public event DESTINOSCompletedEventHandler DESTINOSCompleted;
@@ -697,22 +702,24 @@ namespace TravelWebSite.PaqueteWS {
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.PAQUETES", RequestElementName="PaquetesPopularesWS.PAQUETES", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.PAQUETESResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
         [return: System.Xml.Serialization.XmlElementAttribute("Popularpaquetehtml")]
-        public string PAQUETES() {
-            object[] results = this.Invoke("PAQUETES", new object[0]);
+        public string PAQUETES(short Tipo) {
+            object[] results = this.Invoke("PAQUETES", new object[] {
+                        Tipo});
             return ((string)(results[0]));
         }
         
         /// <remarks/>
-        public void PAQUETESAsync() {
-            this.PAQUETESAsync(null);
+        public void PAQUETESAsync(short Tipo) {
+            this.PAQUETESAsync(Tipo, null);
         }
         
         /// <remarks/>
-        public void PAQUETESAsync(object userState) {
+        public void PAQUETESAsync(short Tipo, object userState) {
             if ((this.PAQUETESOperationCompleted == null)) {
                 this.PAQUETESOperationCompleted = new System.Threading.SendOrPostCallback(this.OnPAQUETESOperationCompleted);
             }
-            this.InvokeAsync("PAQUETES", new object[0], this.PAQUETESOperationCompleted, userState);
+            this.InvokeAsync("PAQUETES", new object[] {
+                        Tipo}, this.PAQUETESOperationCompleted, userState);
         }
         
         private void OnPAQUETESOperationCompleted(object arg) {
@@ -747,6 +754,34 @@ namespace TravelWebSite.PaqueteWS {
             if ((this.BOLETINFOOTERCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.BOLETINFOOTERCompleted(this, new BOLETINFOOTERCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.DESTINOPOPULAR", RequestElementName="PaquetesPopularesWS.DESTINOPOPULAR", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.DESTINOPOPULARResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Destinopopularhtml")]
+        public string DESTINOPOPULAR() {
+            object[] results = this.Invoke("DESTINOPOPULAR", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void DESTINOPOPULARAsync() {
+            this.DESTINOPOPULARAsync(null);
+        }
+        
+        /// <remarks/>
+        public void DESTINOPOPULARAsync(object userState) {
+            if ((this.DESTINOPOPULAROperationCompleted == null)) {
+                this.DESTINOPOPULAROperationCompleted = new System.Threading.SendOrPostCallback(this.OnDESTINOPOPULAROperationCompleted);
+            }
+            this.InvokeAsync("DESTINOPOPULAR", new object[0], this.DESTINOPOPULAROperationCompleted, userState);
+        }
+        
+        private void OnDESTINOPOPULAROperationCompleted(object arg) {
+            if ((this.DESTINOPOPULARCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.DESTINOPOPULARCompleted(this, new DESTINOPOPULARCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1586,6 +1621,32 @@ namespace TravelWebSite.PaqueteWS {
         private object[] results;
         
         internal BOLETINFOOTERCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void DESTINOPOPULARCompletedEventHandler(object sender, DESTINOPOPULARCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class DESTINOPOPULARCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal DESTINOPOPULARCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

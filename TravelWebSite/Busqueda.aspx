@@ -73,6 +73,7 @@
             </div>
         </div>
     </section>
+    <div class="modal"></div>
     <!-- jQuery -->
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <!-- jquery ui js -->
@@ -81,9 +82,12 @@
 <script src="assets/js/ion.rangeSlider.min.js" type="text/javascript"></script>
 <script src="assets/js/jquery.easing.min.js" type="text/javascript"></script>
     <script>     
+        $(document).ready(function () {
+        $body = $("body");
+        console.log($body);
         $(document).on({
-            ajaxStart: function () {/* $body.addClass("loading");*/ console.log("ajaxstart"); },
-            ajaxStop: function () {/* $body.removeClass("loading");*/ console.log("ajaxStop"); }
+            ajaxStart: function () { $body.addClass("loading"); console.log("ajaxstart"); },
+            ajaxStop: function () { $body.removeClass("loading"); console.log("ajaxStop"); }
 
         });
         var webMethod = "Busqueda.aspx/getBusquedaResult";
@@ -101,7 +105,8 @@
                         crossDomain: true,
                         contentType: 'application/json; charset=utf-8',
                         success: function (response) {                            
-                            console.log(response);                            
+                            console.log(response);
+                            $body.removeClass("loading"); console.log("remover clase object empty");
                             $("#ListaPaquete").replaceWith(response.d);
                             $("#<%=lblOpcion.ClientID %>").empty();
                             $("#<%=lblOpcion.ClientID %>").text(opcion);
@@ -128,6 +133,7 @@
                         contentType: 'application/json; charset=utf-8',
                         success: function (response) {
                             console.log(response);
+                            $body.removeClass("loading"); console.log("remover clase object empty");
                             $("#ListaPaquete").replaceWith(response.d);
                             $("#<%=lblOpcion.ClientID %>").empty();
                             $("#<%=lblOpcion.ClientID %>").text(opcion);
@@ -177,7 +183,8 @@
                         crossDomain: true,
                         contentType: 'application/json; charset=utf-8',
                         success: function (response) {                            
-                            console.log(response);                            
+                            console.log(response);
+                            $body.removeClass("loading"); console.log("remover clase object empty");
                             $("#ListaPaquete").replaceWith(response.d);
                             $("#<%=lblOpcion.ClientID %>").empty();
                             $("#<%=lblOpcion.ClientID %>").text(opcion);
@@ -190,6 +197,7 @@
                     });
 
             });
+        });
      </script>
     <%--http://ionden.com/a/plugins/ion.rangeSlider/en.html--%>
 </asp:Content>

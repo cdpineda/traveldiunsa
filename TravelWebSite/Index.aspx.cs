@@ -14,7 +14,7 @@ namespace TravelWebSite
         {
              
             PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
-            string resultado = paquetesWS.PAQUETES();
+            string resultado = paquetesWS.PAQUETES(0);
             LtPaquetePopular.Text = resultado;
             resultado = paquetesWS.DESTINOS();
             LtDestinoPopular.Text = resultado;
@@ -28,6 +28,8 @@ namespace TravelWebSite
             resultado = paquetesWS.CATALOGOS();
             LtCatalogos.Text = resultado;
 
+            resultado = paquetesWS.DESTINOPOPULAR();
+            LtDestino.Text = resultado;
 
         }
         protected void lbBusqueda(object sender, EventArgs e)

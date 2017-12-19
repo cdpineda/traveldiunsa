@@ -26,7 +26,15 @@ namespace TravelWebSite
                 if (Login.UsuarioNombres != "" | Login.UsuarioApellidos != "")
                 {
                     string nombre = Login.UsuarioNombres + " " + Login.UsuarioApellidos;
-                    correo = nombre.Substring(0, 23) + "...";
+                    if (nombre.Length >= 23)
+                    {
+                        correo = nombre.Substring(0, 23) + "...";
+                    }
+
+                    else
+                    {
+                        correo = nombre;
+                    }
                 }
                 else
                 {

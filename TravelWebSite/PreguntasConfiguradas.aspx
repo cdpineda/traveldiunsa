@@ -40,6 +40,7 @@
 
         <!-- Parte central -->
         <div class="col-md-9">
+            <form runat="server">
             <div class="col-md-12" style="border-width: 1px 1px 0px 1px; border-style: solid; border-color: lightgrey;">
                 <h3 style="text-align: center; color:#004d9c;">Perfil de Usuario</h3>
             </div>
@@ -81,6 +82,7 @@
                 </div>
                 &nbsp;
     	    </div>
+                </form>
             </div>
         </div>  
         <!-- Fin del div de parte central -->

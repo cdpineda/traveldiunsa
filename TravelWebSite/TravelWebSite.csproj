@@ -112,6 +112,8 @@
     <Content Include="assets\css\base.css" />
     <Content Include="assets\css\bootstrap.css" />
     <Content Include="assets\css\bootstrap.min.css" />
+    <Content Include="assets\css\comun.css" />
+    <Content Include="assets\css\estilosHotels.css" />
     <Content Include="assets\css\flaticon.css" />
     <Content Include="assets\css\fractionslider.css" />
     <Content Include="assets\css\images\fs.spinner.gif" />
@@ -119,14 +121,33 @@
     <Content Include="assets\css\ion.rangeSlider.css" />
     <Content Include="assets\css\ion.rangeSlider.skinFlat.css" />
     <Content Include="assets\css\jquery-ui.min.css" />
+    <Content Include="assets\css\loader.css" />
     <Content Include="assets\css\magnific-popup.css" />
+    <Content Include="assets\css\material\ring-alt.svg" />
     <Content Include="assets\css\style.css" />
+    <Content Include="assets\css\ui\css\smoothness\images\animated-overlay.gif" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_glass_55_fbf9ee_1x400.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_glass_65_ffffff_1x400.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_glass_75_dadada_1x400.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_glass_75_e6e6e6_1x400.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_glass_95_fef1ec_1x400.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-bg_highlight-soft_75_cccccc_1x100.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-icons_222222_256x240.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-icons_2e83ff_256x240.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-icons_454545_256x240.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-icons_888888_256x240.png" />
+    <Content Include="assets\css\ui\css\smoothness\images\ui-icons_cd0a0a_256x240.png" />
+    <Content Include="assets\css\ui\css\smoothness\jquery-ui-1.10.4.custom.css" />
+    <Content Include="assets\css\ui\css\smoothness\jquery-ui-1.10.4.custom.min.css" />
+    <Content Include="assets\css\ui\js\jquery-1.9.1.js" />
+    <Content Include="assets\css\ui\js\jquery-ui-1.10.4.custom.js" />
     <Content Include="assets\font-awesome\css\font-awesome.css" />
     <Content Include="assets\font-awesome\css\font-awesome.min.css" />
     <Content Include="assets\font-awesome\fonts\fontawesome-webfont.svg" />
     <Content Include="assets\font-awesome\HELP-US-OUT.txt" />
     <Content Include="assets\fonts\Flaticon.svg" />
     <Content Include="assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="assets\images\02.jpg" />
     <Content Include="assets\images\about.jpg" />
     <Content Include="assets\images\accommodation-960x650-1.jpg" />
     <Content Include="assets\images\accommodation-960x650-2.jpg" />
@@ -144,6 +165,7 @@
     <Content Include="assets\images\blog-800x250-4.jpg" />
     <Content Include="assets\images\blog-800x250-5.jpg" />
     <Content Include="assets\images\blog-800x250-6.jpg" />
+    <Content Include="assets\images\calendario.svg" />
     <Content Include="assets\images\client-logo\logo1.png" />
     <Content Include="assets\images\client-logo\logo2.png" />
     <Content Include="assets\images\client-logo\logo3.png" />
@@ -227,6 +249,10 @@
     <Content Include="assets\images\hotel-9.jpg" />
     <Content Include="assets\images\hotel-overview.jpg" />
     <Content Include="assets\images\instagram.png" />
+    <Content Include="assets\images\loading-cylon-black.svg" />
+    <Content Include="assets\images\loading-cylon-blue.svg" />
+    <Content Include="assets\images\loading-cylon-red.svg" />
+    <Content Include="assets\images\loading-cylon-white.svg" />
     <Content Include="assets\images\logo-traveldiunsa.png" />
     <Content Include="assets\images\logo.png" />
     <Content Include="assets\images\marker.png" />
@@ -266,6 +292,7 @@
     <Content Include="assets\js\bootstrap.js" />
     <Content Include="assets\js\bootstrap.min.js" />
     <Content Include="assets\js\box_hotels.js" />
+    <Content Include="assets\js\comun.js" />
     <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\hotels.maps.js" />
     <Content Include="assets\js\index.js" />
@@ -346,11 +373,17 @@
     <Content Include="assets\images\client-logo\Thumbs.db" />
     <Content Include="assets\images\Thumbs.db" />
     <Content Include="assets\owl-carousel\Thumbs.db" />
+    <Content Include="assets\css\comun.css.map" />
+    <Content Include="assets\css\main.sass" />
+    <Content Include="assets\css\partials\cajas.sass" />
+    <Content Include="assets\css\variables\cajas.sass" />
+    <Content Include="assets\css\ui\css\smoothness\images\Thumbs.db" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Hoteles.aspx" />
     <Content Include="Index.aspx" />
     <Content Include="InformacionAdicional.aspx" />
     <Content Include="Login.aspx" />
@@ -481,6 +514,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Hoteles.aspx.cs">
+      <DependentUpon>Hoteles.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Hoteles.aspx.designer.cs">
+      <DependentUpon>Hoteles.aspx</DependentUpon>
     </Compile>
     <Compile Include="Index.aspx.cs">
       <DependentUpon>Index.aspx</DependentUpon>

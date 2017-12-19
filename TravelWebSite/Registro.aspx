@@ -16,6 +16,7 @@
 <br/>
 <div class="container">
     <div class="row">
+    <form runat="server">
     <div class="col-sm-7" style="background-color: #f7f7f7; padding-bottom: 4.5%; margin-right: 4%; margin-left: 2%;">
         <div class="contact-form">
         <br />
@@ -138,15 +139,18 @@
                 </ul>
             </div>       -->
             <!-- Capturar información javascritp a asp.net -->
-            <asp:HiddenField ID="CorreoFBASP" runat="server" />
-            <asp:HiddenField ID="NombreFBASP" runat="server" />
-            <asp:HiddenField ID="CorreoGmailASP" runat="server" />
-            <asp:HiddenField ID="NombreGmailASP" runat="server" /> 
-        </div>    
+            <img src="assets/images/get-offer-bg.jpg" />
+            
+        </div>   
+        <asp:HiddenField ID="CorreoFBASP" runat="server" />
+        <asp:HiddenField ID="NombreFBASP" runat="server" />
+        <asp:HiddenField ID="CorreoGmailASP" runat="server" />
+        <asp:HiddenField ID="NombreGmailASP" runat="server" />  
         <asp:button clientidmode="Static" id="PopupRegistroFB" class="hide" runat="server" text=""></asp:button>
         <asp:button clientidmode="Static" id="PopupRegistro" class="hide" runat="server" text=""></asp:button>
     </div>
     </div>
+    </form>
     </div>
 </div>
 
