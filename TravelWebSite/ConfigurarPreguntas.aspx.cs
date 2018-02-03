@@ -22,9 +22,9 @@ namespace TravelWebSite
         PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
         protected void Page_Load(object sender, EventArgs e)
         {
-                if (Login.UsuarioCorreo != "")
+                if ((string)Session["CorreoUsuario"] != "" && (string)Session["CorreoUsuario"] != null)
                 {
-                    string trama = paquetesWS.RECUPERARVALUEPREGUNTASR(Login.UsuarioCorreo);
+                    string trama = paquetesWS.RECUPERARVALUEPREGUNTASR((string)Session["CorreoUsuario"]);
                     valores = trama.Split('|');
                     Pregunta1 = valores[0];
                     Respuesta1 = valores[1];
@@ -44,6 +44,7 @@ namespace TravelWebSite
                         ListItem oItem = new ListItem(item[0], item[1]);
                         ddlComputedColumns.Items.Add(oItem);
                     }
+             
 
                 for (int j = 0; j < total; j++)
                 {
@@ -88,7 +89,7 @@ namespace TravelWebSite
                                 if (Respuesta2!="")
                                 {
                                     validar = 0;
-                                    paquetesWS.GUARDARPREGUNTAS(Login.UsuarioCorreo, ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
+                                    paquetesWS.GUARDARPREGUNTAS((string)Session["CorreoUsuario"], ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
                                     Response.Redirect("PreguntasConfiguradas.aspx");
                                 }
                                 else
@@ -101,7 +102,7 @@ namespace TravelWebSite
                             {
                                 validar = 0;
                                 vRespuetsa2 = txtRespuesta2.Text;
-                                paquetesWS.GUARDARPREGUNTAS(Login.UsuarioCorreo, ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
+                                paquetesWS.GUARDARPREGUNTAS((string)Session["CorreoUsuario"], ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
                                 Response.Redirect("PreguntasConfiguradas.aspx");
                             }
                         }
@@ -121,7 +122,7 @@ namespace TravelWebSite
                             if (Respuesta2 != "")
                             {
                                 validar = 0;
-                                paquetesWS.GUARDARPREGUNTAS(Login.UsuarioCorreo, ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
+                                paquetesWS.GUARDARPREGUNTAS((string)Session["CorreoUsuario"], ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
                                 Response.Redirect("PreguntasConfiguradas.aspx");
                             }
                             else
@@ -134,7 +135,7 @@ namespace TravelWebSite
                         {
                             validar = 0;
                             vRespuetsa2 = txtRespuesta2.Text;
-                            paquetesWS.GUARDARPREGUNTAS(Login.UsuarioCorreo, ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
+                            paquetesWS.GUARDARPREGUNTAS((string)Session["CorreoUsuario"], ddlComputedColumns.SelectedValue, vRespuesta1, combo2.SelectedValue, vRespuetsa2);
                             Response.Redirect("PreguntasConfiguradas.aspx");
                         }
                     }

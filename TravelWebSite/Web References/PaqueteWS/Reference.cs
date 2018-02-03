@@ -29,6 +29,8 @@ namespace TravelWebSite.PaqueteWS {
     [System.Web.Services.WebServiceBindingAttribute(Name="PaquetesPopularesWSSoapBinding", Namespace="TravelAdmin")]
     public partial class PaquetesPopularesWS : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
+        private System.Threading.SendOrPostCallback LISTAETIQUETASOperationCompleted;
+        
         private System.Threading.SendOrPostCallback OBTENERPREGUNTASOperationCompleted;
         
         private System.Threading.SendOrPostCallback SLIDEROperationCompleted;
@@ -128,6 +130,9 @@ namespace TravelWebSite.PaqueteWS {
         }
         
         /// <remarks/>
+        public event LISTAETIQUETASCompletedEventHandler LISTAETIQUETASCompleted;
+        
+        /// <remarks/>
         public event OBTENERPREGUNTASCompletedEventHandler OBTENERPREGUNTASCompleted;
         
         /// <remarks/>
@@ -216,6 +221,34 @@ namespace TravelWebSite.PaqueteWS {
         
         /// <remarks/>
         public event RECOMENDADOSCompletedEventHandler RECOMENDADOSCompleted;
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.LISTAETIQUETAS", RequestElementName="PaquetesPopularesWS.LISTAETIQUETAS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.LISTAETIQUETASResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("Listaetiquetashtml")]
+        public string LISTAETIQUETAS() {
+            object[] results = this.Invoke("LISTAETIQUETAS", new object[0]);
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void LISTAETIQUETASAsync() {
+            this.LISTAETIQUETASAsync(null);
+        }
+        
+        /// <remarks/>
+        public void LISTAETIQUETASAsync(object userState) {
+            if ((this.LISTAETIQUETASOperationCompleted == null)) {
+                this.LISTAETIQUETASOperationCompleted = new System.Threading.SendOrPostCallback(this.OnLISTAETIQUETASOperationCompleted);
+            }
+            this.InvokeAsync("LISTAETIQUETAS", new object[0], this.LISTAETIQUETASOperationCompleted, userState);
+        }
+        
+        private void OnLISTAETIQUETASOperationCompleted(object arg) {
+            if ((this.LISTAETIQUETASCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.LISTAETIQUETASCompleted(this, new LISTAETIQUETASCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("TravelAdminaction/APAQUETESPOPULARESWS.OBTENERPREGUNTAS", RequestElementName="PaquetesPopularesWS.OBTENERPREGUNTAS", RequestNamespace="TravelAdmin", ResponseElementName="PaquetesPopularesWS.OBTENERPREGUNTASResponse", ResponseNamespace="TravelAdmin", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -1163,6 +1196,32 @@ namespace TravelWebSite.PaqueteWS {
                 return true;
             }
             return false;
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    public delegate void LISTAETIQUETASCompletedEventHandler(object sender, LISTAETIQUETASCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.6.1055.0")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class LISTAETIQUETASCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal LISTAETIQUETASCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
         }
     }
     

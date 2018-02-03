@@ -46,7 +46,7 @@ namespace TravelWebSite
                         {
 
                             validar = 0;
-                            paquetesWS.GUARDARPREGUNTAS(Login.UsuarioCorreo, ddlComputedColumns.SelectedValue, txtRespuesta1.Text, ddlComputedColumns2.SelectedValue, txtRespuesta2.Text);
+                            paquetesWS.GUARDARPREGUNTAS((string)Session["CorreoUsuario"], ddlComputedColumns.SelectedValue, txtRespuesta1.Text, ddlComputedColumns2.SelectedValue, txtRespuesta2.Text);
                             Response.Redirect("Index.aspx");
                         }
                         else

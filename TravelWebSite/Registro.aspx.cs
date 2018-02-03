@@ -83,9 +83,9 @@ namespace TravelWebSite
 
                                             if (Estado == 0)
                                             {
-                                                Login.UsuarioCorreo = vCorreo;
-                                                Login.UsuarioNombres= vNombres;
-                                                Login.UsuarioApellidos = vApellidos;
+                                                Session["CorreoUsuario"] = vCorreo;
+                                                Session["UsuarioNombres"] = vNombres;
+                                                Session["UsuarioApellidos"] = vApellidos;
                                                 Page.ClientScript.RegisterClientScriptBlock(this.GetType(), "clave", "alert('Bienvenido');", true);
                                                 Response.Redirect("Preguntas.aspx");
                                             }
@@ -184,16 +184,16 @@ namespace TravelWebSite
 
                         if (Estado == 0)
                         {
-                            Login.UsuarioCorreo = correoRegistro;
-                            Response.Redirect("ActualizarInformacionAdicional.aspx");
+                            Session["CorreoUsuario"] = correoRegistro;
+                            Response.Redirect("Preguntas.aspx");
                         }
                         else
                         {
-                            Login.UsuarioCorreo = correoRegistro;
-                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(Login.UsuarioCorreo);
+                            Session["CorreoUsuario"] = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO((string)Session["CorreoUsuario"]);
                             string[] Valores = trama.Split('|');
-                            Login.UsuarioNombres = Valores[0];
-                            Login.UsuarioApellidos = Valores[1];
+                            Session["UsuarioNombres"] = Valores[0];
+                            Session["UsuarioApellidos"] = Valores[1];
                             Response.Redirect("Index.aspx");
                             //Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";
@@ -243,16 +243,16 @@ namespace TravelWebSite
 
                         if (Estado == 0)
                         {
-                            Login.UsuarioCorreo = correoRegistro;
-                            Response.Redirect("ActualizarInformacionAdicional.aspx");
+                            Session["CorreoUsuario"] = correoRegistro;
+                            Response.Redirect("Preguntas.aspx");
                         }
                         if (Estado == 1)
                         {
-                            Login.UsuarioCorreo = correoRegistro;
-                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO(Login.UsuarioCorreo);
+                            Session["CorreoUsuario"] = correoRegistro;
+                            string trama = paquetesWS.OBTENERNOMBREAPELLIDO((string)Session["CorreoUsuario"]);
                             string[] Valores = trama.Split('|');
-                            Login.UsuarioNombres = Valores[0];
-                            Login.UsuarioApellidos = Valores[1];
+                            Session["UsuarioNombres"] = Valores[0];
+                            Session["UsuarioApellidos"] = Valores[1];
                             Response.Redirect("Index.aspx");
                             //Mensaje = "¡El correo de este usuario ya está registrado! Inicie sesión o registrese con otro correo.";
                             //MensajeError.Attributes["class"] = "show";

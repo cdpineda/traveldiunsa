@@ -28,7 +28,7 @@ namespace TravelWebSite
             try
             {
                 PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
-                Trama = paquetesWS.GETINFORMACIONADICIONAL(Login.UsuarioCorreo);
+                Trama = paquetesWS.GETINFORMACIONADICIONAL((string)Session["CorreoUsuario"]);
                 string[] Valores = Trama.Split('|');
                 Nombres = Valores[0];
                 Apellidos = Valores[1];
@@ -54,7 +54,7 @@ namespace TravelWebSite
                     VisaFechaVenc = Valores[9];
                 }
 
-                Correo = Login.UsuarioCorreo;
+                Correo = (string)Session["CorreoUsuario"];
                 Nacionalidad = Valores[10];
             }
             catch (Exception ex)

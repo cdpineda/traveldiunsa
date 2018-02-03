@@ -15,6 +15,8 @@ namespace TravelWebSite
             PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
             string resultado = paquetesWS.BUSQUEDAPAQUETES(1,0);
             LitBusqueda.Text = resultado;
+            resultado = paquetesWS.LISTAETIQUETAS();
+            LitEtiquetas.Text = resultado;
         }
 
         [System.Web.Services.WebMethod]

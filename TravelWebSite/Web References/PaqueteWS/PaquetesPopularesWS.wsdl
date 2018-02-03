@@ -2,6 +2,18 @@
 <definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="TravelAdmin" xmlns:wsdlns="TravelAdmin" name="PaquetesPopularesWS" targetNamespace="TravelAdmin" xmlns="http://schemas.xmlsoap.org/wsdl/">
   <types>
     <xsd:schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:SOAP-ENC="http://schemas.xmlsoap.org/soap/encoding/" elementFormDefault="qualified" targetNamespace="TravelAdmin">
+      <xsd:element name="PaquetesPopularesWS.LISTAETIQUETAS">
+        <xsd:complexType>
+          <xsd:sequence />
+        </xsd:complexType>
+      </xsd:element>
+      <xsd:element name="PaquetesPopularesWS.LISTAETIQUETASResponse">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element minOccurs="1" maxOccurs="1" name="Listaetiquetashtml" type="xsd:string" />
+          </xsd:sequence>
+        </xsd:complexType>
+      </xsd:element>
       <xsd:element name="PaquetesPopularesWS.OBTENERPREGUNTAS">
         <xsd:complexType>
           <xsd:sequence />
@@ -428,6 +440,12 @@
       </xsd:element>
     </xsd:schema>
   </types>
+  <message name="PaquetesPopularesWS.LISTAETIQUETASSoapIn">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.LISTAETIQUETAS" />
+  </message>
+  <message name="PaquetesPopularesWS.LISTAETIQUETASSoapOut">
+    <part name="parameters" element="wsdlns:PaquetesPopularesWS.LISTAETIQUETASResponse" />
+  </message>
   <message name="PaquetesPopularesWS.OBTENERPREGUNTASSoapIn">
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTAS" />
   </message>
@@ -609,6 +627,10 @@
     <part name="parameters" element="wsdlns:PaquetesPopularesWS.RECOMENDADOSResponse" />
   </message>
   <portType name="PaquetesPopularesWSSoapPort">
+    <operation name="LISTAETIQUETAS">
+      <input message="wsdlns:PaquetesPopularesWS.LISTAETIQUETASSoapIn" />
+      <output message="wsdlns:PaquetesPopularesWS.LISTAETIQUETASSoapOut" />
+    </operation>
     <operation name="OBTENERPREGUNTAS">
       <input message="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTASSoapIn" />
       <output message="wsdlns:PaquetesPopularesWS.OBTENERPREGUNTASSoapOut" />
@@ -732,6 +754,15 @@
   </portType>
   <binding name="PaquetesPopularesWSSoapBinding" type="wsdlns:PaquetesPopularesWSSoapPort">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="LISTAETIQUETAS">
+      <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.LISTAETIQUETAS" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
     <operation name="OBTENERPREGUNTAS">
       <soap:operation soapAction="TravelAdminaction/APAQUETESPOPULARESWS.OBTENERPREGUNTAS" />
       <input>

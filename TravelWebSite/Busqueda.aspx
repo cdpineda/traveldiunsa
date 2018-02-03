@@ -58,6 +58,27 @@
                             <input type="text" id="range" value="range" name="range" />
                         </div>
                     </div>
+
+                    <!-- Tags -->
+                    <asp:Literal ID="LitEtiquetas" runat="server"></asp:Literal>
+                    <%--<div class="sidber-box tags-widget">
+                        <div class="cats-title">Etiquetas</div>
+                        <ul>
+                            <li>
+                             <label><input type="checkbox" name="" value="false">
+                            <i class="a-icon a-icon-checkbox"></i><span class="a-label a-checkbox-label">
+                                <span>ROATAN</span></span></label>
+
+                            </li>
+                             <li>
+                             <label><input type="checkbox" name="" value="false">
+                            <i class="a-icon a-icon-checkbox"></i><span class="a-label a-checkbox-label">
+                                <span>UTILA</span></span></label>
+
+                            </li>
+                        </ul>
+                        
+                    </div>--%>
                  
                     <!-- help center -->
                     <div class="sidber-box help-widget">
@@ -66,6 +87,9 @@
                         <a href="#" class="phone">(504) 2516-5050</a>
                         <small>Lunes a Viernes 9.00am - 6.30pm</small>
                     </div>
+
+                    
+                    
                 </div><!--End Sideber-->
 
                 <asp:Literal ID="LitBusqueda" runat="server"></asp:Literal>

@@ -15,33 +15,46 @@ namespace TravelWebSite
         public string Pregunta2;
         public string Respuesta1;
         public string Respuesta2;
+        string aR1;
+        string aR2;
         string[] valores;
         PaquetesPopularesWS paquetesWS = new PaquetesPopularesWS();
         protected void Page_Load(object sender, EventArgs e)
         {
-            if (Login.UsuarioCorreo != "")
+            if ((string)Session["CorreoUsuario"] != "" && (string)Session["CorreoUsuario"] != null)
             {
-                string trama = paquetesWS.RECUPERARPREGUNTASR(Login.UsuarioCorreo);
+                string trama = paquetesWS.RECUPERARPREGUNTASR((string)Session["CorreoUsuario"]);
                 valores = trama.Split('|');
+
                 Pregunta1 = valores[0];
-                Respuesta1 = valores[1];
                 Pregunta2 = valores[2];
-                Respuesta2 = valores[3];
+                
                 if (Pregunta1=="")
                 {
                     Pregunta1 = "Pregunta No.1 - No Configurada";
                 }
+                else
+                {
+                    int contarR1 = valores[1].Count();
+                    for (int r1 = 2; r1 < contarR1; r1++)
+                    {
+                        aR1 += "*";
+                    }
+                    Respuesta1 = valores[1].Substring(0, 1) + aR1 + valores[1].Substring(contarR1 - 1, 1);
+                }
+
                 if (Pregunta2 == "")
                 {
                     Pregunta2 = "Pregunta No.2 - No Configurada";
                 }
-                if (Respuesta1 == "")
+                else
                 {
-                    Respuesta1 = "Respuesta No.1 - No Configurada";
-                }
-                if (Respuesta2 == "")
-                {
-                    Respuesta2 = "Respuesta No.2 - No Configurada";
+                    int contarR2 = valores[3].Count();
+                    for (int r2 = 2; r2 < contarR2; r2++)
+                    {
+                        aR2 += "*";
+                    }
+                    Respuesta2 = valores[3].Substring(0, 1) + aR2 + valores[3].Substring(contarR2 - 1, 1);
                 }
             }
         }

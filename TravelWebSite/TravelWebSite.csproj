@@ -387,6 +387,7 @@
     <Content Include="Index.aspx" />
     <Content Include="InformacionAdicional.aspx" />
     <Content Include="Login.aspx" />
+    <Content Include="PanelEje.aspx" />
     <Content Include="Paquete.aspx" />
     <Content Include="Preguntas.aspx" />
     <Content Include="PreguntasConfiguradas.aspx" />
@@ -542,6 +543,13 @@
     </Compile>
     <Compile Include="Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="PanelEje.aspx.cs">
+      <DependentUpon>PanelEje.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="PanelEje.aspx.designer.cs">
+      <DependentUpon>PanelEje.aspx</DependentUpon>
     </Compile>
     <Compile Include="Paquete.aspx.cs">
       <DependentUpon>Paquete.aspx</DependentUpon>

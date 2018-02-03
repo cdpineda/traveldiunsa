@@ -17,28 +17,39 @@ namespace TravelWebSite
         {
             string telefono = paquetesWS.HEADERTELEFONO();
             string publicidad = paquetesWS.HEADERPUBLICIDAD();
+            string correoIS = (string)Session["CorreoUsuario"];
+            string nombreIS = (string)Session["UsuarioNombres"];
+            string apellidoIS = (string)Session["UsuarioApellidos"];
             LitTelefono.Text = telefono;
             LitPublicidad.Text = publicidad;
             slider = paquetesWS.SLIDER();
 
-            if (Login.UsuarioCorreo != "")
+            if (correoIS != null)
             {
-                if (Login.UsuarioNombres != "" | Login.UsuarioApellidos != "")
+                if (nombreIS != "" | apellidoIS != "")
                 {
-                    string nombre = Login.UsuarioNombres + " " + Login.UsuarioApellidos;
-                    if (nombre.Length >= 23)
+                    if (nombreIS != null | apellidoIS != null)
                     {
-                        correo = nombre.Substring(0, 23) + "...";
-                    }
+                        string nombre = nombreIS + " " + apellidoIS;
+                        if (nombre.Length >= 23)
+                        {
+                            correo = nombre.Substring(0, 23) + "...";
+                        }
 
+                        else
+                        {
+                            correo = nombre;
+                        }
+                    }
                     else
                     {
-                        correo = nombre;
+                        correo = correoIS;
                     }
+
                 }
                 else
                 {
-                    correo = Login.UsuarioCorreo;
+                    correo = correoIS;
                 }
             }
             else
@@ -174,9 +185,7 @@ namespace TravelWebSite
         {
             try
             {
-                Login.UsuarioCorreo = "";
-                Login.UsuarioNombres = "";
-                Login.UsuarioApellidos = "";
+                Session.RemoveAll();
                 Response.Redirect("Index.aspx");
 
             }

@@ -29,7 +29,7 @@ namespace TravelWebSite
         {
             try
             {
-                Trama = paquetesWS.GETINFORMACIONADICIONAL(Login.UsuarioCorreo);
+                Trama = paquetesWS.GETINFORMACIONADICIONAL((string)Session["CorreoUsuario"]);
                 string[] Valores = Trama.Split('|');
                 Nombres = Valores[0];
                 Apellidos = Valores[1];
@@ -56,7 +56,7 @@ namespace TravelWebSite
                 }
                 Nacionalidad = Valores[10];
 
-                Correo = Login.UsuarioCorreo;
+                Correo = (string)Session["CorreoUsuario"];
                 LbNombres.Attributes["placeholder"] = Nombres;
                 LbApellidos.Attributes["placeholder"] = Apellidos;
                 LbFechaNacimiento.Attributes["placeholder"] = FechaNacimientoG.ToString();
@@ -244,7 +244,7 @@ namespace TravelWebSite
                 DateTime vFechaNacimiento = Convert.ToDateTime(FechaNacimiento);
                 DateTime vPasaporteFecVenc = Convert.ToDateTime(PasaporteFecVenc);
                 DateTime vVisaFecVenc = Convert.ToDateTime(VisaFecVenc);
-                int Estado = paquetesWS.INFORMACIONADICIONAL(vNombres, vApellidos, Login.UsuarioCorreo, vFechaNacimiento, vCiudadResidencia, vTelefono, vCelular, vPasaporte, vPasaporteFecVenc, vVisa, vVisaFecVenc, vNacionalidad);
+                int Estado = paquetesWS.INFORMACIONADICIONAL(vNombres, vApellidos, (string)Session["CorreoUsuario"], vFechaNacimiento, vCiudadResidencia, vTelefono, vCelular, vPasaporte, vPasaporteFecVenc, vVisa, vVisaFecVenc, vNacionalidad);
                 Response.Redirect("InformacionAdicional.aspx");
 
             }
